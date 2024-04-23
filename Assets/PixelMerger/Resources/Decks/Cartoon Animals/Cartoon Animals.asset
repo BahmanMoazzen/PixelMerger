@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8837853c2c970dd48bfe001ccea978fb, type: 3}
+  m_Name: Cartoon Animals
+  m_EditorClassIdentifier: 
+  DeckName: Cartoon Animals
+  DeckBackGround: {fileID: -6695950386315148514, guid: f718394f5942d4546be02d48c8e4c511, type: 3}
+  DeckIcon: {fileID: -2579126775739661544, guid: fc86ead7970d3724bb61474246514a71, type: 3}
+  DeckPixels:
+  - {fileID: 11400000, guid: b09df396a3a1d9845a8888eb16786ee6, type: 2}
+  - {fileID: 11400000, guid: 431e6c00b65503c49b50657849cfcfe2, type: 2}
+  - {fileID: 11400000, guid: e994f56fd8ca45f44b3682c785b5bc26, type: 2}
+  - {fileID: 11400000, guid: c4eb7590de18ad1488450ebaab39e32b, type: 2}
+  - {fileID: 11400000, guid: 2b748d35bbaad1848af699effefa895e, type: 2}
+  - {fileID: 11400000, guid: ecf231f3a86d24848bf61e3b33c73417, type: 2}
+  - {fileID: 11400000, guid: bcab8bb171a7ada4ebdd4a358f254408, type: 2}
+  - {fileID: 11400000, guid: 94ceb6161254278439735b4d93042214, type: 2}
+  - {fileID: 11400000, guid: 93bc1bffd16757c4dbc7595ab448d327, type: 2}
+  - {fileID: 11400000, guid: 6154cc74ba930c84bb60ce4e437cadce, type: 2}
+  - {fileID: 11400000, guid: 15880a18df2528a42986c798c2613934, type: 2}
+  - {fileID: 11400000, guid: 3b59021d4282c6448aec71f6598c5659, type: 2}
+  WeightIncreaseStep: 0.5
+  RadiousIncreaseStep: 0.5
+  isLock: 0

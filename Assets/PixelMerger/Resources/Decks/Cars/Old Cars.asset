@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8837853c2c970dd48bfe001ccea978fb, type: 3}
+  m_Name: Old Cars
+  m_EditorClassIdentifier: 
+  DeckName: Old Cars
+  DeckBackGround: {fileID: -2413806693520163455, guid: fdf4f03f21fcd2b43b04bfc5fb5e5f70, type: 3}
+  DeckIcon: {fileID: 385832102940872456, guid: 7c49616e88040144ca01f07a32877673, type: 3}
+  DeckPixels:
+  - {fileID: 11400000, guid: 2d2c0bc9da559274fbc3c5f46b18167f, type: 2}
+  - {fileID: 11400000, guid: dc6cb8dcba5a69d4ab4d7bdcf04a25bb, type: 2}
+  - {fileID: 11400000, guid: a8fc872b4c373ee4b8395c5b60448ee1, type: 2}
+  - {fileID: 11400000, guid: ecfe96e22624de749bb897b6b48f5194, type: 2}
+  - {fileID: 11400000, guid: a2a06adffd1876741911f5e2dc490673, type: 2}
+  - {fileID: 11400000, guid: cb1ed5c3f6478384c9b8ffedcd477beb, type: 2}
+  - {fileID: 11400000, guid: 053590e71c8b0284ca8b24e593527ae1, type: 2}
+  - {fileID: 11400000, guid: c01ab8f840dc7c043afa223e5af3f882, type: 2}
+  - {fileID: 11400000, guid: 11e212dd69e410544a38d447a6b91800, type: 2}
+  - {fileID: 11400000, guid: d326a782715406045a8cc15f7bbc19dd, type: 2}
+  - {fileID: 11400000, guid: 0e5a8fd166658cc499ff59d5a91efc72, type: 2}
+  - {fileID: 11400000, guid: 4c334250b6dbb7f49b58ea5eb34ff947, type: 2}
+  WeightIncreaseStep: 0.5
+  RadiousIncreaseStep: 0.5
+  isLock: 1

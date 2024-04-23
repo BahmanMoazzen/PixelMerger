@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcbc08cea1529d418244cd9d5541bae, type: 3}
+  m_Name: 06-Zombie6.png
+  m_EditorClassIdentifier: 
+  MergerName: Zombie6
+  MergerSprite: {fileID: -4129920444763562191, guid: 72db2564069040f43a3d2ee7b74921ce, type: 3}
+  MergerOrder: 6
+  MergerDeckInfo: {fileID: 11400000, guid: b0bf1f323d7380140998c0cbc84e2b35, type: 2}

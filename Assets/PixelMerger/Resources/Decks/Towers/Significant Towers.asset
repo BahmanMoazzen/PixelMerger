@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8837853c2c970dd48bfe001ccea978fb, type: 3}
+  m_Name: Significant Towers
+  m_EditorClassIdentifier: 
+  DeckName: Significant Towers
+  DeckBackGround: {fileID: -6695950386315148514, guid: e33c21374b51d3246aeca325913ecee5, type: 3}
+  DeckIcon: {fileID: 2197339003567805683, guid: 042c6d53ddfd45e4cb0e24bcec2d147c, type: 3}
+  DeckPixels:
+  - {fileID: 11400000, guid: 7c4faaabfffb6154683cf92b12b66dc6, type: 2}
+  - {fileID: 11400000, guid: 69b66c9c149afc341bc8eb78a326f664, type: 2}
+  - {fileID: 11400000, guid: d8d6f808787172c429d6d84bce06d7d8, type: 2}
+  - {fileID: 11400000, guid: 8bb4d6d5478009543830661320cce4ea, type: 2}
+  - {fileID: 11400000, guid: 4f1760b30a2a3ca4eb952deac98667df, type: 2}
+  - {fileID: 11400000, guid: f481bc87c39fdab439524b0c2f4a0c01, type: 2}
+  - {fileID: 11400000, guid: 99ca71b716da5954a8855869c9ce6fe0, type: 2}
+  - {fileID: 11400000, guid: fcec684c0a87466469fa8d8906f58f00, type: 2}
+  - {fileID: 11400000, guid: 964664014db2c404aa57caf0e6a8071f, type: 2}
+  - {fileID: 11400000, guid: afd3e13453e9bf34f9d794e7b3a933a6, type: 2}
+  - {fileID: 11400000, guid: f4c90062b07e5234da4ad77e1ae6df67, type: 2}
+  - {fileID: 11400000, guid: af846619377c5e145946c90216fcde7e, type: 2}
+  WeightIncreaseStep: 0.5
+  RadiousIncreaseStep: 0.5
+  isLock: 1

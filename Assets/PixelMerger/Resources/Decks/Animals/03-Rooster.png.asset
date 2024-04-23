@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcbc08cea1529d418244cd9d5541bae, type: 3}
+  m_Name: 03-Rooster.png
+  m_EditorClassIdentifier: 
+  MergerName: Rooster
+  MergerSprite: {fileID: -1594298052885153121, guid: 34864f307f31e8341a6644d342b6e87f, type: 3}
+  MergerOrder: 3
+  MergerDeckInfo: {fileID: 11400000, guid: 805be661633b65045ab7bece380eadc4, type: 2}

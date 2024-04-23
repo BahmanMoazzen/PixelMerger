@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcbc08cea1529d418244cd9d5541bae, type: 3}
+  m_Name: 08-spoonbill.png
+  m_EditorClassIdentifier: 
+  MergerName: spoonbill
+  MergerSprite: {fileID: -3230248243703427096, guid: be21cf9842f525d429aefa48b2d21ddb, type: 3}
+  MergerOrder: 8
+  MergerDeckInfo: {fileID: 11400000, guid: 61990d344236afe4cb5b1b50bb69d12a, type: 2}

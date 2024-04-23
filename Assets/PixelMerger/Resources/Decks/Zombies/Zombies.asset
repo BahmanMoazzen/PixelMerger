@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8837853c2c970dd48bfe001ccea978fb, type: 3}
+  m_Name: Zombies
+  m_EditorClassIdentifier: 
+  DeckName: Zombies
+  DeckBackGround: {fileID: -2413806693520163455, guid: fdf4f03f21fcd2b43b04bfc5fb5e5f70, type: 3}
+  DeckIcon: {fileID: 9131319800151397861, guid: b5129c02e13d8714ba1cac5686618352, type: 3}
+  DeckPixels:
+  - {fileID: 11400000, guid: ea9088a8d3429a64bb1811db92f9c8a4, type: 2}
+  - {fileID: 11400000, guid: 5c5c39a0f1dfd0a43a386446f64fb7c9, type: 2}
+  - {fileID: 11400000, guid: 64dc673b8539f04459cc40a0f1ba4315, type: 2}
+  - {fileID: 11400000, guid: 5062dcb9f12f32e42a18e6fb5ba9e8eb, type: 2}
+  - {fileID: 11400000, guid: bac253786c963c743bf8b7a0626f7855, type: 2}
+  - {fileID: 11400000, guid: dc6ba30ec4e09ac46ac4dd894d35f1c0, type: 2}
+  - {fileID: 11400000, guid: 21bff553fdd0a32409bfcc3bf670bac6, type: 2}
+  - {fileID: 11400000, guid: 58fc64210ac44dc438fec8c7c5ec2706, type: 2}
+  - {fileID: 11400000, guid: 464049ea6af3f014a98ce87026954f36, type: 2}
+  - {fileID: 11400000, guid: e1b0b925a72a31b4ca8b8a2e8ea96356, type: 2}
+  - {fileID: 11400000, guid: 007f225a09441a94f86ad02447aa1b64, type: 2}
+  - {fileID: 11400000, guid: 1aca1e2c97242bf4288b716aa7763ef6, type: 2}
+  WeightIncreaseStep: 0.5
+  RadiousIncreaseStep: 0.5
+  isLock: 1

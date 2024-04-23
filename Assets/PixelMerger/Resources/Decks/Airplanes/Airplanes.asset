@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8837853c2c970dd48bfe001ccea978fb, type: 3}
+  m_Name: Airplanes
+  m_EditorClassIdentifier: 
+  DeckName: Airplanes
+  DeckBackGround: {fileID: -6695950386315148514, guid: aa86e1244b552cc40aa25b070b6a6eab, type: 3}
+  DeckIcon: {fileID: 3651807660005126932, guid: 6b78e54edff3f2c46b07cb4449d1d69f, type: 3}
+  DeckPixels:
+  - {fileID: 11400000, guid: 2d4fabab1b4fafb4e934544954b0904f, type: 2}
+  - {fileID: 11400000, guid: 3fcab14d6842e8a4b84e7aeb671716ae, type: 2}
+  - {fileID: 11400000, guid: 4950ed68a2b82b84f90e699a8f040f77, type: 2}
+  - {fileID: 11400000, guid: b93baa5d076fa5a41b6fc056173f14a1, type: 2}
+  - {fileID: 11400000, guid: 493d8dd9da6499649ba49a4f959a5c6c, type: 2}
+  - {fileID: 11400000, guid: e40c74c6bf812154f914b3f8afb7c88e, type: 2}
+  - {fileID: 11400000, guid: 19394c1ff24510246be3068091a504dc, type: 2}
+  - {fileID: 11400000, guid: 75c7d4d4940731b479a6667617528a50, type: 2}
+  - {fileID: 11400000, guid: 9f91e59ccbb06be45955824552087c9d, type: 2}
+  - {fileID: 11400000, guid: e02df2b18de09e2429101de4ed05c1bf, type: 2}
+  - {fileID: 11400000, guid: 9e5f14ab5801c2e42b6f723c7ebdeb95, type: 2}
+  - {fileID: 11400000, guid: 621c57d1bcc3512458313ef37d688af0, type: 2}
+  WeightIncreaseStep: 0.5
+  RadiousIncreaseStep: 0.5
+  isLock: 1

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcbc08cea1529d418244cd9d5541bae, type: 3}
+  m_Name: 05-One-Wolrd-Trade-Center.png
+  m_EditorClassIdentifier: 
+  MergerName: One Wolrd Trade Center
+  MergerSprite: {fileID: -4120668321266633604, guid: 94b38a7e76817c24bb42d8e47bf838e2, type: 3}
+  MergerOrder: 5
+  MergerDeckInfo: {fileID: 11400000, guid: 89f7a0e79c82b044cb0d39438cb0694e, type: 2}

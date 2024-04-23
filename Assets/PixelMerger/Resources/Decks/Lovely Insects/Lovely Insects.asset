@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8837853c2c970dd48bfe001ccea978fb, type: 3}
+  m_Name: Lovely Insects
+  m_EditorClassIdentifier: 
+  DeckName: Lovely Insects
+  DeckBackGround: {fileID: -6695950386315148514, guid: cae25c20e7e0d874a950f1fd967c66e2, type: 3}
+  DeckIcon: {fileID: 2544683767549116349, guid: 24467cc8efee54446aea7957cad3e083, type: 3}
+  DeckPixels:
+  - {fileID: 11400000, guid: cbd4ef5994121e5418932dbe657ff838, type: 2}
+  - {fileID: 11400000, guid: c82225e53f223d446a8e3b77b76e4d14, type: 2}
+  - {fileID: 11400000, guid: d93e9ed60e930f04096e9873aa5eb449, type: 2}
+  - {fileID: 11400000, guid: 56eb5ba0f84660e428ddeb500eee7f69, type: 2}
+  - {fileID: 11400000, guid: d456f4c4072755c4287effcb380fd46a, type: 2}
+  - {fileID: 11400000, guid: 338f3913368ff8c44806d54869d20ede, type: 2}
+  - {fileID: 11400000, guid: 1a2e9f8c450f95a4e997a5787a11c81c, type: 2}
+  - {fileID: 11400000, guid: b90bb67bea21fa243b99cf903055f005, type: 2}
+  - {fileID: 11400000, guid: d551baf9e0723f14ba914d0dba8602d1, type: 2}
+  - {fileID: 11400000, guid: 0b1eeafdc97da46459039bf236e859ea, type: 2}
+  - {fileID: 11400000, guid: 0d69544b6b9b42b4db08819fa4e8485e, type: 2}
+  - {fileID: 11400000, guid: a6f27802489b427409c6cc6a5141f4dc, type: 2}
+  WeightIncreaseStep: 0.5
+  RadiousIncreaseStep: 0.5
+  isLock: 1

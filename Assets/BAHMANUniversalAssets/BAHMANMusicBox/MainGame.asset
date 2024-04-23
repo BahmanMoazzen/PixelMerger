@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7062276a84aa62b4dab703268c23749d, type: 3}
+  m_Name: MainGame
+  m_EditorClassIdentifier: 
+  _SceneName: 2
+  _SceneMusics:
+  - {fileID: 8300000, guid: 30e7bc0387db67f4497bd1bad7587d0c, type: 3}
+  - {fileID: 8300000, guid: d0df08a730492c64ca57aef6531d28a3, type: 3}
+  - {fileID: 8300000, guid: 5426b64e6a4ce16459316a1f68b68e75, type: 3}
+  - {fileID: 8300000, guid: d796a007ed427724e8b2ad1e041ad499, type: 3}
+  - {fileID: 8300000, guid: d5dbaffe0b32fb84196594e5e5b8ca1c, type: 3}
+  _GlobalMusicVolume: 1
+  _ShufflePlay: 1
+  _StopMusicGradually: 0
+  _FadeInterval: 0.1
+  _SilenceBetweenClips: 10
+  _StopAfterListEnded: 0

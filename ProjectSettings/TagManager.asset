@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - GameFrame
+  - M1
+  - M2
+  - M3
+  - M4
+  - M5
+  - M6
+  - M7
+  - M8
+  - M9
+  - M10
+  - M11
+  - M12
+  - Line
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - M1
+  - M2
+  - M3
+  - M4
+  - M5
+  - M6
+  - M7
+  - M8
+  - M9
+  - M10
+  - M11
+  - M12
+  - Start
+  - InGame
+  - Line
+  - Manager
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: BG
+    uniqueID: 3658542851
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Pixels
+    uniqueID: 2956368867
+    locked: 0
+  - name: FG
+    uniqueID: 2395708381
+    locked: 0

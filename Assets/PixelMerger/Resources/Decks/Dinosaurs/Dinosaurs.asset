@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8837853c2c970dd48bfe001ccea978fb, type: 3}
+  m_Name: Dinosaurs
+  m_EditorClassIdentifier: 
+  DeckName: Dinosaurs
+  DeckBackGround: {fileID: -6695950386315148514, guid: a0c904098e2e61b43b0f74ce0bb7af2d, type: 3}
+  DeckIcon: {fileID: 7130258444457573802, guid: f3cbc00546f381c44929fcb472546d6e, type: 3}
+  DeckPixels:
+  - {fileID: 11400000, guid: bd52d22966062c545b18ceb998498849, type: 2}
+  - {fileID: 11400000, guid: c0945dfadcefe3a41af4150f7373549d, type: 2}
+  - {fileID: 11400000, guid: c4e280d60f219644eb27d20759d38a78, type: 2}
+  - {fileID: 11400000, guid: d281397652897fc41b566f5f9e5e56d4, type: 2}
+  - {fileID: 11400000, guid: aacfe29670d6d7a4c943f471ecd0caf8, type: 2}
+  - {fileID: 11400000, guid: 956b4a8664494ca46895222e5bca8917, type: 2}
+  - {fileID: 11400000, guid: 5ada80b5b8bb89e47a0cec4e26af221b, type: 2}
+  - {fileID: 11400000, guid: 06bd455f357f5754aa55c640f6421a02, type: 2}
+  - {fileID: 11400000, guid: a5b253f5a3896d8439d23798b8e25e81, type: 2}
+  - {fileID: 11400000, guid: caf4e010e20915146b83b30a8165255f, type: 2}
+  - {fileID: 11400000, guid: ae8b99500f7708744857d573730f0023, type: 2}
+  - {fileID: 11400000, guid: 0f5a45ac5e7b7c045a9e353d975a82a3, type: 2}
+  WeightIncreaseStep: 0.5
+  RadiousIncreaseStep: 0.5
+  isLock: 1

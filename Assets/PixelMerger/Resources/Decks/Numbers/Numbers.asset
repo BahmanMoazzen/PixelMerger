@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8837853c2c970dd48bfe001ccea978fb, type: 3}
+  m_Name: Numbers
+  m_EditorClassIdentifier: 
+  DeckName: Numbers
+  DeckBackGround: {fileID: -6695950386315148514, guid: 5c578c5d53cb4744fa358302efdeaf72, type: 3}
+  DeckIcon: {fileID: -2224709050019747820, guid: 05413e2868833774d83e4717c6d6b45b, type: 3}
+  DeckPixels:
+  - {fileID: 11400000, guid: 8a237e2a04462b146a09a273f9b33466, type: 2}
+  - {fileID: 11400000, guid: eb3b8e18a9b9a6c4aadac4552b1adc55, type: 2}
+  - {fileID: 11400000, guid: aebb3bcbd3dad6646ab4d461e7c125a3, type: 2}
+  - {fileID: 11400000, guid: 8c313382ef417b1428b8713340e4cd19, type: 2}
+  - {fileID: 11400000, guid: 39dbc0885e413294f920db02e15be6be, type: 2}
+  - {fileID: 11400000, guid: d22737add74061148ac1ec805a6a04aa, type: 2}
+  - {fileID: 11400000, guid: a359bb315a4c35147a04a9ca06fd9f6b, type: 2}
+  - {fileID: 11400000, guid: c30df25afe244e44db11b38720f4c0ba, type: 2}
+  - {fileID: 11400000, guid: a96ebc7694054954799425441a84b073, type: 2}
+  - {fileID: 11400000, guid: 8fe56f1605c0d97409809f7b14057b6c, type: 2}
+  - {fileID: 11400000, guid: 569826b4f5f7c6444996583db76bf459, type: 2}
+  - {fileID: 11400000, guid: a443c51dcafd6604ba6568e703f05155, type: 2}
+  WeightIncreaseStep: 0.5
+  RadiousIncreaseStep: 0.5

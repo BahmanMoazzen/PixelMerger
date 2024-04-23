@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcbc08cea1529d418244cd9d5541bae, type: 3}
+  m_Name: 09-Shanghai-Tower.png
+  m_EditorClassIdentifier: 
+  MergerName: Shanghai Tower
+  MergerSprite: {fileID: -5048010170147786131, guid: 694d6c5d6c3f9d44fb36863c03420a11, type: 3}
+  MergerOrder: 9
+  MergerDeckInfo: {fileID: 11400000, guid: 89f7a0e79c82b044cb0d39438cb0694e, type: 2}
