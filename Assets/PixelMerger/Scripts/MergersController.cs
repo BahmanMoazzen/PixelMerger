@@ -64,7 +64,7 @@ public class MergersController : MonoBehaviour
         _BGSpriteRenderer.sprite = iMerger.MergerDeckInfo.DeckBackGround;
         _FGSpriteRenderer.sprite = iMerger.MergerSprite;
         transform.tag = A.Pixels.PixelTag(iMerger.MergerOrder);
-        _rigidbody.velocity = iVelocity;
+        _rigidbody.linearVelocity = iVelocity;
         _rigidbody.angularVelocity = iAngularVelocity;
         if (iIsinGame)
         {
@@ -138,7 +138,7 @@ public class MergersController : MonoBehaviour
                         Instantiate(A.Pixels.PixelSkeleton
                             , c2d.gameObject.transform.position
                             , Quaternion.identity);
-                        newGo.GetComponent<MergersController>()._LoadPixel(newPixel, c2d.GetComponent<Rigidbody2D>().velocity, c2d.GetComponent<Rigidbody2D>().angularVelocity, true);
+                        newGo.GetComponent<MergersController>()._LoadPixel(newPixel, c2d.GetComponent<Rigidbody2D>().linearVelocity, c2d.GetComponent<Rigidbody2D>().angularVelocity, true);
                     }
                     OnMerge?.Invoke(c2d.gameObject, gameObject, newGo);
                     Destroy(c2d.gameObject);
@@ -159,13 +159,13 @@ public class MergersController : MonoBehaviour
                         if (transform.position.y < c2d.transform.position.y)
                         {
                             newPos = transform.position;
-                            rbVelocity = _rigidbody.velocity;
+                            rbVelocity = _rigidbody.linearVelocity;
                             angVelocity = _rigidbody.angularVelocity;
                         }
                         else
                         {
                             newPos = c2d.gameObject.transform.position;
-                            rbVelocity = c2d.GetComponent<Rigidbody2D>().velocity;
+                            rbVelocity = c2d.GetComponent<Rigidbody2D>().linearVelocity;
                             angVelocity = c2d.GetComponent<Rigidbody2D>().angularVelocity;
                         }
 
