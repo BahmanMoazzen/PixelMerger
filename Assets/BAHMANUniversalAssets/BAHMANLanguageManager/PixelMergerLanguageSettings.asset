@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edce2664e6bc0ea4e87cf570c6deb88c, type: 3}
   m_Name: PixelMergerLanguageSettings
   m_EditorClassIdentifier: 
-  _enableTranslation: 1
+  _enableTranslation: 0
   LanguagesName:
   - Farsi
   currentLanguage: 0
