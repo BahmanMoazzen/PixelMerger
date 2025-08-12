@@ -30,4 +30,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 621c57d1bcc3512458313ef37d688af0, type: 2}
   WeightIncreaseStep: 0.5
   RadiousIncreaseStep: 0.5
-  isLock: 1
+  isLock: 0
