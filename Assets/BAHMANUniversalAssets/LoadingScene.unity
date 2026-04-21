@@ -1001,9 +1001,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2483376871929128604, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.17960358
+      objectReference: {fileID: 0}
     - target: {fileID: 5117802511455209460, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_Name
       value: BAHMANMessageBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621997682801628676, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -18.200012
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621997682801628676, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6.700012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771961819005824880, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -18.200012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771961819005824880, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6.700012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1101,6 +1121,10 @@ PrefabInstance:
     - target: {fileID: 7151882458078286805, guid: da7653545e3aa3745a0a08aad9f3bdc3, type: 3}
       propertyPath: m_Name
       value: BAHMANPublicRelation
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151882458078286805, guid: da7653545e3aa3745a0a08aad9f3bdc3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
