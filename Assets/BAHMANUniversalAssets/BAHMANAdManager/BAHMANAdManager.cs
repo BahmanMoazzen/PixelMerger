@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using MyketPlugin;
 using System.Collections.Generic;
 public class BAHMANAdManager : MonoBehaviour
 {
@@ -111,7 +110,7 @@ public class BAHMANAdManager : MonoBehaviour
     public void _BuySKU(string iSKU, UnityAction iPurchaseSuccess, UnityAction iPurchaseFail)
     {
         _loadScreen.SetActive(true);
-        MyketIAB.init(_ShopKey);
+        //MyketIAB.init(_ShopKey);
         _currentSKU = iSKU;
         _purchaseFail = iPurchaseFail;
         _purchaseSuccess = iPurchaseSuccess;
@@ -135,18 +134,18 @@ public class BAHMANAdManager : MonoBehaviour
     void OnEnable()
     {
         // Listen to all events for illustration purposes
-        IABEventManager.billingSupportedEvent += billingSupportedEvent;
-        IABEventManager.billingNotSupportedEvent += billingNotSupportedEvent;
-        IABEventManager.queryInventorySucceededEvent += queryInventorySucceededEvent;
-        IABEventManager.queryInventoryFailedEvent += queryInventoryFailedEvent;
-        IABEventManager.querySkuDetailsSucceededEvent += querySkuDetailsSucceededEvent;
-        IABEventManager.querySkuDetailsFailedEvent += querySkuDetailsFailedEvent;
-        IABEventManager.queryPurchasesSucceededEvent += queryPurchasesSucceededEvent;
-        IABEventManager.queryPurchasesFailedEvent += queryPurchasesFailedEvent;
-        IABEventManager.purchaseSucceededEvent += purchaseSucceededEvent;
-        IABEventManager.purchaseFailedEvent += purchaseFailedEvent;
-        IABEventManager.consumePurchaseSucceededEvent += consumePurchaseSucceededEvent;
-        IABEventManager.consumePurchaseFailedEvent += consumePurchaseFailedEvent;
+        //IABEventManager.billingSupportedEvent += billingSupportedEvent;
+        //IABEventManager.billingNotSupportedEvent += billingNotSupportedEvent;
+        //IABEventManager.queryInventorySucceededEvent += queryInventorySucceededEvent;
+        //IABEventManager.queryInventoryFailedEvent += queryInventoryFailedEvent;
+        //IABEventManager.querySkuDetailsSucceededEvent += querySkuDetailsSucceededEvent;
+        //IABEventManager.querySkuDetailsFailedEvent += querySkuDetailsFailedEvent;
+        //IABEventManager.queryPurchasesSucceededEvent += queryPurchasesSucceededEvent;
+        //IABEventManager.queryPurchasesFailedEvent += queryPurchasesFailedEvent;
+        //IABEventManager.purchaseSucceededEvent += purchaseSucceededEvent;
+        //IABEventManager.purchaseFailedEvent += purchaseFailedEvent;
+        //IABEventManager.consumePurchaseSucceededEvent += consumePurchaseSucceededEvent;
+        //IABEventManager.consumePurchaseFailedEvent += consumePurchaseFailedEvent;
     }
 
 
@@ -154,25 +153,25 @@ public class BAHMANAdManager : MonoBehaviour
     void OnDisable()
     {
         // Remove all event handlers
-        IABEventManager.billingSupportedEvent -= billingSupportedEvent;
-        IABEventManager.billingNotSupportedEvent -= billingNotSupportedEvent;
-        IABEventManager.queryInventorySucceededEvent -= queryInventorySucceededEvent;
-        IABEventManager.queryInventoryFailedEvent -= queryInventoryFailedEvent;
-        IABEventManager.querySkuDetailsSucceededEvent -= querySkuDetailsSucceededEvent;
-        IABEventManager.querySkuDetailsFailedEvent -= querySkuDetailsFailedEvent;
-        IABEventManager.queryPurchasesSucceededEvent -= queryPurchasesSucceededEvent;
-        IABEventManager.queryPurchasesFailedEvent -= queryPurchasesFailedEvent;
-        IABEventManager.purchaseSucceededEvent -= purchaseSucceededEvent;
-        IABEventManager.purchaseFailedEvent -= purchaseFailedEvent;
-        IABEventManager.consumePurchaseSucceededEvent -= consumePurchaseSucceededEvent;
-        IABEventManager.consumePurchaseFailedEvent -= consumePurchaseFailedEvent;
+        //IABEventManager.billingSupportedEvent -= billingSupportedEvent;
+        //IABEventManager.billingNotSupportedEvent -= billingNotSupportedEvent;
+        //IABEventManager.queryInventorySucceededEvent -= queryInventorySucceededEvent;
+        //IABEventManager.queryInventoryFailedEvent -= queryInventoryFailedEvent;
+        //IABEventManager.querySkuDetailsSucceededEvent -= querySkuDetailsSucceededEvent;
+        //IABEventManager.querySkuDetailsFailedEvent -= querySkuDetailsFailedEvent;
+        //IABEventManager.queryPurchasesSucceededEvent -= queryPurchasesSucceededEvent;
+        //IABEventManager.queryPurchasesFailedEvent -= queryPurchasesFailedEvent;
+        //IABEventManager.purchaseSucceededEvent -= purchaseSucceededEvent;
+        //IABEventManager.purchaseFailedEvent -= purchaseFailedEvent;
+        //IABEventManager.consumePurchaseSucceededEvent -= consumePurchaseSucceededEvent;
+        //IABEventManager.consumePurchaseFailedEvent -= consumePurchaseFailedEvent;
     }
 
 
     void billingSupportedEvent()
     {
         _dlog("billingSupportedEvent");
-        MyketIAB.queryPurchases();
+        //MyketIAB.queryPurchases();
         //BAHMANMessageBoxManager._INSTANCE._ShowMessage("Myket ini success");
     }
 
@@ -184,22 +183,22 @@ public class BAHMANAdManager : MonoBehaviour
         //BAHMANMessageBoxManager._INSTANCE._ShowMessage("Myket ini fail");
     }
 
-    void queryInventorySucceededEvent(List<MyketPurchase> purchases, List<MyketSkuInfo> skus)
-    {
-        _dlog(string.Format("queryInventorySucceededEvent. total purchases: {0}, total skus: {1}", purchases.Count, skus.Count));
+    //void queryInventorySucceededEvent(List<MyketPurchase> purchases, List<MyketSkuInfo> skus)
+    //{
+    //    _dlog(string.Format("queryInventorySucceededEvent. total purchases: {0}, total skus: {1}", purchases.Count, skus.Count));
 
-        for (int i = 0; i < purchases.Count; ++i)
-        {
-            _dlog(purchases[i].ToString());
-        }
+    //    for (int i = 0; i < purchases.Count; ++i)
+    //    {
+    //        _dlog(purchases[i].ToString());
+    //    }
 
-        _dlog("-----------------------------");
+    //    _dlog("-----------------------------");
 
-        for (int i = 0; i < skus.Count; ++i)
-        {
-            _dlog(skus[i].ToString());
-        }
-    }
+    //    for (int i = 0; i < skus.Count; ++i)
+    //    {
+    //        _dlog(skus[i].ToString());
+    //    }
+    //}
 
     void queryInventoryFailedEvent(string error)
     {
@@ -207,52 +206,52 @@ public class BAHMANAdManager : MonoBehaviour
 
     }
 
-    private void querySkuDetailsSucceededEvent(List<MyketSkuInfo> skus)
-    {
-        _dlog(string.Format("querySkuDetailsSucceededEvent. total skus: {0}", skus.Count));
+    //private void querySkuDetailsSucceededEvent(List<MyketSkuInfo> skus)
+    //{
+    //    _dlog(string.Format("querySkuDetailsSucceededEvent. total skus: {0}", skus.Count));
 
-        for (int i = 0; i < skus.Count; ++i)
-        {
-            _dlog(skus[i].ToString());
-        }
-    }
+    //    for (int i = 0; i < skus.Count; ++i)
+    //    {
+    //        _dlog(skus[i].ToString());
+    //    }
+    //}
 
     private void querySkuDetailsFailedEvent(string error)
     {
         _dlog("querySkuDetailsFailedEvent: " + error);
     }
 
-    private void queryPurchasesSucceededEvent(List<MyketPurchase> purchases)
-    {
-        _dlog(string.Format("queryPurchasesSucceededEvent. total purchases: {0}", purchases.Count));
+    //private void queryPurchasesSucceededEvent(List<MyketPurchase> purchases)
+    //{
+    //    _dlog(string.Format("queryPurchasesSucceededEvent. total purchases: {0}", purchases.Count));
 
-        for (int i = 0; i < purchases.Count; ++i)
-        {
-            _dlog(purchases[i].ToString());
-            if (purchases[i].ProductId == _currentSKU)
-            {
-                _purchaseSuccess?.Invoke();
-                _finishBuyProcess();
-                return;
-            }
+    //    for (int i = 0; i < purchases.Count; ++i)
+    //    {
+    //        _dlog(purchases[i].ToString());
+    //        if (purchases[i].ProductId == _currentSKU)
+    //        {
+    //            _purchaseSuccess?.Invoke();
+    //            _finishBuyProcess();
+    //            return;
+    //        }
 
-        }
-        MyketIAB.purchaseProduct(_currentSKU);
-    }
+    //    }
+    //    MyketIAB.purchaseProduct(_currentSKU);
+    //}
 
-    private void queryPurchasesFailedEvent(string error)
-    {
-        _dlog("queryPurchasesFailedEvent: " + error);
-        MyketIAB.purchaseProduct(_currentSKU);
-    }
+    //private void queryPurchasesFailedEvent(string error)
+    //{
+    //    _dlog("queryPurchasesFailedEvent: " + error);
+    //    MyketIAB.purchaseProduct(_currentSKU);
+    //}
 
-    void purchaseSucceededEvent(MyketPurchase purchase)
-    {
-        _dlog("purchaseSucceededEvent: " + purchase);
-        //BAHMANMessageBoxManager._INSTANCE._ShowMessage("purchase success");
-        MyketIAB.consumeProduct(purchase.ProductId);
-        //BAHMANMessageBoxManager._INSTANCE._ShowMessage("starting consume");
-    }
+    //void purchaseSucceededEvent(MyketPurchase purchase)
+    //{
+    //    _dlog("purchaseSucceededEvent: " + purchase);
+    //    //BAHMANMessageBoxManager._INSTANCE._ShowMessage("purchase success");
+    //    MyketIAB.consumeProduct(purchase.ProductId);
+    //    //BAHMANMessageBoxManager._INSTANCE._ShowMessage("starting consume");
+    //}
 
     void purchaseFailedEvent(string error)
     {
@@ -263,15 +262,15 @@ public class BAHMANAdManager : MonoBehaviour
         _finishBuyProcess();
     }
 
-    void consumePurchaseSucceededEvent(MyketPurchase purchase)
-    {
-        _dlog("consumePurchaseSucceededEvent: " + purchase);
-        //BAHMANMessageBoxManager._INSTANCE._ShowMessage("consume success");
-        _purchaseSuccess?.Invoke();
-        //BAHMANMessageBoxManager._INSTANCE._ShowMessage("nulling actions");
-        _finishBuyProcess();
+    //void consumePurchaseSucceededEvent(MyketPurchase purchase)
+    //{
+    //    _dlog("consumePurchaseSucceededEvent: " + purchase);
+    //    //BAHMANMessageBoxManager._INSTANCE._ShowMessage("consume success");
+    //    _purchaseSuccess?.Invoke();
+    //    //BAHMANMessageBoxManager._INSTANCE._ShowMessage("nulling actions");
+    //    _finishBuyProcess();
 
-    }
+    //}
     void consumePurchaseFailedEvent(string error)
     {
         _dlog("consumePurchaseFailedEvent: " + error);

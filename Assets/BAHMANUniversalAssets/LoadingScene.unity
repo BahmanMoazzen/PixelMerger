@@ -860,6 +860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BAHMANAdManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5691996461057120165, guid: 02c0562668681e541b9abe9632c18c49, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6910664508794655335, guid: 02c0562668681e541b9abe9632c18c49, type: 3}
       propertyPath: m_IsActive
       value: 0
