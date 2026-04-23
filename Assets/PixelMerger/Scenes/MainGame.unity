@@ -1735,7 +1735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.596, y: 0.054822173}
   m_AnchorMax: {x: 0.71322286, y: 0.39085916}
-  m_AnchoredPosition: {x: 0.33670044, y: -3.9879465}
+  m_AnchoredPosition: {x: 0.33670044, y: -3.9879456}
   m_SizeDelta: {x: -0.1800003, y: -1.2200012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1220182270
@@ -1922,8 +1922,8 @@ MonoBehaviour:
         m_MethodName: _ItemClicked
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: bdca5ef989f49b74fb6e37e0d9eac915, type: 2}
-          m_ObjectArgumentAssemblyTypeName: SaveableItem, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: 0bf8f7e810fda684181365b9c8b28ab8, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ShoptItemInfo, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2686,6 +2686,7 @@ MonoBehaviour:
   _hammerObject: {fileID: 12745928}
   _hammerText: {fileID: 2129641795}
   _globalLight: {fileID: 364585503}
+  _totalScoreSavable: {fileID: 11400000, guid: bd8f19f90d7dd7b478758ef665f93c3e, type: 2}
 --- !u!4 &1597540233
 Transform:
   m_ObjectHideFlags: 0
@@ -3086,9 +3087,9 @@ MonoBehaviour:
         m_MethodName: _ItemClicked
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: b9a650610eab673478b8730a6b89255f, type: 2}
-          m_ObjectArgumentAssemblyTypeName: SaveableItem, Assembly-CSharp
-          m_IntArgument: 1
+          m_ObjectArgument: {fileID: 11400000, guid: 7362daee3679e614db46c437b9f016e1, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ShoptItemInfo, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3646,8 +3647,8 @@ MonoBehaviour:
         m_MethodName: _ItemClicked
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 8275432ea3dec6f4191c2b41692debae, type: 2}
-          m_ObjectArgumentAssemblyTypeName: SaveableItem, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: 0484ca7d5b5911d47b07991b8aee37c0, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ShoptItemInfo, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4267,9 +4268,9 @@ MonoBehaviour:
         m_MethodName: _ItemClicked
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: e8c810ac69fa14e45a10be018d0104e3, type: 2}
-          m_ObjectArgumentAssemblyTypeName: SaveableItem, Assembly-CSharp
-          m_IntArgument: -1
+          m_ObjectArgument: {fileID: 11400000, guid: d3d03de9fe1090a44917587c67a69c9c, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ShoptItemInfo, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

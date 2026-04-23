@@ -4,21 +4,33 @@ using UnityEngine;
 public class SaveableItem : ScriptableObject
 {
 
-    // if value changed successfully this will trigger
+    /// <summary>
+    /// if value changed successfully this will trigger
+    /// </summary>
+    /// <param name="iSaveable">The saveable item that changed</param>
+    /// <param name="iAmountChanged">The amount by which the value changed</param>
     public delegate void ValueChanged(SaveableItem iSaveable,int iAmountChanged);
     public static event ValueChanged OnValueChanged;
 
     public string _SKU;
 
-    //the image of saveable item
+    /// <summary>
+    /// the image of saveable item
+    /// </summary>
     public Sprite _Icon;
-    // the tag used for playerprefs to save
+    /// <summary>
+    /// the tag used for playerprefs to save
+    /// </summary>
     public string _Tag;
-    // startup value of saveable object
+    /// <summary>
+    /// startup value of saveable object
+    /// </summary>
     public int _DefaultAmount;
 
 
-    // current stock saved on disk
+    /// <summary>
+    /// current stock saved on disk
+    /// </summary>
     public int _Stock
     {
         get
@@ -32,7 +44,12 @@ public class SaveableItem : ScriptableObject
     }
     
 
-    // change the amount saved on disk by iAmount and check if has stock --> if(_ChangeAmount(-1,true) {do the code becase have stock and reduced}else{item doesnt have enough stock}
+    /// <summary>
+    /// change the amount saved on disk by iAmount and check if has stock --> if(_ChangeAmount(-1,true) {do the code becase have stock and reduced}else{item doesnt have enough stock}
+    /// </summary>
+    /// <param name="iAmount">The amount to change</param>
+    /// <param name="iCheckZeroStock">Whether to check if the stock goes below zero</param>
+    /// <returns>True if the amount was changed successfully, false otherwise</returns>
     public bool _ChangeAmount(int iAmount,bool iCheckZeroStock)
     {
 
@@ -50,13 +67,19 @@ public class SaveableItem : ScriptableObject
         OnValueChanged?.Invoke(this,iAmount);
         return true;
     }
-
+    public bool _ChangeAmount(int iAmount)
+    {
+        return _ChangeAmount(iAmount,true);
+        
+    }
     public void _ResetAmount()
     {
         _Stock = _DefaultAmount;
     }
 
-    // check if item has stock more than zero
+    /// <summary>
+    /// Gets a value indicating whether the item has stock available. check if item has stock more than zero
+    /// </summary>
     public bool _HaveStock
 
     {

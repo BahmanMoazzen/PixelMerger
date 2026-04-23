@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf61572c36fc7d4bb27aab442d0320d, type: 3}
+  m_Name: SHPUnicolor
+  m_EditorClassIdentifier: Assembly-CSharp::ShoptItemInfo
+  _ItemName: Unicolor
+  _ItemSKUID: 
+  _itemPrice: 250
+  _ItemChargeAmount: 1
+  _ItemInfo: {fileID: 11400000, guid: bdca5ef989f49b74fb6e37e0d9eac915, type: 2}
+  isToman: 1
+  IsTousandSeprated: 1

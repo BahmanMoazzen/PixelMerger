@@ -93,7 +93,12 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// the current savable item to manipulate
     /// </summary>
-    SaveableItem _activeItem;
+    //SaveableItem _activeItem;
+    ShoptItemInfo _activeShopItem;
+    /// <summary>
+    /// The total score savable item to save the score on it
+    /// </summary>
+    [SerializeField] SaveableItem _totalScoreSavable;
     /// <summary>
     /// level starup routine
     /// </summary>
@@ -124,26 +129,56 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    public void _ItemClicked(SaveableItem iItem)
+    //public void _ItemClicked(SaveableItem iItem)
+    //{
+    //    _activeItem = iItem;
+    //    if (iItem._HaveStock)
+    //    {
+    //        switch (iItem._Tag)
+    //        {
+    //            case "Hammer":
+    //                _UseHammer();
+    //                break;
+    //            case "TiltLeft":
+    //                _Tilt(-1);
+    //                iItem._ChangeAmount(-1, false);
+    //                break;
+    //            case "TiltRight":
+    //                iItem._ChangeAmount(-1, false);
+    //                _Tilt(1);
+    //                break;
+    //            case "UniColor":
+    //                iItem._ChangeAmount(-1, false);
+    //                _LoadUnicolor();
+    //                break;
+    //        }
+    //    }
+    //    else
+    //    {
+
+    //        BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyOneTag, _itemClickedConfirmShowAd);
+    //    }
+    //}
+    public void _ItemClicked(ShoptItemInfo iItem)
     {
-        _activeItem = iItem;
-        if (iItem._HaveStock)
+        _activeShopItem = iItem;
+        if (iItem._ItemInfo._HaveStock)
         {
-            switch (iItem._Tag)
+            switch (iItem._ItemInfo._Tag)
             {
                 case "Hammer":
                     _UseHammer();
                     break;
                 case "TiltLeft":
                     _Tilt(-1);
-                    iItem._ChangeAmount(-1, false);
+                    iItem._ItemInfo._ChangeAmount(-1, false);
                     break;
                 case "TiltRight":
-                    iItem._ChangeAmount(-1, false);
+                    iItem._ItemInfo._ChangeAmount(-1, false);
                     _Tilt(1);
                     break;
                 case "UniColor":
-                    iItem._ChangeAmount(-1, false);
+                    iItem._ItemInfo._ChangeAmount(-1, false);
                     _LoadUnicolor();
                     break;
             }
@@ -151,19 +186,26 @@ public class GameManager : MonoBehaviour
         else
         {
 
-            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyOneTag, _itemClickedConfirmShowAd);
+            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()), _itemClickedConfirmShowAd);
         }
     }
     void _itemClickedConfirmShowAd()
     {
-        BAHMANAdManager._Instance._BuySKU(_activeItem._SKU, AdManager__OnAdRewarded, AdManager__OnAdFailed);
+        if (_totalScoreSavable._ChangeAmount(-_activeShopItem._intPrice))
+        {
+            AdManager__OnAdRewarded();
+        }
+        else
+        {
+            AdManager__OnAdFailed();
+        }
         _isShopShowing = true;
     }
 
     private void AdManager__OnAdFailed()
     {
         BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseFailedTag);
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
+        //BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
         _isShopShowing = false;
 
     }
@@ -171,7 +213,7 @@ public class GameManager : MonoBehaviour
     private void AdManager__OnAdRewarded()
     {
         BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseSuccessTag);
-        _activeItem._ResetAmount();
+        _activeShopItem._ItemInfo._ChangeAmount(1, false);
         _isShopShowing = false;
 
     }
@@ -240,7 +282,7 @@ public class GameManager : MonoBehaviour
     {
 
         MergersController.OnPixelClicked -= MergersController_OnPixelClicked;
-        _activeItem._ChangeAmount(-1, false);
+        _activeShopItem._ItemInfo._ChangeAmount(-1, false);
         _levelPixels.Remove(iPixel);
         Destroy(iPixel);
         StartCoroutine(_deactivateHammerRoutine());

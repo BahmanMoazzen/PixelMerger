@@ -8,11 +8,13 @@ public class DeckButtomController : MonoBehaviour
     [SerializeField] GameObject _lockGameObject;
     PixelDeckInfo _deckInfo;
     int _deckOrder;
+    SaveableItem _scoresItem;
 
-    public void _CreateButtom(PixelDeckInfo iDeck, int iDeckOrder)
+    public void _CreateButtom(PixelDeckInfo iDeck, int iDeckOrder, SaveableItem iScores)
     {
         _deckInfo = iDeck;
         _deckOrder = iDeckOrder;
+        _scoresItem = iScores;
         _buttomIcon.sprite = iDeck.DeckIcon;
         _buttomIcon.preserveAspect = true;
         _buttomTitle.text = iDeck.DeckName;
@@ -34,7 +36,15 @@ public class DeckButtomController : MonoBehaviour
     }
     void _unlockWithPurchase()
     {
-        BAHMANAdManager._Instance._BuySKU(_deckInfo.GetSKUName(), _perchaseSuccess, _purchaseFailed);
+        if (_scoresItem._ChangeAmount(-_deckInfo.Price))
+        {
+            _perchaseSuccess();
+        }
+        else
+        {
+            _purchaseFailed();
+        }
+        //BAHMANAdManager._Instance._BuySKU(_deckInfo.GetSKUName(), _perchaseSuccess, _purchaseFailed);
     }
     void _perchaseSuccess()
     {
@@ -43,13 +53,14 @@ public class DeckButtomController : MonoBehaviour
     void _purchaseFailed()
     {
         BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.PurchaseFailedTag);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.NotEnoughScoreTag);
     }
     public void _ButtomClicked()
     {
         if (_deckInfo.IsLocked)
         {
-                BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(A.Tags.IsLockedTag, A.Tags.BuyOneTag, _unlockWithPurchase);
-            
+            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(A.Tags.IsLockedTag, A.Tags.BuyDeckTag.Replace("&&&", _deckInfo.DeckName).Replace("$$$", A.Tools.TousandSeprator(_deckInfo.Price.ToString(), ',')), _unlockWithPurchase);
+
         }
         else
         {
@@ -63,7 +74,7 @@ public class DeckButtomController : MonoBehaviour
     {
 
         BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseFailedTag);
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
+        //BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
     }
     private void AdManager__OnAdSuccess()
     {

@@ -7,6 +7,8 @@ public class AftermathManager : MonoBehaviour
 
     [SerializeField] Text _bestScore;
     [SerializeField] Text _thisRunScore;
+    [SerializeField] Text _totalScore;
+    [SerializeField] SaveableItem _totalScoreSavable;
     [SerializeField] GameObject _newBestRecordText;
     //[SerializeField] LootLockerRankingManager _rankingManager;
     public void _Back()
@@ -18,8 +20,13 @@ public class AftermathManager : MonoBehaviour
     {
         yield return null;
         //_rankingManager._SetActiveLeaderBoard((int)A.Levels.DifficultyLevel, A.Levels.ThisRoundScore);
+        
+        _totalScoreSavable._ChangeAmount(A.Levels.ThisRoundScore);
+
         _bestScore.text = A.Tools.ScoreToTitle(A.Levels.BestScore);
         _thisRunScore.text = A.Tools.ScoreToTitle(A.Levels.ThisRoundScore);
+        _totalScore.text = A.Tools.ScoreToTitle(_totalScoreSavable._Stock);
+
         if (A.Levels.SetBestScore(A.Levels.ThisRoundScore))
         {
             _newBestRecordText.SetActive(true);
