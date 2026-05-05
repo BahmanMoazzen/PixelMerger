@@ -8,13 +8,12 @@ public class DeckButtomController : MonoBehaviour
     [SerializeField] GameObject _lockGameObject;
     PixelDeckInfo _deckInfo;
     int _deckOrder;
-    SaveableItem _scoresItem;
 
-    public void _CreateButtom(PixelDeckInfo iDeck, int iDeckOrder, SaveableItem iScores)
+    public void _CreateButtom(PixelDeckInfo iDeck, int iDeckOrder)
     {
         _deckInfo = iDeck;
         _deckOrder = iDeckOrder;
-        _scoresItem = iScores;
+        
         _buttomIcon.sprite = iDeck.DeckIcon;
         _buttomIcon.preserveAspect = true;
         _buttomTitle.text = iDeck.DeckName;
@@ -36,7 +35,7 @@ public class DeckButtomController : MonoBehaviour
     }
     void _unlockWithPurchase()
     {
-        if (_scoresItem._ChangeAmount(-_deckInfo.Price))
+        if (A.GameSetting.ScoreTotal._ChangeAmount(-_deckInfo.Price))
         {
             _perchaseSuccess();
         }

@@ -30,5 +30,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df75175af9791aa4eaba65daf29bdc80, type: 2}
   WeightIncreaseStep: 0.5
   RadiousIncreaseStep: 0.5
-  isLock: 0
-  Price: 4500
+  isLock: 1
+  Price: 33000

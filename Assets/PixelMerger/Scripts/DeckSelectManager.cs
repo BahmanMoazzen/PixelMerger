@@ -4,7 +4,6 @@ using UnityEngine;
 public class DeckSelectManager : MonoBehaviour
 {
     [SerializeField] GameObject _ButtomParentObject;
-    [SerializeField] SaveableItem _scoresItem;
     //[SerializeField] string _SKUs;
     private IEnumerator Start()
     {
@@ -13,7 +12,7 @@ public class DeckSelectManager : MonoBehaviour
         for (int i = 0; i < A.GameSetting.AllDecks.Length; i++)
         {
             //_SKUs += A.GameSetting.AllDecks[i].GetSKUName() + ";";
-            Instantiate(A.GameSetting.DeckButtonTemplate, _ButtomParentObject.transform).GetComponent<DeckButtomController>()._CreateButtom(A.GameSetting.AllDecks[i], i, _scoresItem);
+            Instantiate(A.GameSetting.DeckButtonTemplate, _ButtomParentObject.transform).GetComponent<DeckButtomController>()._CreateButtom(A.GameSetting.AllDecks[i], i);
         }
     }
     public void _Back()

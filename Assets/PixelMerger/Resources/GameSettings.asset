@@ -44,4 +44,4 @@ MonoBehaviour:
   antiAliasing: 1
   soundFX: 1
   music: 1
-  RatingURL: 
+  ScoreTotal: {fileID: 11400000, guid: bd8f19f90d7dd7b478758ef665f93c3e, type: 2}
