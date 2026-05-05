@@ -41,7 +41,7 @@ PlayerSettings:
     height: 1
   m_SplashScreenLogos:
   - logo: {fileID: 21300000, guid: eb47daab1b5dbe744897c7433bc46166, type: 3}
-    duration: 3
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
@@ -184,7 +184,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: ir.helengamefactory.pixelmerger
+    Android: au.com.helengamefactory.pixelmerger
     Standalone: com.DefaultCompany.2DProject
     iPhone: ir.helengamefactory.pixelmerger
   buildNumber:
@@ -286,10 +286,10 @@ PlayerSettings:
   useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
-  AndroidTargetArchitectures: 1
+  AndroidTargetArchitectures: 2
   AndroidAllowedArchitectures: -1
   AndroidSplashScreenScale: 0
-  androidSplashScreen: {fileID: 2800000, guid: 8bddedfd348b50947a90241665e78c29, type: 3}
+  androidSplashScreen: {fileID: 2800000, guid: a7d3bcaaf6fc42649861e58d6306fb07, type: 3}
   AndroidKeystoreName: G:/_googleDrive/keys/bmoazzen.jks
   AndroidKeyaliasName: b.moazzen
   AndroidEnableArmv9SecurityFeatures: 0
@@ -319,7 +319,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 8bddedfd348b50947a90241665e78c29, type: 3}
+      m_Icon: {fileID: 2800000, guid: a7d3bcaaf6fc42649861e58d6306fb07, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -877,7 +877,7 @@ PlayerSettings:
   gcIncremental: 1
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform: {}
-  editorAssembliesCompatibilityLevel: 1
+  editorAssembliesCompatibilityLevel: 2
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: PixelMerger
@@ -954,7 +954,7 @@ PlayerSettings:
   hmiCpuConfiguration: 
   hmiLogStartupTiming: 0
   qnxGraphicConfPath: 
-  apiCompatibilityLevel: 6
+  apiCompatibilityLevel: 3
   captureStartupLogs: {}
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
@@ -969,7 +969,7 @@ PlayerSettings:
   hmiLoadingImage: {fileID: 0}
   platformRequiresReadableAssets: 0
   virtualTexturingSupportEnabled: 0
-  insecureHttpOption: 2
+  insecureHttpOption: 0
   androidVulkanDenyFilterList: []
   androidVulkanAllowFilterList: []
   androidVulkanDeviceFilterListAsset: {fileID: 0}
