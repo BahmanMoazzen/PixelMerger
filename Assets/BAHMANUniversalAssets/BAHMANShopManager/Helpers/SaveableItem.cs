@@ -95,4 +95,15 @@ public class SaveableItem : ScriptableObject
             }
         }
     }
+    public bool _HaveAmount(int iAmount)
+    {
+        if (_Stock >= iAmount)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

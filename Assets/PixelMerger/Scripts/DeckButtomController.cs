@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class DeckButtomController : MonoBehaviour
 {
     [SerializeField] Text _buttomTitle;
     [SerializeField] Image _buttomIcon;
     [SerializeField] GameObject _lockGameObject;
+    [SerializeField] Slider _unlockSlider;
+    [SerializeField] TMP_Text _unlockPointText;
+    [SerializeField] GameObject _unlockButton;
     PixelDeckInfo _deckInfo;
     int _deckOrder;
 
@@ -13,25 +16,44 @@ public class DeckButtomController : MonoBehaviour
     {
         _deckInfo = iDeck;
         _deckOrder = iDeckOrder;
-        
+
         _buttomIcon.sprite = iDeck.DeckIcon;
         _buttomIcon.preserveAspect = true;
         _buttomTitle.text = iDeck.DeckName;
         //Debug.Log("Name:" + _deckInfo.DeckName + " Lock:" + _deckInfo.IsLocked);
         if (_deckInfo.IsLocked)
         {
-            _lockGameObject.SetActive(true);
+            if (A.GameSetting.ScoreTotal._HaveAmount(_deckInfo.Price))
+            {
+                _unlockSlider.gameObject.SetActive(false);
+                _unlockButton.SetActive(true);
 
+
+            }
+            else
+            {
+                _lockGameObject.SetActive(true);
+                _unlockSlider.maxValue = _deckInfo.Price;
+                _unlockSlider.value = A.GameSetting.ScoreTotal._Stock;
+                _unlockPointText.text = A.Tools.TousandSeprator(_deckInfo.Price.ToString(), ',');
+            }
         }
         else
         {
-            _lockGameObject.SetActive(false);
+            _hideLock();
+
         }
     }
     void _unlockWithAd()
     {
         BAHMANAdManager._Instance._ShowRewardedAd(AdManager__OnAdSuccess, AdManager__OnAdFailed);
 
+    }
+    private void _hideLock()
+    {
+        _lockGameObject.SetActive(false);
+        _unlockSlider.gameObject.SetActive(false);
+        _unlockButton.SetActive(false);
     }
     void _unlockWithPurchase()
     {
@@ -79,7 +101,7 @@ public class DeckButtomController : MonoBehaviour
     {
         BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseSuccessTag);
         _deckInfo.IsLocked = false;
-        _lockGameObject.SetActive(false);
+        _hideLock();
 
     }
 
