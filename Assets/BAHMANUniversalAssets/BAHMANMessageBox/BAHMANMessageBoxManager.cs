@@ -138,6 +138,20 @@ public class BAHMANMessageBoxManager : MonoBehaviour
             , BAHMANLanguageManager._Instance._Translate(NOTAG)
             , true, true, null, iYesAction, null);
     }
+    public void _ShowYesNoBox(string iTitle, string iMessage, UnityAction iYesAction,UnityAction iNoAction)
+    {
+        _yesNoController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage)
+            , BAHMANLanguageManager._Instance._Translate(YESTAG)
+            , BAHMANLanguageManager._Instance._Translate(NOTAG)
+            , true, true, null, iYesAction,iNoAction);
+    }
+    public void _ShowYesNoBox(string iTitle, string iMessage, UnityAction iCloseAction, UnityAction iYesAction, UnityAction iNoAction)
+    {
+        _yesNoController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage)
+            , BAHMANLanguageManager._Instance._Translate(YESTAG)
+            , BAHMANLanguageManager._Instance._Translate(NOTAG)
+            , true, true, iCloseAction, iYesAction,iNoAction);
+    }
     public void _ShowConfirmBox(string iTitle, string iMessage, string iConfirmButtonText, bool iShowCloseButton, bool iShowTitleBar, UnityAction iCloseAction, UnityAction iConfirmAction)
     {
         _confirmController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage)

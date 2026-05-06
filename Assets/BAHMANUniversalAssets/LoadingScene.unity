@@ -1022,6 +1022,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 22604818820577394, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000022888184
+      objectReference: {fileID: 0}
+    - target: {fileID: 506509511726918136, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 03da769f7cb3f492787dc8e96c5b404e, type: 3}
+    - target: {fileID: 916381684090954208, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366181367273968044, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.2400513
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366181367273968044, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.14141846
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586595987945061698, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.2400513
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586595987945061698, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.14141846
+      objectReference: {fileID: 0}
     - target: {fileID: 1897934960813036699, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1106,18 +1134,50 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.17960358
       objectReference: {fileID: 0}
+    - target: {fileID: 3695617836844981726, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.92993164
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743142631173574431, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5965042
+      objectReference: {fileID: 0}
     - target: {fileID: 4021423937977099188, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_Text
       value: The message to show on the panel.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622245585415869972, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.4995117
+      objectReference: {fileID: 0}
+    - target: {fileID: 5003850153351244248, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0059814453
+      objectReference: {fileID: 0}
+    - target: {fileID: 5003850153351244248, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5965042
       objectReference: {fileID: 0}
     - target: {fileID: 5117802511455209460, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_Name
       value: BAHMANMessageBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5165082355575112520, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.256958
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533120091951652541, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.4995117
+      objectReference: {fileID: 0}
     - target: {fileID: 5791197422103013509, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6481351558013569813, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b4b024c6ca6464483b99578de7edfd49, type: 3}
     - target: {fileID: 6621997682801628676, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -18.200012
@@ -1130,6 +1190,10 @@ PrefabInstance:
       propertyPath: _messageText
       value: 
       objectReference: {fileID: 520848113}
+    - target: {fileID: 8586510740803346120, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8771961819005824880, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -18.200012
@@ -1141,6 +1205,10 @@ PrefabInstance:
     - target: {fileID: 9065121150255391618, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184708112884808026, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.256958
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4021423937977099188, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}

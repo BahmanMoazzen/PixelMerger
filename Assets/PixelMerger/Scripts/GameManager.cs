@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
@@ -96,9 +97,15 @@ public class GameManager : MonoBehaviour
     //SaveableItem _activeItem;
     ShoptItemInfo _activeShopItem;
     /// <summary>
-    /// The total score savable item to save the score on it
+    /// to show the point gaind by this merge on the screen
     /// </summary>
-    [SerializeField] SaveableItem _totalScoreSavable;
+    [SerializeField] GameObject _pointTextMesh;
+    /// <summary>
+    /// duration of the point text mesh to show on the screen
+    /// </summary>
+    float _pointTextMeshDuration = 1f;
+    [Range(0, 72)]
+    [SerializeField] float _baseFontSize = 0f;
     /// <summary>
     /// level starup routine
     /// </summary>
@@ -185,13 +192,14 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-
-            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()), _itemClickedConfirmShowAd);
+            _isShopShowing = true;
+            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()), _disableShopShowing, _itemClickedConfirmShowAd, _disableShopShowing);
         }
     }
     void _itemClickedConfirmShowAd()
     {
-        if (_totalScoreSavable._ChangeAmount(-_activeShopItem._intPrice))
+        _disableShopShowing();
+        if (A.GameSetting.ScoreTotal._ChangeAmount(-_activeShopItem._intPrice))
         {
             AdManager__OnAdRewarded();
         }
@@ -199,14 +207,29 @@ public class GameManager : MonoBehaviour
         {
             AdManager__OnAdFailed();
         }
-        _isShopShowing = true;
+
+    }
+
+    void _disableShopShowing()
+    {
+        StartCoroutine(_disableShoppingMode());
+    }
+    /// <summary>
+    /// we need this coroutine to prevent accidental release of pixels while the shop is showing.
+    /// </summary>
+    /// <returns>waits until the end of next frame</returns>
+    IEnumerator _disableShoppingMode()
+    {
+        yield return new WaitForEndOfFrame();
+        _isShopShowing = false;
+
     }
 
     private void AdManager__OnAdFailed()
     {
         BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseFailedTag);
         //BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
-        _isShopShowing = false;
+
 
     }
 
@@ -214,13 +237,20 @@ public class GameManager : MonoBehaviour
     {
         BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseSuccessTag);
         _activeShopItem._ItemInfo._ChangeAmount(1, false);
-        _isShopShowing = false;
+
 
     }
 
     private void MergersController_OnMerge(GameObject iFirstPixel, GameObject iSeconPixel, GameObject iNewPixel)
     {
-        _totalScore += A.Pixels.PixelScore(iFirstPixel.GetComponent<MergersController>()._MergerInfo.MergerOrder);
+        int pixelScore = A.Pixels.PixelScore(iFirstPixel.GetComponent<MergersController>()._MergerInfo.MergerOrder);
+        _totalScore += pixelScore;
+        GameObject scoreTextMesh = Instantiate(_pointTextMesh, iNewPixel.transform.position, Quaternion.identity);
+        TextMeshPro tmp = scoreTextMesh.GetComponent<TextMeshPro>();
+        tmp.text = "+" + pixelScore.ToString();
+        tmp.fontSize = _baseFontSize + (iFirstPixel.GetComponent<MergersController>()._MergerInfo.MergerOrder * 2);
+        Destroy(scoreTextMesh, _pointTextMeshDuration);
+
         _scoreText.text = A.Tools.ScoreToTitle(_totalScore);
         _levelPixels.Remove(iFirstPixel);
         _levelPixels.Remove(iSeconPixel);

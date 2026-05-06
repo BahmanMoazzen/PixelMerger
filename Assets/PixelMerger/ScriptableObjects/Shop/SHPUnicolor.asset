@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShoptItemInfo
   _ItemName: Unicolor
   _ItemSKUID: 
-  _itemPrice: 250
+  _itemPrice: 1000
   _ItemChargeAmount: 1
   _ItemInfo: {fileID: 11400000, guid: bdca5ef989f49b74fb6e37e0d9eac915, type: 2}
   isToman: 1

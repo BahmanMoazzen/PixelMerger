@@ -857,6 +857,7 @@ GameObject:
   - component: {fileID: 738831069}
   - component: {fileID: 738831070}
   - component: {fileID: 738831071}
+  - component: {fileID: 738831072}
   m_Layer: 5
   m_Name: TiltRightTempText
   m_TagString: Untagged
@@ -912,7 +913,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9ded7b4c7ca849b40bd8716c84d6fbd4, type: 3}
+    m_Font: {fileID: 12800000, guid: 7f47410f368bf40f4b4be4929906c9c9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -925,6 +926,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: -1
+--- !u!114 &738831072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738831068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &780629887
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,6 +952,7 @@ GameObject:
   - component: {fileID: 780629890}
   - component: {fileID: 780629889}
   - component: {fileID: 780629888}
+  - component: {fileID: 780629891}
   m_Layer: 5
   m_Name: UnicollorTempText
   m_TagString: Untagged
@@ -964,7 +981,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9ded7b4c7ca849b40bd8716c84d6fbd4, type: 3}
+    m_Font: {fileID: 12800000, guid: 7f47410f368bf40f4b4be4929906c9c9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1004,6 +1021,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.5}
   m_SizeDelta: {x: -1.699997, y: -0.70000076}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &780629891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780629887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1027061149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,7 +1324,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -636424445
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: -1000
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 27a0e679f426f394dbcd0e019d53b4a9, type: 3}
@@ -1389,6 +1421,7 @@ GameObject:
   - component: {fileID: 1087844752}
   - component: {fileID: 1087844753}
   - component: {fileID: 1087844754}
+  - component: {fileID: 1087844755}
   m_Layer: 5
   m_Name: TiltLeftTempText
   m_TagString: Untagged
@@ -1444,7 +1477,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9ded7b4c7ca849b40bd8716c84d6fbd4, type: 3}
+    m_Font: {fileID: 12800000, guid: 7f47410f368bf40f4b4be4929906c9c9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1457,6 +1490,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: -1
+--- !u!114 &1087844755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087844751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1152274794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2392,7 +2440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7122733, y: 0.9149709}
   m_AnchorMax: {x: 0.9755753, y: 0.9845964}
-  m_AnchoredPosition: {x: -0.058013916, y: 0.05999756}
+  m_AnchoredPosition: {x: -0.058013916, y: 0.059936523}
   m_SizeDelta: {x: -1.564209, y: 0.6800003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401396215
@@ -2686,7 +2734,8 @@ MonoBehaviour:
   _hammerObject: {fileID: 12745928}
   _hammerText: {fileID: 2129641795}
   _globalLight: {fileID: 364585503}
-  _totalScoreSavable: {fileID: 11400000, guid: bd8f19f90d7dd7b478758ef665f93c3e, type: 2}
+  _pointTextMesh: {fileID: 1408682649264498768, guid: 20818db7b5c47874faf92b2062c11a7e, type: 3}
+  _baseFontSize: 4
 --- !u!4 &1597540233
 Transform:
   m_ObjectHideFlags: 0
@@ -3144,7 +3193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.038639475, y: 0.06321479}
   m_AnchorMax: {x: 0.15861142, y: 0.39925176}
-  m_AnchoredPosition: {x: -0.26101685, y: -4.9879456}
+  m_AnchoredPosition: {x: -0.26098633, y: -4.9879456}
   m_SizeDelta: {x: -0.52199936, y: -0.21999979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1697994317
@@ -3786,6 +3835,7 @@ GameObject:
   - component: {fileID: 2055517370}
   - component: {fileID: 2055517371}
   - component: {fileID: 2055517372}
+  - component: {fileID: 2055517373}
   m_Layer: 5
   m_Name: HammerTempText
   m_TagString: Untagged
@@ -3841,7 +3891,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9ded7b4c7ca849b40bd8716c84d6fbd4, type: 3}
+    m_Font: {fileID: 12800000, guid: 7f47410f368bf40f4b4be4929906c9c9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -3854,6 +3904,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: -1
+--- !u!114 &2055517373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055517369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2070601925
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,7 +4390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2207772, y: 0.76921475}
   m_AnchorMax: {x: 0.5122228, y: 1}
-  m_AnchoredPosition: {x: 0.58999634, y: 0.6513977}
+  m_AnchoredPosition: {x: 0.58999634, y: 0.65140533}
   m_SizeDelta: {x: -5.529999, y: -2.7000008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2129641798

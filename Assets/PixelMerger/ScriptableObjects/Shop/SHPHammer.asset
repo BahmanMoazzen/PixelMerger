@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShoptItemInfo
   _ItemName: Hammer
   _ItemSKUID: 
-  _itemPrice: 3000
+  _itemPrice: 600
   _ItemChargeAmount: 1
   _ItemInfo: {fileID: 11400000, guid: 8275432ea3dec6f4191c2b41692debae, type: 2}
   isToman: 1
