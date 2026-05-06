@@ -100,12 +100,8 @@ public class GameManager : MonoBehaviour
     /// to show the point gaind by this merge on the screen
     /// </summary>
     [SerializeField] GameObject _pointTextMesh;
-    /// <summary>
-    /// duration of the point text mesh to show on the screen
-    /// </summary>
-    float _pointTextMeshDuration = 1f;
-    [Range(0, 72)]
-    [SerializeField] float _baseFontSize = 0f;
+
+
     /// <summary>
     /// level starup routine
     /// </summary>
@@ -246,10 +242,9 @@ public class GameManager : MonoBehaviour
         int pixelScore = A.Pixels.PixelScore(iFirstPixel.GetComponent<MergersController>()._MergerInfo.MergerOrder);
         _totalScore += pixelScore;
         GameObject scoreTextMesh = Instantiate(_pointTextMesh, iNewPixel.transform.position, Quaternion.identity);
-        TextMeshPro tmp = scoreTextMesh.GetComponent<TextMeshPro>();
-        tmp.text = "+" + pixelScore.ToString();
-        tmp.fontSize = _baseFontSize + (iFirstPixel.GetComponent<MergersController>()._MergerInfo.MergerOrder * 2);
-        Destroy(scoreTextMesh, _pointTextMeshDuration);
+
+        scoreTextMesh.GetComponent<ScoreTextController>()._Setup(pixelScore, iFirstPixel.GetComponent<MergersController>()._MergerInfo.MergerOrder * 2);
+
 
         _scoreText.text = A.Tools.ScoreToTitle(_totalScore);
         _levelPixels.Remove(iFirstPixel);
@@ -384,7 +379,8 @@ public class GameManager : MonoBehaviour
         foreach (GameObject go in _levelPixels)
         {
             Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
-            rb.AddForce(new Vector2(iDirection, -1f) * _tiltMagnetute * rb.mass);
+            if (rb != null)
+                rb.AddForce(new Vector2(iDirection, -1f) * _tiltMagnetute * rb.mass);
         }
 
     }

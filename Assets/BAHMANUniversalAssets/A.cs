@@ -7,6 +7,7 @@ public static class A
 {
     public static class Tags
     {
+        public static char PLUS_SIGN = '+';
         public static string OutOfStockTag = "Out Of Stock";
         public static string NotEnoughScoreTag = "Not Enough Score!";
         public static string PurchaseFailedTag = "Purchase Failed!";

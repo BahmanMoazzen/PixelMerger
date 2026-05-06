@@ -2729,13 +2729,12 @@ MonoBehaviour:
   - {fileID: 1675269320}
   - {fileID: 2070601925}
   _arena: {fileID: 1597540234}
-  _particle: {fileID: 608340399284876015, guid: c98810d1b33e0f24eac6212b485d6d32, type: 3}
+  _particle: {fileID: 6341587042773240541, guid: 5aa0c52aff7626e4b8238a06c5304a8d, type: 3}
   _tiltMagnetute: 1000
   _hammerObject: {fileID: 12745928}
   _hammerText: {fileID: 2129641795}
   _globalLight: {fileID: 364585503}
-  _pointTextMesh: {fileID: 1408682649264498768, guid: 20818db7b5c47874faf92b2062c11a7e, type: 3}
-  _baseFontSize: 4
+  _pointTextMesh: {fileID: 3813910832692216596, guid: 61835c5fe4a694048a68428700d80cc5, type: 3}
 --- !u!4 &1597540233
 Transform:
   m_ObjectHideFlags: 0
