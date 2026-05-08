@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 4-Deinonychus.png
   m_EditorClassIdentifier: 
   MergerName: Deinonychus
-  MergerSprite: {fileID: 5222797667959493666, guid: a9a40a2661b233248a8a8d47a7d831b0, type: 3}
+  MergerSprite: {fileID: 21300000, guid: a9a40a2661b233248a8a8d47a7d831b0, type: 3}
   MergerOrder: 4
   MergerDeckInfo: {fileID: 11400000, guid: 38685dafb0cc6644d85e66c271c92800, type: 2}

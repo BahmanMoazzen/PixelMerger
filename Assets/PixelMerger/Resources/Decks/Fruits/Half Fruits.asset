@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeckName: Half Fruits
   DeckBackGround: {fileID: -6695950386315148514, guid: c5d6b67a205ece74f95e9ca5ee2797db, type: 3}
-  DeckIcon: {fileID: -8866779660224281436, guid: 34c381659cc57a8449c057d3829d6912, type: 3}
+  DeckIcon: {fileID: -5890180436634068874, guid: c0eccfcefafd74442a638036cde979ff, type: 3}
   DeckPixels:
   - {fileID: 11400000, guid: 88bc83e02d3cd8342b0adc97afc96538, type: 2}
   - {fileID: 11400000, guid: 34fc22bb9037b7741be26dd347daf87b, type: 2}
@@ -30,5 +30,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df75175af9791aa4eaba65daf29bdc80, type: 2}
   WeightIncreaseStep: 0.5
   RadiousIncreaseStep: 0.5
-  isLock: 1
+  isLock: 0
   Price: 33000

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 3-Velociraptor.png
   m_EditorClassIdentifier: 
   MergerName: Velociraptor
-  MergerSprite: {fileID: -6639859261547110486, guid: 9fb9022013406f24da34f09ee7f02734, type: 3}
+  MergerSprite: {fileID: 21300000, guid: 9fb9022013406f24da34f09ee7f02734, type: 3}
   MergerOrder: 3
   MergerDeckInfo: {fileID: 11400000, guid: 38685dafb0cc6644d85e66c271c92800, type: 2}

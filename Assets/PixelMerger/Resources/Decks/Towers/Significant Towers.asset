@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeckName: Significant Towers
   DeckBackGround: {fileID: -6695950386315148514, guid: e33c21374b51d3246aeca325913ecee5, type: 3}
-  DeckIcon: {fileID: 2197339003567805683, guid: 042c6d53ddfd45e4cb0e24bcec2d147c, type: 3}
+  DeckIcon: {fileID: 3550135792681066848, guid: f1e063e79b21eac49b54624d0a6f93ed, type: 3}
   DeckPixels:
   - {fileID: 11400000, guid: 7c4faaabfffb6154683cf92b12b66dc6, type: 2}
   - {fileID: 11400000, guid: 69b66c9c149afc341bc8eb78a326f664, type: 2}
@@ -30,5 +30,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: af846619377c5e145946c90216fcde7e, type: 2}
   WeightIncreaseStep: 0.5
   RadiousIncreaseStep: 0.5
-  isLock: 1
+  isLock: 0
   Price: 52500

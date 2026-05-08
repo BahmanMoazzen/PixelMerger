@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 6-Giganotosaurus.png
   m_EditorClassIdentifier: 
   MergerName: Giganotosaurus
-  MergerSprite: {fileID: 1790998830362170716, guid: d3f5442fe59c73740b7e995f0be76d14, type: 3}
+  MergerSprite: {fileID: 21300000, guid: d3f5442fe59c73740b7e995f0be76d14, type: 3}
   MergerOrder: 6
   MergerDeckInfo: {fileID: 11400000, guid: 38685dafb0cc6644d85e66c271c92800, type: 2}

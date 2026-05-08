@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 5-Edmontosaurus.png
   m_EditorClassIdentifier: 
   MergerName: Edmontosaurus
-  MergerSprite: {fileID: -4727226768949809123, guid: 3aef6db885381cf43b44d0773a1a6c33, type: 3}
+  MergerSprite: {fileID: 21300000, guid: 3aef6db885381cf43b44d0773a1a6c33, type: 3}
   MergerOrder: 5
   MergerDeckInfo: {fileID: 11400000, guid: 38685dafb0cc6644d85e66c271c92800, type: 2}
