@@ -31,6 +31,11 @@ public class PixelDeckInfo : ScriptableObject
     /// define if the deck is locked
     /// </summary>
     [SerializeField] bool isLock = false;
+    /// <summary>
+    /// The price of the deck in shop, if it is 0, it will be unlocked from the start
+    /// </summary>
+    public int Price = 0;
+
 
     public bool IsLocked
     {

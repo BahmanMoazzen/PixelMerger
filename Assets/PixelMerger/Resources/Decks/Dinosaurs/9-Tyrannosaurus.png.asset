@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 9-Tyrannosaurus.png
   m_EditorClassIdentifier: 
   MergerName: Tyrannosaurus
-  MergerSprite: {fileID: 5700452246476670150, guid: 0ac0cb58c2d402341ba51e1f8fd579c7, type: 3}
+  MergerSprite: {fileID: 21300000, guid: 0ac0cb58c2d402341ba51e1f8fd579c7, type: 3}
   MergerOrder: 9
   MergerDeckInfo: {fileID: 11400000, guid: 38685dafb0cc6644d85e66c271c92800, type: 2}

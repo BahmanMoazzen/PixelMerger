@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
@@ -93,7 +94,14 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// the current savable item to manipulate
     /// </summary>
-    SaveableItem _activeItem;
+    //SaveableItem _activeItem;
+    ShoptItemInfo _activeShopItem;
+    /// <summary>
+    /// to show the point gaind by this merge on the screen
+    /// </summary>
+    [SerializeField] GameObject _pointTextMesh;
+
+
     /// <summary>
     /// level starup routine
     /// </summary>
@@ -124,61 +132,120 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    public void _ItemClicked(SaveableItem iItem)
+    //public void _ItemClicked(SaveableItem iItem)
+    //{
+    //    _activeItem = iItem;
+    //    if (iItem._HaveStock)
+    //    {
+    //        switch (iItem._Tag)
+    //        {
+    //            case "Hammer":
+    //                _UseHammer();
+    //                break;
+    //            case "TiltLeft":
+    //                _Tilt(-1);
+    //                iItem._ChangeAmount(-1, false);
+    //                break;
+    //            case "TiltRight":
+    //                iItem._ChangeAmount(-1, false);
+    //                _Tilt(1);
+    //                break;
+    //            case "UniColor":
+    //                iItem._ChangeAmount(-1, false);
+    //                _LoadUnicolor();
+    //                break;
+    //        }
+    //    }
+    //    else
+    //    {
+
+    //        BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyOneTag, _itemClickedConfirmShowAd);
+    //    }
+    //}
+    public void _ItemClicked(ShoptItemInfo iItem)
     {
-        _activeItem = iItem;
-        if (iItem._HaveStock)
+        _activeShopItem = iItem;
+        if (iItem._ItemInfo._HaveStock)
         {
-            switch (iItem._Tag)
+            switch (iItem._ItemInfo._Tag)
             {
                 case "Hammer":
                     _UseHammer();
                     break;
                 case "TiltLeft":
                     _Tilt(-1);
-                    iItem._ChangeAmount(-1, false);
+                    iItem._ItemInfo._ChangeAmount(-1, false);
                     break;
                 case "TiltRight":
-                    iItem._ChangeAmount(-1, false);
+                    iItem._ItemInfo._ChangeAmount(-1, false);
                     _Tilt(1);
                     break;
                 case "UniColor":
-                    iItem._ChangeAmount(-1, false);
+                    iItem._ItemInfo._ChangeAmount(-1, false);
                     _LoadUnicolor();
                     break;
             }
         }
         else
         {
-
-            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyOneTag, _itemClickedConfirmShowAd);
+            _isShopShowing = true;
+            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()), _disableShopShowing, _itemClickedConfirmShowAd, _disableShopShowing);
         }
     }
     void _itemClickedConfirmShowAd()
     {
-        BAHMANAdManager._Instance._BuySKU(_activeItem._SKU, AdManager__OnAdRewarded, AdManager__OnAdFailed);
-        _isShopShowing = true;
+        _disableShopShowing();
+        if (A.GameSetting.ScoreTotal._ChangeAmount(-_activeShopItem._intPrice))
+        {
+            AdManager__OnAdRewarded();
+        }
+        else
+        {
+            AdManager__OnAdFailed();
+        }
+
+    }
+
+    void _disableShopShowing()
+    {
+        StartCoroutine(_disableShoppingMode());
+    }
+    /// <summary>
+    /// we need this coroutine to prevent accidental release of pixels while the shop is showing.
+    /// </summary>
+    /// <returns>waits until the end of next frame</returns>
+    IEnumerator _disableShoppingMode()
+    {
+        yield return new WaitForEndOfFrame();
+        _isShopShowing = false;
+
     }
 
     private void AdManager__OnAdFailed()
     {
         BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseFailedTag);
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
-        _isShopShowing = false;
+        //BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
+
 
     }
 
     private void AdManager__OnAdRewarded()
     {
         BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseSuccessTag);
-        _activeItem._ResetAmount();
-        _isShopShowing = false;
+        _activeShopItem._ItemInfo._ChangeAmount(1, false);
+
 
     }
 
     private void MergersController_OnMerge(GameObject iFirstPixel, GameObject iSeconPixel, GameObject iNewPixel)
     {
-        _totalScore += A.Pixels.PixelScore(iFirstPixel.GetComponent<MergersController>()._MergerInfo.MergerOrder);
+        int pixelScore = A.Pixels.PixelScore(iFirstPixel.GetComponent<MergersController>()._MergerInfo.MergerOrder);
+        _totalScore += pixelScore;
+        GameObject scoreTextMesh = Instantiate(_pointTextMesh, iNewPixel.transform.position, Quaternion.identity);
+
+        scoreTextMesh.GetComponent<ScoreTextController>()._Setup(pixelScore, iFirstPixel.GetComponent<MergersController>()._MergerInfo.MergerOrder * 2);
+
+
         _scoreText.text = A.Tools.ScoreToTitle(_totalScore);
         _levelPixels.Remove(iFirstPixel);
         _levelPixels.Remove(iSeconPixel);
@@ -240,7 +307,7 @@ public class GameManager : MonoBehaviour
     {
 
         MergersController.OnPixelClicked -= MergersController_OnPixelClicked;
-        _activeItem._ChangeAmount(-1, false);
+        _activeShopItem._ItemInfo._ChangeAmount(-1, false);
         _levelPixels.Remove(iPixel);
         Destroy(iPixel);
         StartCoroutine(_deactivateHammerRoutine());
@@ -312,7 +379,8 @@ public class GameManager : MonoBehaviour
         foreach (GameObject go in _levelPixels)
         {
             Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
-            rb.AddForce(new Vector2(iDirection, -1f) * _tiltMagnetute * rb.mass);
+            if (rb != null)
+                rb.AddForce(new Vector2(iDirection, -1f) * _tiltMagnetute * rb.mass);
         }
 
     }

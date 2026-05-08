@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class YesNoPannelController : MonoBehaviour
 {
 
     [SerializeField] Text _titleText;
-    [SerializeField] Text _messageText;
+    [SerializeField] TextMeshProUGUI _messageText;
     [SerializeField] Button _closeButton;
     [SerializeField] Button _yesButton;
     [SerializeField] Button _noButton;

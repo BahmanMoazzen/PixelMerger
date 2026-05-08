@@ -12,7 +12,7 @@ public class DeckSelectManager : MonoBehaviour
         for (int i = 0; i < A.GameSetting.AllDecks.Length; i++)
         {
             //_SKUs += A.GameSetting.AllDecks[i].GetSKUName() + ";";
-            Instantiate(A.GameSetting.DeckButtonTemplate, _ButtomParentObject.transform).GetComponent<DeckButtomController>()._CreateButtom(A.GameSetting.AllDecks[i],i);
+            Instantiate(A.GameSetting.DeckButtonTemplate, _ButtomParentObject.transform).GetComponent<DeckButtomController>()._CreateButtom(A.GameSetting.AllDecks[i], i);
         }
     }
     public void _Back()

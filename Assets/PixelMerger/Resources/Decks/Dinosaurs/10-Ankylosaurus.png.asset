@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 10-Ankylosaurus.png
   m_EditorClassIdentifier: 
   MergerName: Ankylosaurus
-  MergerSprite: {fileID: 472334809223726588, guid: 0a0775e7fe0e8cd49b667308089dfc6f, type: 3}
+  MergerSprite: {fileID: 21300000, guid: 0a0775e7fe0e8cd49b667308089dfc6f, type: 3}
   MergerOrder: 10
   MergerDeckInfo: {fileID: 11400000, guid: 38685dafb0cc6644d85e66c271c92800, type: 2}

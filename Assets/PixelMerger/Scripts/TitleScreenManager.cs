@@ -12,14 +12,14 @@ public class TitleScreenManager : MonoBehaviour
         _soundFX.isOn = _gameSettingInfo.SoundFX;
         _antialiasing.isOn = _gameSettingInfo.AntiAliasing;
         _musicToggle.isOn = _gameSettingInfo.Music;
-        if (_gameSettingInfo.RatingURL == string.Empty)
-        {
-            _ratingBottom.SetActive(false);
-        }
-        else
-        {
-            _ratingBottom.SetActive(true);
-        }
+        //if (_gameSettingInfo.RatingURL == string.Empty)
+        //{
+        //    _ratingBottom.SetActive(false);
+        //}
+        //else
+        //{
+        //    _ratingBottom.SetActive(true);
+        //}
     }
 
     public void _BackButton()
@@ -57,7 +57,7 @@ public class TitleScreenManager : MonoBehaviour
     public void _RateUs()
     {
         SoundManager._Instance._PlaySound(GameSounds.ButtomClicked);
-        Application.OpenURL(string.Format(_gameSettingInfo.RatingURL, Application.identifier));
+        //Application.OpenURL(string.Format(_gameSettingInfo.RatingURL, Application.identifier));
     }
 
     public void _ButtomClicked()

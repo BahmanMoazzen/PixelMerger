@@ -12,6 +12,7 @@ using TMPro;
 public class BAHMANLanguageManager : MonoBehaviour
 {
     /// <summary>
+    /// 
     /// the instance to reference the class
     /// </summary>
     public static BAHMANLanguageManager _Instance;
