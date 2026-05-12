@@ -27,7 +27,7 @@ public static class A
         }
         public static string ScoreSaveTag()
         {
-            return "BestScoreTag_"+((int)Levels.DifficultyLevel).ToString();
+            return "BestScoreTag_" + ((int)Levels.DifficultyLevel).ToString();
         }
 
 
@@ -171,7 +171,7 @@ public static class A
         {
             return (iOrder * massGrowthFactor) + massBaseFactor;
         }
-        
+
         public static GameObject PixelSkeleton
         {
             get
@@ -233,7 +233,22 @@ public static class A
 
     public static class GameSettings
     {
-        public static int CurrentDeckPosition = 0;
+        public static string CURRENTDECKTAG = "CurrentDeckTag";
+
+        public static int CurrentDeckPosition
+        {
+            get
+            {
+                return PlayerPrefs.GetInt(CURRENTDECKTAG, 0);
+            }
+            set
+            {
+                PlayerPrefs.SetInt(CURRENTDECKTAG, value);
+            }
+        }
+
+
+
         public static List<PixelInfo> CurrentDeckMergers
         {
             get
