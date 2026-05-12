@@ -19,6 +19,7 @@ class MessageStruct
     public Color _color;
     public string _message;
     public float _interval;
+    public Sprite _sprite;
 
 }
 public class BAHMANMessageBoxManager : MonoBehaviour
@@ -50,7 +51,7 @@ public class BAHMANMessageBoxManager : MonoBehaviour
         //{
         //    _messageQueue = new Queue<MessageStruct>();
         //}
-        _messageQueue? .Enqueue(messageStructure);
+        _messageQueue?.Enqueue(messageStructure);
 
 
     }
@@ -111,6 +112,28 @@ public class BAHMANMessageBoxManager : MonoBehaviour
         _messageQueue.Enqueue(messageStructure);
     }
     /// <summary>
+    /// Enqueues a message to be displayed with the specified text, color, display interval, and optional sprite.
+    /// </summary>
+    /// <remarks>Messages are queued and displayed in the order they are added. The message text is
+    /// automatically translated using the application's language manager.</remarks>
+    /// <param name="iMessage">The message text to display. The text will be translated before being shown.</param>
+    /// <param name="iColor">The color to use when displaying the message.</param>
+    /// <param name="iInterval">The duration, in seconds, for which the message will be displayed.</param>
+    /// <param name="iSprite">An optional sprite to display alongside the message. Can be null if no sprite is needed.</param>
+    public void _ShowMessage(string iMessage, Color iColor, float iInterval, Sprite iSprite)
+    {
+        MessageStruct messageStructure = new MessageStruct();
+        messageStructure._color = iColor;
+        messageStructure._message = BAHMANLanguageManager._Instance._Translate(iMessage);
+        messageStructure._interval = iInterval;
+        messageStructure._sprite = iSprite;
+        //if (_messageQueue == null)
+        //{
+        //    _messageQueue = new Queue<MessageStruct>();
+        //}
+        _messageQueue.Enqueue(messageStructure);
+    }
+    /// <summary>
     /// 
     /// </summary>
     /// <param name="iTitle"></param>
@@ -138,19 +161,19 @@ public class BAHMANMessageBoxManager : MonoBehaviour
             , BAHMANLanguageManager._Instance._Translate(NOTAG)
             , true, true, null, iYesAction, null);
     }
-    public void _ShowYesNoBox(string iTitle, string iMessage, UnityAction iYesAction,UnityAction iNoAction)
+    public void _ShowYesNoBox(string iTitle, string iMessage, UnityAction iYesAction, UnityAction iNoAction)
     {
         _yesNoController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage)
             , BAHMANLanguageManager._Instance._Translate(YESTAG)
             , BAHMANLanguageManager._Instance._Translate(NOTAG)
-            , true, true, null, iYesAction,iNoAction);
+            , true, true, null, iYesAction, iNoAction);
     }
     public void _ShowYesNoBox(string iTitle, string iMessage, UnityAction iCloseAction, UnityAction iYesAction, UnityAction iNoAction)
     {
         _yesNoController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage)
             , BAHMANLanguageManager._Instance._Translate(YESTAG)
             , BAHMANLanguageManager._Instance._Translate(NOTAG)
-            , true, true, iCloseAction, iYesAction,iNoAction);
+            , true, true, iCloseAction, iYesAction, iNoAction);
     }
     public void _ShowConfirmBox(string iTitle, string iMessage, string iConfirmButtonText, bool iShowCloseButton, bool iShowTitleBar, UnityAction iCloseAction, UnityAction iConfirmAction)
     {
@@ -175,7 +198,12 @@ public class BAHMANMessageBoxManager : MonoBehaviour
     /// <summary>
     /// message text placeholder
     /// </summary>
+    /// 
     [SerializeField] Text _MessageText;
+    /// <summary>
+    /// Shows the message sprite if you want to show an image with the message, otherwise it will be hidden
+    /// </summary>
+    [SerializeField] Image _MessageSprite;
 
     /// <summary>
     /// message panel to show or hide
@@ -228,7 +256,7 @@ public class BAHMANMessageBoxManager : MonoBehaviour
 
     }
 
-    
+
 
 
     IEnumerator _startupRoutine()
@@ -262,6 +290,15 @@ public class BAHMANMessageBoxManager : MonoBehaviour
                     _MessagePanel.SetActive(true);
                     _MessageText.text = message._message;
                     _MessageText.color = message._color;
+                    if (message._sprite != null)
+                    {
+                        _MessageSprite.sprite = message._sprite;
+                        _MessageSprite.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        _MessageSprite.gameObject.SetActive(false);
+                    }
                     yield return new WaitForSeconds(message._interval);
                     _MessagePanel.SetActive(false);
                     _MessageText.text = string.Empty;
