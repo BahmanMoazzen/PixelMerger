@@ -888,9 +888,9 @@ MonoBehaviour:
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 0.20392157}
-    topRight: {r: 0, g: 0.4759282, b: 1, a: 1}
+    topRight: {r: 0, g: 0.8542309, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 0.8352941}
-    bottomRight: {r: 0.048704028, g: 0, b: 1, a: 1}
+    bottomRight: {r: 0, g: 0.36588287, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -2982,6 +2982,7 @@ GameObject:
   - component: {fileID: 893286986}
   - component: {fileID: 893286985}
   - component: {fileID: 893286984}
+  - component: {fileID: 893286987}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -3052,7 +3053,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 893286985}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1925954770}
+        m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
+        m_MethodName: _StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1925954770}
+        m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
+        m_MethodName: _ButtomClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &893286985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3091,6 +3116,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893286982}
   m_CullTransparentMesh: 1
+--- !u!95 &893286987
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893286982}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dbe990687bed915489e532f127d81b4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &915585783
 GameObject:
   m_ObjectHideFlags: 0
@@ -7520,6 +7567,7 @@ GameObject:
   - component: {fileID: 2142819604}
   - component: {fileID: 2142819606}
   - component: {fileID: 2142819605}
+  - component: {fileID: 2142819607}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -7585,6 +7633,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142819603}
   m_CullTransparentMesh: 1
+--- !u!95 &2142819607
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142819603}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3cfa55de787f3214d8b7d674276b4ce3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &470103384117161086
 GameObject:
   m_ObjectHideFlags: 0
