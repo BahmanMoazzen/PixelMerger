@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour
     /// the position on the screen
     /// </summary>
     [SerializeField] Transform _topLeft, _bottomRight, _pixelSpawnPoint;
-
+    /// <summary>
+    /// the background placeholder to show the background of the game
+    /// </summary>
+    [SerializeField] SpriteRenderer _backgroundSprite;
     /// <summary>
     /// gap between each drop
     /// </summary>
@@ -109,6 +112,7 @@ public class GameManager : MonoBehaviour
     IEnumerator Start()
     {
         MergersController._isAnnounced = false;
+        _backgroundSprite.sprite = A.GameSettings.InGameBackground;
         _levelPixels = new List<GameObject>();
         _deadLines[(int)A.Levels.DifficultyLevel].SetActive(true);
         _line = _deadLines[(int)A.Levels.DifficultyLevel].GetComponent<LineRenderer>();

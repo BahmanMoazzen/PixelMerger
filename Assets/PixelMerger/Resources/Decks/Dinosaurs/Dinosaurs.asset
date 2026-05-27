@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeckName: Dinosaurs
   DeckBackGround: {fileID: -6695950386315148514, guid: a0c904098e2e61b43b0f74ce0bb7af2d, type: 3}
+  DeckGameBackGround: {fileID: 21300000, guid: a0b025d22d869204587fa046ea0e2a0e, type: 3}
   DeckIcon: {fileID: 21300000, guid: d90278b9260c8324fa221114bf9845ff, type: 3}
   DeckPixels:
   - {fileID: 11400000, guid: bd52d22966062c545b18ceb998498849, type: 2}

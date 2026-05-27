@@ -256,6 +256,13 @@ public static class A
                 return A.GameSetting.AllDecks[CurrentDeckPosition].DeckPixels;
             }
         }
+        public static Sprite InGameBackground
+        {
+            get
+            {
+                return A.GameSetting.AllDecks[CurrentDeckPosition].DeckGameBackGround;
+            }
+        }
 
     }
 

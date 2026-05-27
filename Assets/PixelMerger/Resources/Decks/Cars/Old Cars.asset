@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeckName: Old Cars
   DeckBackGround: {fileID: -2413806693520163455, guid: fdf4f03f21fcd2b43b04bfc5fb5e5f70, type: 3}
+  DeckGameBackGround: {fileID: 21300000, guid: 984f158c3c548604895379711b71dbff, type: 3}
   DeckIcon: {fileID: 385832102940872456, guid: 7c49616e88040144ca01f07a32877673, type: 3}
   DeckPixels:
   - {fileID: 11400000, guid: 2d2c0bc9da559274fbc3c5f46b18167f, type: 2}
