@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 public class DeckButtomController : MonoBehaviour
 {
+    public static event UnityAction OnDeckSelected;
     [SerializeField] Text _buttomTitle;
     [SerializeField] Image _buttomIcon;
     [SerializeField] GameObject _lockGameObject;
@@ -85,10 +87,12 @@ public class DeckButtomController : MonoBehaviour
         }
         else
         {
+
             A.GameSettings.CurrentDeckPosition = _deckOrder;
+            OnDeckSelected?.Invoke();
             SoundManager._Instance._PlaySound(GameSounds.DeckSelect);
             //AdManager._Instance.ShowInterstitialAd();
-            BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.GameScene);
+            //BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.GameScene);
         }
     }
     private void AdManager__OnAdFailed()

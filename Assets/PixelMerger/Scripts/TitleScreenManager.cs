@@ -10,7 +10,7 @@ public class TitleScreenManager : MonoBehaviour
     private void Start()
     {
         _soundFX.isOn = _gameSettingInfo.SoundFX;
-        _antialiasing.isOn = _gameSettingInfo.AntiAliasing;
+        //_antialiasing.isOn = _gameSettingInfo.AntiAliasing;
         _musicToggle.isOn = _gameSettingInfo.Music;
         //if (_gameSettingInfo.RatingURL == string.Empty)
         //{
@@ -38,8 +38,8 @@ public class TitleScreenManager : MonoBehaviour
     }
     public void _SelectDeck(int iGameDifficulty)
     {
-        A.Levels.DifficultyLevel =(GameModes) iGameDifficulty;
-        SoundManager._Instance._PlaySound(GameSounds.ButtomClicked);
+        //A.Levels.DifficultyLevel =(GameModes) iGameDifficulty;
+        //SoundManager._Instance._PlaySound(GameSounds.ButtomClicked);
         //BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.DeckSelect);
 
     }
