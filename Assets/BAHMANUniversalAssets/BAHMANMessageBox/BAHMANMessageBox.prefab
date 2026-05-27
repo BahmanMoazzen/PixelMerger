@@ -778,9 +778,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6345656100326168072, guid: 2eb33ff94807dae4aa0d3530748231e1, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1297,6 +1297,7 @@ MonoBehaviour:
   _MessagePanel: {fileID: 8586510740803346120}
   _DefaultHideIntervalTime: 1.5
   _DefaultColor: {r: 0.9294118, g: 0.9333334, b: 0.62352943, a: 1}
+  _messageBoxAnimator: {fileID: 3818244634388169369}
 --- !u!114 &1660794487386821451
 MonoBehaviour:
   m_ObjectHideFlags: 0
