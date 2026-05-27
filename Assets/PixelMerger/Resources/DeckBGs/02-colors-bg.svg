@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="960" viewBox="0 0 480 960">
+  <defs>
+    <filter id="prismblur">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+  </defs>
+
+  <!-- Base dark background -->
+  <rect width="480" height="960" fill="#0a0a0a"/>
+
+  <!-- Large diagonal color prism blocks -->
+  <!-- Red band -->
+  <polygon points="0,0 180,0 0,220" fill="#ff2442" opacity="0.9"/>
+  <polygon points="0,0 280,0 80,0 0,100" fill="#ff6680" opacity="0.6"/>
+
+  <!-- Orange band -->
+  <polygon points="180,0 480,0 480,180 0,220" fill="#ff7a00" opacity="0.85"/>
+
+  <!-- Yellow slice -->
+  <polygon points="480,0 480,300 240,160" fill="#ffd600" opacity="0.8"/>
+
+  <!-- Green stripe -->
+  <polygon points="0,220 480,180 480,420 0,460" fill="#00d68f" opacity="0.8"/>
+
+  <!-- Cyan/Teal middle -->
+  <polygon points="0,460 480,420 480,600 0,640" fill="#00c8e0" opacity="0.82"/>
+
+  <!-- Blue band -->
+  <polygon points="0,640 480,600 480,780 0,800" fill="#1a6fff" opacity="0.85"/>
+
+  <!-- Indigo -->
+  <polygon points="0,800 480,780 480,900 0,930" fill="#5040ff" opacity="0.8"/>
+
+  <!-- Violet bottom -->
+  <polygon points="0,930 480,900 480,960 0,960" fill="#c020ff" opacity="0.85"/>
+
+  <!-- Purple upper accent -->
+  <polygon points="0,100 480,80 480,180 0,220" fill="#9b20ff" opacity="0.5"/>
+
+  <!-- Overlapping diagonal light shards -->
+  <polygon points="120,0 320,0 480,200 480,100 200,0" fill="#ffffff" opacity="0.07"/>
+  <polygon points="0,350 200,300 350,500 100,560" fill="#ffffff" opacity="0.05"/>
+  <polygon points="200,600 480,520 480,700 150,780" fill="#ffffff" opacity="0.06"/>
+  <polygon points="0,750 300,700 200,960 0,960" fill="#000000" opacity="0.15"/>
+
+  <!-- Central bright diagonal slash of white light -->
+  <polygon points="160,0 280,0 480,320 480,200" fill="#ffffff" opacity="0.12"/>
+  <polygon points="0,500 100,450 300,750 200,800" fill="#ffffff" opacity="0.08"/>
+
+  <!-- Thin crisp division lines between color bands -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.25" fill="none">
+    <line x1="0" y1="220" x2="480" y2="180"/>
+    <line x1="0" y1="460" x2="480" y2="420"/>
+    <line x1="0" y1="640" x2="480" y2="600"/>
+    <line x1="0" y1="800" x2="480" y2="780"/>
+    <line x1="0" y1="930" x2="480" y2="900"/>
+  </g>
+
+  <!-- Color dot accents (paint splatter feel) -->
+  <circle cx="60" cy="80" r="18" fill="#ff2442" opacity="0.5"/>
+  <circle cx="400" cy="50" r="12" fill="#ffd600" opacity="0.5"/>
+  <circle cx="240" cy="140" r="22" fill="#ff7a00" opacity="0.4"/>
+  <circle cx="30" cy="330" r="15" fill="#00d68f" opacity="0.45"/>
+  <circle cx="450" cy="360" r="20" fill="#00c8e0" opacity="0.4"/>
+  <circle cx="100" cy="530" r="16" fill="#1a6fff" opacity="0.45"/>
+  <circle cx="380" cy="570" r="14" fill="#9b20ff" opacity="0.4"/>
+  <circle cx="200" cy="720" r="22" fill="#c020ff" opacity="0.4"/>
+  <circle cx="440" cy="740" r="18" fill="#ff2442" opacity="0.4"/>
+  <circle cx="50" cy="870" r="20" fill="#ffd600" opacity="0.4"/>
+  <circle cx="300" cy="900" r="16" fill="#00d68f" opacity="0.4"/>
+
+  <!-- Vignette corners -->
+  <radialGradient id="vig2" cx="50%" cy="50%" r="75%">
+    <stop offset="55%" stop-color="transparent"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
+  </radialGradient>
+  <rect width="480" height="960" fill="url(#vig2)"/>
+
+  <!-- White prismatic border lines left -->
+  <rect x="0" y="0" width="4" height="960" fill="url(#prismLeft)" opacity="0.5"/>
+
+  <defs>
+    <linearGradient id="prismLeft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff2442"/>
+      <stop offset="16%" stop-color="#ff7a00"/>
+      <stop offset="32%" stop-color="#ffd600"/>
+      <stop offset="48%" stop-color="#00d68f"/>
+      <stop offset="64%" stop-color="#00c8e0"/>
+      <stop offset="80%" stop-color="#1a6fff"/>
+      <stop offset="100%" stop-color="#c020ff"/>
+    </linearGradient>
+    <linearGradient id="prismRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c020ff"/>
+      <stop offset="20%" stop-color="#1a6fff"/>
+      <stop offset="40%" stop-color="#00c8e0"/>
+      <stop offset="55%" stop-color="#00d68f"/>
+      <stop offset="70%" stop-color="#ffd600"/>
+      <stop offset="85%" stop-color="#ff7a00"/>
+      <stop offset="100%" stop-color="#ff2442"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="4" height="960" fill="url(#prismLeft)"/>
+  <rect x="476" y="0" width="4" height="960" fill="url(#prismRight)"/>
+</svg>

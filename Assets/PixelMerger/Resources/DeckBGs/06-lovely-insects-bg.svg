@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="960" viewBox="0 0 480 960">
+  <defs>
+    <radialGradient id="insect-sky" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#1a0533"/>
+      <stop offset="40%" stop-color="#2d0d4a"/>
+      <stop offset="70%" stop-color="#4a1570"/>
+      <stop offset="100%" stop-color="#7b3fa0"/>
+    </radialGradient>
+    <radialGradient id="moon-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f3e5ff"/>
+      <stop offset="50%" stop-color="#ce93d8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="vig6" cx="50%" cy="50%" r="75%">
+      <stop offset="45%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#0a0015" stop-opacity="0.7"/>
+    </radialGradient>
+    <filter id="dewglow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="480" height="960" fill="url(#insect-sky)"/>
+
+  <!-- Moon -->
+  <circle cx="120" cy="140" r="80" fill="url(#moon-glow)"/>
+  <circle cx="120" cy="140" r="52" fill="#f3e5ff" opacity="0.95"/>
+  <circle cx="120" cy="140" r="46" fill="#ede7f6"/>
+  <!-- Moon craters -->
+  <circle cx="105" cy="128" r="7" fill="#d1c4e9" opacity="0.5"/>
+  <circle cx="130" cy="155" r="5" fill="#d1c4e9" opacity="0.4"/>
+  <circle cx="118" cy="148" r="9" fill="#d1c4e9" opacity="0.4"/>
+
+  <!-- Stars -->
+  <g fill="#e1bee7" opacity="0.6">
+    <circle cx="270" cy="50" r="2"/>
+    <circle cx="310" cy="30" r="1.5"/>
+    <circle cx="380" cy="70" r="2"/>
+    <circle cx="430" cy="45" r="1.5"/>
+    <circle cx="460" cy="110" r="2"/>
+    <circle cx="350" cy="120" r="1.5"/>
+    <circle cx="290" cy="140" r="2"/>
+    <circle cx="220" cy="90" r="1.5"/>
+    <circle cx="400" cy="170" r="2"/>
+    <circle cx="50" cy="220" r="1.5"/>
+    <circle cx="30" cy="300" r="2"/>
+    <circle cx="460" cy="280" r="1.5"/>
+    <circle cx="440" cy="350" r="2"/>
+    <circle cx="200" cy="210" r="1.5"/>
+    <circle cx="170" cy="270" r="2"/>
+  </g>
+
+  <!-- Sparkle stars -->
+  <g fill="#ffffff" opacity="0.9" filter="url(#dewglow)">
+    <path d="M340,80 L342,74 L344,80 L350,82 L344,84 L342,90 L340,84 L334,82Z"/>
+    <path d="M450,200 L451,196 L452,200 L456,201 L452,202 L451,206 L450,202 L446,201Z"/>
+    <path d="M60,350 L61,346 L62,350 L66,351 L62,352 L61,356 L60,352 L56,351Z"/>
+  </g>
+
+  <!-- Giant leaf background - monstera left -->
+  <g opacity="0.35" fill="#2d5a1a">
+    <path d="M-30,500 Q40,350 120,380 Q180,390 150,480 Q200,400 240,450 Q200,520 130,560 Q80,590 -30,600Z"/>
+  </g>
+
+  <!-- Tall grass silhouettes mid -->
+  <g fill="#1a3d0a" opacity="0.6">
+    <rect x="10" y="650" width="6" height="200" rx="3" transform="rotate(-5,13,750)"/>
+    <rect x="25" y="630" width="5" height="220" rx="2.5" transform="rotate(3,27,740)"/>
+    <rect x="40" y="660" width="6" height="190" rx="3" transform="rotate(-8,43,755)"/>
+    <rect x="55" y="640" width="5" height="210" rx="2.5" transform="rotate(6,57,745)"/>
+    <rect x="420" y="650" width="6" height="200" rx="3" transform="rotate(5,423,750)"/>
+    <rect x="435" y="630" width="5" height="220" rx="2.5" transform="rotate(-3,437,740)"/>
+    <rect x="450" y="660" width="6" height="190" rx="3" transform="rotate(8,453,755)"/>
+    <rect x="465" y="640" width="5" height="210" rx="2.5" transform="rotate(-6,467,745)"/>
+  </g>
+
+  <!-- Tall flower stalks -->
+  <g opacity="0.75">
+    <!-- Lavender left -->
+    <rect x="80" y="580" width="5" height="260" rx="2" fill="#2d5a1a"/>
+    <ellipse cx="82" cy="576" rx="8" ry="20" fill="#9575cd"/>
+    <ellipse cx="76" cy="590" rx="6" ry="15" fill="#7e57c2"/>
+    <ellipse cx="88" cy="592" rx="6" ry="14" fill="#9575cd"/>
+    <!-- Lavender right -->
+    <rect x="398" y="590" width="5" height="250" rx="2" fill="#2d5a1a"/>
+    <ellipse cx="400" cy="586" rx="8" ry="20" fill="#9575cd"/>
+    <ellipse cx="394" cy="600" rx="6" ry="15" fill="#7e57c2"/>
+    <ellipse cx="406" cy="602" rx="6" ry="14" fill="#9575cd"/>
+    <!-- Wild flower center -->
+    <rect x="200" y="600" width="5" height="240" rx="2" fill="#2d5a1a"/>
+    <circle cx="202" cy="594" r="12" fill="#f48fb1"/>
+    <circle cx="192" cy="590" r="8" fill="#f48fb1"/>
+    <circle cx="212" cy="590" r="8" fill="#f06292"/>
+    <circle cx="202" cy="582" r="8" fill="#f48fb1"/>
+    <circle cx="202" cy="594" r="5" fill="#ffff00"/>
+  </g>
+
+  <!-- Large dewy leaves foreground -->
+  <!-- Leaf 1 left -->
+  <g opacity="0.8">
+    <path d="M0,780 Q60,700 130,750 Q100,820 30,840Z" fill="#1e5c0a"/>
+    <path d="M0,780 Q60,700 130,750" stroke="#2d8a18" stroke-width="1.5" fill="none"/>
+    <!-- Vein -->
+    <line x1="0" y1="780" x2="80" y2="730" stroke="#2d8a18" stroke-width="0.8" opacity="0.6"/>
+  </g>
+  <!-- Leaf 2 right -->
+  <g opacity="0.8">
+    <path d="M480,760 Q420,680 350,730 Q380,800 450,820Z" fill="#1e5c0a"/>
+    <path d="M480,760 Q420,680 350,730" stroke="#2d8a18" stroke-width="1.5" fill="none"/>
+    <line x1="480" y1="760" x2="400" y2="710" stroke="#2d8a18" stroke-width="0.8" opacity="0.6"/>
+  </g>
+  <!-- Giant low leaf center -->
+  <path d="M120,900 Q240,820 360,900 Q300,960 180,960Z" fill="#256b14" opacity="0.7"/>
+  <path d="M120,900 Q240,820 360,900" stroke="#3d9e28" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+  <!-- Dew drops on leaves -->
+  <g filter="url(#dewglow)">
+    <circle cx="90" cy="760" r="4" fill="#c5e8ff" opacity="0.8"/>
+    <circle cx="105" cy="748" r="3" fill="#e1f5fe" opacity="0.7"/>
+    <circle cx="390" cy="745" r="4" fill="#c5e8ff" opacity="0.8"/>
+    <circle cx="375" cy="758" r="3" fill="#e1f5fe" opacity="0.7"/>
+    <circle cx="200" cy="850" r="4" fill="#c5e8ff" opacity="0.8"/>
+    <circle cx="240" cy="840" r="3" fill="#e1f5fe" opacity="0.7"/>
+    <circle cx="280" cy="855" r="4" fill="#c5e8ff" opacity="0.8"/>
+  </g>
+
+  <!-- Glowing fireflies -->
+  <g filter="url(#dewglow)" opacity="0.85">
+    <circle cx="160" cy="450" r="4" fill="#ccff00"/>
+    <circle cx="330" cy="480" r="3.5" fill="#ccff00"/>
+    <circle cx="80" cy="550" r="4" fill="#ccff00"/>
+    <circle cx="410" cy="520" r="3.5" fill="#ccff00"/>
+    <circle cx="220" cy="510" r="4" fill="#aaff00"/>
+    <circle cx="350" cy="560" r="3" fill="#ccff00"/>
+    <circle cx="130" cy="620" r="3.5" fill="#ccff00"/>
+    <circle cx="380" cy="600" r="4" fill="#aaff00"/>
+    <circle cx="260" cy="640" r="3" fill="#ccff00"/>
+    <circle cx="50" cy="680" r="3.5" fill="#ccff00"/>
+    <circle cx="440" cy="660" r="4" fill="#aaff00"/>
+  </g>
+  <!-- Firefly inner bright dots -->
+  <g opacity="0.95">
+    <circle cx="160" cy="450" r="1.5" fill="#ffffff"/>
+    <circle cx="330" cy="480" r="1.2" fill="#ffffff"/>
+    <circle cx="80" cy="550" r="1.5" fill="#ffffff"/>
+    <circle cx="410" cy="520" r="1.2" fill="#ffffff"/>
+    <circle cx="220" cy="510" r="1.5" fill="#ffffff"/>
+    <circle cx="350" cy="560" r="1.2" fill="#ffffff"/>
+    <circle cx="130" cy="620" r="1.5" fill="#ffffff"/>
+    <circle cx="380" cy="600" r="1.5" fill="#ffffff"/>
+    <circle cx="260" cy="640" r="1.2" fill="#ffffff"/>
+    <circle cx="50" cy="680" r="1.5" fill="#ffffff"/>
+    <circle cx="440" cy="660" r="1.5" fill="#ffffff"/>
+  </g>
+
+  <!-- Ground mist -->
+  <ellipse cx="240" cy="900" rx="300" ry="70" fill="#9b59b6" opacity="0.12"/>
+  <ellipse cx="240" cy="930" rx="280" ry="55" fill="#7b2fbe" opacity="0.1"/>
+
+  <!-- Ground -->
+  <rect x="0" y="880" width="480" height="80" fill="#0d1a08" opacity="0.9"/>
+  <rect x="0" y="920" width="480" height="40" fill="#0a1206" opacity="0.95"/>
+
+  <rect width="480" height="960" fill="url(#vig6)"/>
+
+  <!-- Purple glow border -->
+  <rect x="0" y="0" width="480" height="3" fill="#9b59b6" opacity="0.6"/>
+  <rect x="0" y="957" width="480" height="3" fill="#7b2fbe" opacity="0.6"/>
+</svg>

@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="960" viewBox="0 0 480 960">
+  <defs>
+    <linearGradient id="plane-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#001433"/>
+      <stop offset="25%" stop-color="#003366"/>
+      <stop offset="55%" stop-color="#1565c0"/>
+      <stop offset="80%" stop-color="#42a5f5"/>
+      <stop offset="100%" stop-color="#90caf9"/>
+    </linearGradient>
+    <radialGradient id="vig9" cx="50%" cy="50%" r="75%">
+      <stop offset="40%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#000822" stop-opacity="0.55"/>
+    </radialGradient>
+    <filter id="contrail-blur">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+    <filter id="cloud-blur">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- Sky gradient - very deep up top to bright at horizon -->
+  <rect width="480" height="960" fill="url(#plane-sky)"/>
+
+  <!-- Stars at top -->
+  <g fill="#ffffff" opacity="0.4">
+    <circle cx="30" cy="30" r="1.5"/>
+    <circle cx="100" cy="15" r="1"/>
+    <circle cx="180" cy="40" r="1.5"/>
+    <circle cx="260" cy="10" r="1"/>
+    <circle cx="360" cy="35" r="1.5"/>
+    <circle cx="440" cy="20" r="1"/>
+    <circle cx="70" cy="80" r="1"/>
+    <circle cx="220" cy="70" r="1.5"/>
+    <circle cx="400" cy="60" r="1"/>
+    <circle cx="460" cy="100" r="1.5"/>
+  </g>
+
+  <!-- Sun upper right -->
+  <circle cx="420" cy="120" r="45" fill="#fffde7" opacity="0.15"/>
+  <circle cx="420" cy="120" r="32" fill="#fff9c4" opacity="0.7"/>
+  <circle cx="420" cy="120" r="24" fill="#fff176" opacity="0.9"/>
+
+  <!-- Contrails from planes -->
+  <!-- Contrail 1 - diagonal left to right -->
+  <g filter="url(#contrail-blur)" opacity="0.45">
+    <line x1="-20" y1="180" x2="500" y2="80" stroke="#ffffff" stroke-width="6"/>
+  </g>
+  <line x1="-20" y1="180" x2="500" y2="80" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Contrail 2 -->
+  <g filter="url(#contrail-blur)" opacity="0.35">
+    <line x1="-20" y1="250" x2="500" y2="180" stroke="#e3f2fd" stroke-width="5"/>
+  </g>
+  <line x1="-20" y1="250" x2="500" y2="180" stroke="#e3f2fd" stroke-width="1.2" opacity="0.6"/>
+
+  <!-- Contrail 3 opposite direction -->
+  <g filter="url(#contrail-blur)" opacity="0.3">
+    <line x1="500" y1="350" x2="-20" y2="260" stroke="#ffffff" stroke-width="4"/>
+  </g>
+  <line x1="500" y1="350" x2="-20" y2="260" stroke="#ffffff" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Contrail 4 steeper -->
+  <g filter="url(#contrail-blur)" opacity="0.25">
+    <line x1="100" y1="-20" x2="380" y2="500" stroke="#bbdefb" stroke-width="4"/>
+  </g>
+  <line x1="100" y1="-20" x2="380" y2="500" stroke="#bbdefb" stroke-width="1" opacity="0.45"/>
+
+  <!-- Contrail cross 5 -->
+  <g filter="url(#contrail-blur)" opacity="0.2">
+    <line x1="380" y1="-20" x2="100" y2="400" stroke="#e3f2fd" stroke-width="3"/>
+  </g>
+
+  <!-- Tiny plane silhouettes on contrails -->
+  <!-- Plane 1 top left on contrail 1 -->
+  <g transform="translate(30,172) rotate(-11)">
+    <rect x="-12" y="-3" width="24" height="5" rx="2" fill="#ffffff" opacity="0.9"/>
+    <polygon points="12,-3 22,0 12,3" fill="#ffffff" opacity="0.9"/>
+    <rect x="-2" y="-9" width="15" height="3" rx="1" fill="#ffffff" opacity="0.9"/>
+    <rect x="2" y="4" width="8" height="2" rx="1" fill="#ffffff" opacity="0.9"/>
+  </g>
+  <!-- Plane 2 right on contrail 2 -->
+  <g transform="translate(440,186) rotate(-8)">
+    <rect x="-10" y="-2.5" width="20" height="4" rx="1.5" fill="#e3f2fd" opacity="0.8"/>
+    <polygon points="10,-2.5 18,0 10,2.5" fill="#e3f2fd" opacity="0.8"/>
+    <rect x="-1" y="-7" width="13" height="2.5" rx="1" fill="#e3f2fd" opacity="0.8"/>
+    <rect x="2" y="3" width="7" height="2" rx="1" fill="#e3f2fd" opacity="0.8"/>
+  </g>
+  <!-- Plane 3 going opposite -->
+  <g transform="translate(460,355) rotate(172)">
+    <rect x="-10" y="-2.5" width="20" height="4" rx="1.5" fill="#bbdefb" opacity="0.75"/>
+    <polygon points="10,-2.5 18,0 10,2.5" fill="#bbdefb" opacity="0.75"/>
+    <rect x="-1" y="-7" width="13" height="2.5" rx="1" fill="#bbdefb" opacity="0.75"/>
+  </g>
+
+  <!-- Atmospheric haze band -->
+  <rect x="0" y="550" width="480" height="80" fill="#42a5f5" opacity="0.2"/>
+
+  <!-- Cloud layer 1 (high cirrus) -->
+  <g filter="url(#cloud-blur)" opacity="0.35">
+    <ellipse cx="60" cy="440" rx="120" ry="18"/>
+    <ellipse cx="200" cy="420" rx="100" ry="14"/>
+    <ellipse cx="370" cy="455" rx="110" ry="16"/>
+    <ellipse cx="460" cy="430" rx="80" ry="12"/>
+  </g>
+  <g fill="#ffffff" opacity="0.35">
+    <ellipse cx="60" cy="440" rx="120" ry="12"/>
+    <ellipse cx="200" cy="420" rx="100" ry="9"/>
+    <ellipse cx="370" cy="455" rx="110" ry="10"/>
+    <ellipse cx="460" cy="430" rx="80" ry="8"/>
+  </g>
+
+  <!-- Cloud layer 2 (cumulus mid) -->
+  <g fill="#e3f2fd" opacity="0.75">
+    <ellipse cx="80" cy="600" rx="90" ry="40"/>
+    <ellipse cx="130" cy="578" rx="70" ry="35"/>
+    <ellipse cx="50" cy="585" rx="60" ry="32"/>
+    <ellipse cx="390" cy="590" rx="85" ry="38"/>
+    <ellipse cx="440" cy="568" rx="65" ry="32"/>
+    <ellipse cx="360" cy="575" rx="55" ry="28"/>
+    <ellipse cx="240" cy="620" rx="75" ry="35"/>
+    <ellipse cx="280" cy="600" rx="60" ry="28"/>
+    <ellipse cx="205" cy="605" rx="55" ry="30"/>
+  </g>
+
+  <!-- Big cloud layer 3 (below, thick) -->
+  <g fill="#ffffff" opacity="0.85">
+    <ellipse cx="80" cy="720" rx="120" ry="55"/>
+    <ellipse cx="155" cy="695" rx="100" ry="48"/>
+    <ellipse cx="40" cy="710" rx="80" ry="42"/>
+    <ellipse cx="240" cy="730" rx="130" ry="60"/>
+    <ellipse cx="310" cy="705" rx="105" ry="50"/>
+    <ellipse cx="180" cy="715" rx="90" ry="45"/>
+    <ellipse cx="400" cy="720" rx="120" ry="55"/>
+    <ellipse cx="460" cy="700" rx="95" ry="45"/>
+    <ellipse cx="360" cy="705" rx="85" ry="42"/>
+    <ellipse cx="120" cy="760" rx="100" ry="45"/>
+    <ellipse cx="360" cy="755" rx="110" ry="48"/>
+    <ellipse cx="240" cy="775" rx="130" ry="52"/>
+  </g>
+
+  <!-- Cloud underside shadow -->
+  <g fill="#bbdefb" opacity="0.5">
+    <ellipse cx="80" cy="760" rx="115" ry="25"/>
+    <ellipse cx="240" cy="785" rx="125" ry="28"/>
+    <ellipse cx="400" cy="760" rx="115" ry="25"/>
+  </g>
+
+  <!-- Below cloud - ground view from above (green/brown earth) -->
+  <rect x="0" y="820" width="480" height="140" fill="#4a7a28" opacity="0.85"/>
+  <!-- Fields patterns from above -->
+  <g opacity="0.5">
+    <rect x="0" y="820" width="80" height="50" fill="#5a9e38"/>
+    <rect x="80" y="820" width="70" height="50" fill="#3d6e28"/>
+    <rect x="150" y="820" width="90" height="50" fill="#6ab040"/>
+    <rect x="240" y="820" width="60" height="50" fill="#3d6e28"/>
+    <rect x="300" y="820" width="100" height="50" fill="#5a9e38"/>
+    <rect x="400" y="820" width="80" height="50" fill="#4a8a30"/>
+    <rect x="0" y="870" width="90" height="50" fill="#c8a064"/>
+    <rect x="90" y="870" width="70" height="50" fill="#5a9e38"/>
+    <rect x="160" y="870" width="100" height="50" fill="#3d6e28"/>
+    <rect x="260" y="870" width="80" height="50" fill="#c8a064"/>
+    <rect x="340" y="870" width="70" height="50" fill="#5a9e38"/>
+    <rect x="410" y="870" width="70" height="50" fill="#3d6e28"/>
+    <rect x="0" y="920" width="120" height="40" fill="#4a8a30"/>
+    <rect x="120" y="920" width="80" height="40" fill="#c8a064"/>
+    <rect x="200" y="920" width="100" height="40" fill="#5a9e38"/>
+    <rect x="300" y="920" width="90" height="40" fill="#3d6e28"/>
+    <rect x="390" y="920" width="90" height="40" fill="#c8a064"/>
+  </g>
+  <!-- Rivers from above -->
+  <g fill="#42a5f5" opacity="0.45">
+    <path d="M100,820 Q130,870 110,960" stroke="#42a5f5" stroke-width="6" fill="none"/>
+    <path d="M320,820 Q300,880 330,960" stroke="#42a5f5" stroke-width="5" fill="none"/>
+  </g>
+
+  <!-- Altitude meter ticks right edge -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.2">
+    <line x1="465" y1="100" x2="478" y2="100"/>
+    <line x1="468" y1="150" x2="478" y2="150"/>
+    <line x1="465" y1="200" x2="478" y2="200"/>
+    <line x1="468" y1="250" x2="478" y2="250"/>
+    <line x1="465" y1="300" x2="478" y2="300"/>
+    <line x1="468" y1="350" x2="478" y2="350"/>
+    <line x1="465" y1="400" x2="478" y2="400"/>
+  </g>
+  <g font-family="'Courier New', monospace" font-size="9" fill="#ffffff" opacity="0.3">
+    <text x="450" y="103" text-anchor="end">35K</text>
+    <text x="450" y="203" text-anchor="end">30K</text>
+    <text x="450" y="303" text-anchor="end">25K</text>
+    <text x="450" y="403" text-anchor="end">20K</text>
+  </g>
+
+  <rect width="480" height="960" fill="url(#vig9)"/>
+
+  <!-- Aviation blue border -->
+  <rect x="0" y="0" width="480" height="3" fill="#1565c0" opacity="0.7"/>
+  <rect x="0" y="957" width="480" height="3" fill="#42a5f5" opacity="0.7"/>
+  <rect x="0" y="0" width="3" height="960" fill="#1565c0" opacity="0.5"/>
+  <rect x="477" y="0" width="3" height="960" fill="#1565c0" opacity="0.5"/>
+</svg>

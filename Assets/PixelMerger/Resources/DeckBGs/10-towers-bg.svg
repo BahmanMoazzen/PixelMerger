@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="960" viewBox="0 0 480 960">
+  <defs>
+    <linearGradient id="tower-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00040a"/>
+      <stop offset="30%" stop-color="#000d1a"/>
+      <stop offset="65%" stop-color="#001a33"/>
+      <stop offset="100%" stop-color="#002244"/>
+    </linearGradient>
+    <radialGradient id="city-glow" cx="50%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#ff6600" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="vig10" cx="50%" cy="50%" r="75%">
+      <stop offset="40%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+    </radialGradient>
+    <filter id="glow10">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="480" height="960" fill="url(#tower-sky)"/>
+
+  <!-- City ambient glow from below -->
+  <rect width="480" height="960" fill="url(#city-glow)"/>
+
+  <!-- Stars -->
+  <g fill="#ffffff" opacity="0.35">
+    <circle cx="25" cy="20" r="1.5"/>
+    <circle cx="80" cy="10" r="1"/>
+    <circle cx="150" cy="30" r="1.5"/>
+    <circle cx="220" cy="8" r="1"/>
+    <circle cx="290" cy="25" r="1.5"/>
+    <circle cx="370" cy="12" r="1"/>
+    <circle cx="440" cy="28" r="1.5"/>
+    <circle cx="60" cy="60" r="1"/>
+    <circle cx="130" cy="75" r="1.5"/>
+    <circle cx="200" cy="55" r="1"/>
+    <circle cx="310" cy="68" r="1.5"/>
+    <circle cx="420" cy="50" r="1"/>
+    <circle cx="470" cy="80" r="1.5"/>
+    <circle cx="40" cy="120" r="1"/>
+    <circle cx="170" cy="110" r="1.5"/>
+    <circle cx="350" cy="90" r="1"/>
+  </g>
+
+  <!-- Moon -->
+  <circle cx="60" cy="80" r="38" fill="#fffde7" opacity="0.08"/>
+  <circle cx="60" cy="80" r="26" fill="#fffde7" opacity="0.7"/>
+  <circle cx="60" cy="80" r="22" fill="#fff9c4" opacity="0.9"/>
+
+  <!-- Taipei 101 silhouette - main tower center back -->
+  <g opacity="0.9">
+    <!-- Base floors -->
+    <rect x="198" y="440" width="84" height="480" fill="#0d1a2a"/>
+    <!-- Section modules (8 segments like real Taipei 101) -->
+    <rect x="202" y="430" width="76" height="52" rx="3" fill="#0d1a2a"/>
+    <rect x="206" y="380" width="68" height="52" rx="3" fill="#0d1a2a"/>
+    <rect x="210" y="332" width="60" height="50" rx="3" fill="#0d1a2a"/>
+    <rect x="214" y="286" width="52" height="48" rx="3" fill="#0d1a2a"/>
+    <rect x="218" y="244" width="44" height="44" rx="3" fill="#0d1a2a"/>
+    <rect x="222" y="204" width="36" height="42" rx="3" fill="#0d1a2a"/>
+    <rect x="226" y="168" width="28" height="38" rx="3" fill="#0d1a2a"/>
+    <rect x="228" y="136" width="24" height="34" rx="3" fill="#0d1a2a"/>
+    <!-- Spire -->
+    <rect x="237" y="80" width="6" height="56" fill="#0d1a2a"/>
+    <polygon points="240,60 244,80 236,80" fill="#0d1a2a"/>
+    <!-- Antenna tip light -->
+    <circle cx="240" cy="58" r="3" fill="#ff4444" opacity="0.9" filter="url(#glow10)"/>
+    <!-- Module rim lights (iconic) -->
+    <rect x="202" y="479" width="76" height="3" fill="#00ccff" opacity="0.45"/>
+    <rect x="206" y="429" width="68" height="3" fill="#00ccff" opacity="0.4"/>
+    <rect x="210" y="379" width="60" height="3" fill="#00ccff" opacity="0.4"/>
+    <rect x="214" y="330" width="52" height="3" fill="#00ccff" opacity="0.35"/>
+    <rect x="218" y="284" width="44" height="3" fill="#00ccff" opacity="0.35"/>
+    <rect x="222" y="242" width="36" height="3" fill="#00ccff" opacity="0.3"/>
+    <rect x="226" y="202" width="28" height="3" fill="#00ccff" opacity="0.3"/>
+    <rect x="228" y="166" width="24" height="3" fill="#00ccff" opacity="0.3"/>
+    <!-- Observation deck light -->
+    <rect x="228" y="162" width="24" height="8" fill="#00ccff" opacity="0.25"/>
+    <!-- Floor windows right side -->
+    <g fill="#ffe082" opacity="0.35">
+      <rect x="260" y="530" width="6" height="5"/>
+      <rect x="260" y="548" width="6" height="5"/>
+      <rect x="260" y="566" width="6" height="5"/>
+      <rect x="268" y="540" width="5" height="5"/>
+      <rect x="268" y="560" width="5" height="5"/>
+      <rect x="260" y="620" width="6" height="5"/>
+      <rect x="268" y="632" width="5" height="5"/>
+      <rect x="260" y="700" width="6" height="5"/>
+      <rect x="268" y="715" width="5" height="5"/>
+    </g>
+    <g fill="#ffe082" opacity="0.25">
+      <rect x="212" y="530" width="6" height="5"/>
+      <rect x="212" y="560" width="6" height="5"/>
+      <rect x="204" y="548" width="5" height="5"/>
+      <rect x="212" y="640" width="6" height="5"/>
+      <rect x="212" y="720" width="6" height="5"/>
+    </g>
+  </g>
+
+  <!-- Eiffel Tower silhouette left -->
+  <g opacity="0.7">
+    <polygon points="50,480 80,480 85,400 45,400" fill="#0d1a2a"/>
+    <polygon points="52,400 78,400 72,320 58,320" fill="#0d1a2a"/>
+    <polygon points="55,320 75,320 69,240 61,240" fill="#0d1a2a"/>
+    <polygon points="58,240 72,240 67,180 63,180" fill="#0d1a2a"/>
+    <rect x="63" y="100" width="4" height="80" fill="#0d1a2a"/>
+    <polygon points="65,90 68,100 62,100" fill="#0d1a2a"/>
+    <!-- Arch bottom -->
+    <rect x="50" y="472" width="14" height="12" rx="7" fill="#0d1a2a"/>
+    <rect x="66" y="472" width="14" height="12" rx="7" fill="#0d1a2a"/>
+    <!-- Eiffel lights -->
+    <circle cx="65" cy="92" r="2" fill="#ffe082" opacity="0.8"/>
+    <rect x="51" y="398" width="28" height="2" fill="#ffe082" opacity="0.3"/>
+    <rect x="55" y="318" width="20" height="2" fill="#ffe082" opacity="0.28"/>
+    <rect x="59" y="238" width="12" height="2" fill="#ffe082" opacity="0.25"/>
+  </g>
+
+  <!-- Burj Khalifa silhouette right -->
+  <g opacity="0.7">
+    <!-- Base wings -->
+    <polygon points="380,500 440,500 438,440 382,440" fill="#0d1a2a"/>
+    <!-- Stepped tower -->
+    <polygon points="392,440 428,440 425,370 395,370" fill="#0d1a2a"/>
+    <polygon points="398,370 422,370 419,300 401,300" fill="#0d1a2a"/>
+    <polygon points="403,300 417,300 415,230 405,230" fill="#0d1a2a"/>
+    <polygon points="406,230 414,230 413,165 407,165" fill="#0d1a2a"/>
+    <polygon points="408,165 412,165 411,105 409,105" fill="#0d1a2a"/>
+    <rect x="409.5" y="50" width="1" height="55" fill="#0d1a2a"/>
+    <!-- Burj spire tip -->
+    <polygon points="410,40 412,50 408,50" fill="#0d1a2a"/>
+    <circle cx="410" cy="38" r="2" fill="#ff4444" opacity="0.8" filter="url(#glow10)"/>
+    <!-- Burj window rows -->
+    <g fill="#ffe082" opacity="0.3">
+      <rect x="382" y="450" width="56" height="3"/>
+      <rect x="382" y="465" width="56" height="3"/>
+      <rect x="382" y="480" width="56" height="3"/>
+      <rect x="395" y="390" width="30" height="2"/>
+      <rect x="395" y="408" width="30" height="2"/>
+      <rect x="400" y="325" width="20" height="2"/>
+      <rect x="400" y="340" width="20" height="2"/>
+      <rect x="404" y="255" width="12" height="2"/>
+      <rect x="404" y="270" width="12" height="2"/>
+    </g>
+    <!-- Burj sky bridge -->
+    <rect x="383" y="440" width="54" height="4" fill="#00ccff" opacity="0.3"/>
+  </g>
+
+  <!-- CN Tower silhouette far left -->
+  <g opacity="0.5">
+    <rect x="18" y="480" width="14" height="440" fill="#0d1a2a"/>
+    <!-- Observation pod -->
+    <ellipse cx="25" cy="400" rx="18" ry="10" fill="#0d1a2a"/>
+    <rect x="22" y="300" width="6" height="100" fill="#0d1a2a"/>
+    <polygon points="25,250 28,300 22,300" fill="#0d1a2a"/>
+    <circle cx="25" cy="248" r="2" fill="#ff4444" opacity="0.7"/>
+    <rect x="8" y="395" width="34" height="20" rx="3" fill="#0d1a2a"/>
+    <!-- Pod light ring -->
+    <rect x="8" y="394" width="34" height="3" fill="#00ccff" opacity="0.3"/>
+  </g>
+
+  <!-- Empire State far right -->
+  <g opacity="0.5">
+    <rect x="448" y="500" width="28" height="460" fill="#0d1a2a"/>
+    <rect x="452" y="450" width="20" height="54" fill="#0d1a2a"/>
+    <rect x="455" y="390" width="14" height="62" fill="#0d1a2a"/>
+    <rect x="457" y="330" width="10" height="62" fill="#0d1a2a"/>
+    <rect x="459" y="260" width="6" height="72" fill="#0d1a2a"/>
+    <rect x="460" y="180" width="4" height="82" fill="#0d1a2a"/>
+    <polygon points="462,150 464,180 460,180" fill="#0d1a2a"/>
+    <rect x="461" y="110" width="2" height="40" fill="#0d1a2a"/>
+    <circle cx="462" cy="108" r="2" fill="#ff4444" opacity="0.7"/>
+    <!-- Empire windows -->
+    <g fill="#ffe082" opacity="0.3">
+      <rect x="449" y="510" width="25" height="2"/>
+      <rect x="449" y="530" width="25" height="2"/>
+      <rect x="449" y="550" width="25" height="2"/>
+      <rect x="449" y="600" width="25" height="2"/>
+      <rect x="449" y="650" width="25" height="2"/>
+    </g>
+  </g>
+
+  <!-- Background city buildings (generic skyline) -->
+  <g fill="#060e1a" opacity="0.85">
+    <!-- Various height buildings behind main towers -->
+    <rect x="95" y="700" width="35" height="260"/>
+    <rect x="100" y="680" width="25" height="24"/>
+    <rect x="135" y="720" width="30" height="240"/>
+    <rect x="170" y="740" width="25" height="220"/>
+    <rect x="280" y="730" width="28" height="230"/>
+    <rect x="310" y="710" width="32" height="250"/>
+    <rect x="342" y="750" width="24" height="210"/>
+    <rect x="115" y="760" width="20" height="200"/>
+    <rect x="328" y="760" width="18" height="200"/>
+    <!-- Lit windows in background buildings -->
+    <rect x="98" y="710" width="5" height="4" fill="#ffe082" opacity="0.4"/>
+    <rect x="108" y="720" width="5" height="4" fill="#ff9800" opacity="0.35"/>
+    <rect x="98" y="730" width="5" height="4" fill="#ffe082" opacity="0.4"/>
+    <rect x="108" y="740" width="5" height="4" fill="#ffe082" opacity="0.35"/>
+    <rect x="139" y="730" width="5" height="4" fill="#ff9800" opacity="0.35"/>
+    <rect x="147" y="745" width="5" height="4" fill="#ffe082" opacity="0.4"/>
+    <rect x="283" y="740" width="5" height="4" fill="#ffe082" opacity="0.4"/>
+    <rect x="291" y="752" width="5" height="4" fill="#ff9800" opacity="0.35"/>
+    <rect x="315" y="720" width="5" height="4" fill="#ffe082" opacity="0.4"/>
+    <rect x="323" y="735" width="5" height="4" fill="#ffe082" opacity="0.35"/>
+    <rect x="347" y="760" width="5" height="4" fill="#ff9800" opacity="0.35"/>
+  </g>
+
+  <!-- Reflection on water below -->
+  <rect x="0" y="880" width="480" height="80" fill="#000814" opacity="0.95"/>
+  <!-- Shimmering water reflection -->
+  <g opacity="0.3">
+    <!-- Taipei 101 reflection -->
+    <rect x="235" y="885" width="10" height="60" fill="#00ccff"/>
+    <!-- Other tower reflections -->
+    <rect x="62" y="885" width="4" height="45" fill="#ffe082"/>
+    <rect x="408" y="885" width="4" height="40" fill="#ffe082"/>
+    <!-- City lights reflection -->
+    <g fill="#ffe082" opacity="0.4">
+      <rect x="100" y="890" width="20" height="2"/>
+      <rect x="140" y="900" width="18" height="2"/>
+      <rect x="180" y="892" width="15" height="2"/>
+      <rect x="290" y="896" width="18" height="2"/>
+      <rect x="330" y="886" width="22" height="2"/>
+      <rect x="360" y="900" width="16" height="2"/>
+    </g>
+  </g>
+  <!-- Water ripple lines -->
+  <g stroke="#001533" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M0,900 Q120,895 240,900 Q360,905 480,900"/>
+    <path d="M0,915 Q120,910 240,916 Q360,922 480,916"/>
+    <path d="M0,930 Q120,924 240,930 Q360,936 480,930"/>
+  </g>
+
+  <!-- City haze / light pollution at horizon -->
+  <rect x="0" y="820" width="480" height="60" fill="#ff6600" opacity="0.08"/>
+  <rect x="0" y="840" width="480" height="40" fill="#ff9900" opacity="0.06"/>
+
+  <rect width="480" height="960" fill="url(#vig10)"/>
+
+  <!-- Cyan skyline border -->
+  <rect x="0" y="0" width="480" height="3" fill="#00ccff" opacity="0.5"/>
+  <rect x="0" y="957" width="480" height="3" fill="#00ccff" opacity="0.5"/>
+  <rect x="0" y="0" width="3" height="960" fill="#00ccff" opacity="0.4"/>
+  <rect x="477" y="0" width="3" height="960" fill="#00ccff" opacity="0.4"/>
+</svg>

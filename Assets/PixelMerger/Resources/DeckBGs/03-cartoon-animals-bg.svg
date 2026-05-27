@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="960" viewBox="0 0 480 960">
+  <defs>
+    <radialGradient id="skybg" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="60%" stop-color="#5BB8F5"/>
+      <stop offset="100%" stop-color="#3a9de0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFEE58"/>
+      <stop offset="100%" stop-color="#FFA726" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="480" height="960" fill="url(#skybg)"/>
+
+  <!-- Sun with rays -->
+  <circle cx="380" cy="110" r="55" fill="url(#sun)" opacity="0.9"/>
+  <circle cx="380" cy="110" r="40" fill="#FFEE58" opacity="0.95"/>
+  <g stroke="#FFEE58" stroke-width="3" opacity="0.6">
+    <line x1="380" y1="45" x2="380" y2="20"/>
+    <line x1="380" y1="175" x2="380" y2="200"/>
+    <line x1="315" y1="110" x2="290" y2="110"/>
+    <line x1="445" y1="110" x2="470" y2="110"/>
+    <line x1="334" y1="64" x2="316" y2="46"/>
+    <line x1="426" y1="156" x2="444" y2="174"/>
+    <line x1="426" y1="64" x2="444" y2="46"/>
+    <line x1="334" y1="156" x2="316" y2="174"/>
+  </g>
+
+  <!-- Clouds -->
+  <g fill="#ffffff" opacity="0.85">
+    <ellipse cx="80" cy="130" rx="55" ry="28"/>
+    <ellipse cx="120" cy="118" rx="40" ry="25"/>
+    <ellipse cx="50" cy="120" rx="35" ry="22"/>
+    <ellipse cx="280" cy="80" rx="50" ry="24"/>
+    <ellipse cx="318" cy="68" rx="38" ry="22"/>
+    <ellipse cx="250" cy="72" rx="32" ry="20"/>
+    <ellipse cx="100" cy="260" rx="45" ry="22"/>
+    <ellipse cx="135" cy="248" rx="35" ry="20"/>
+    <ellipse cx="75" cy="253" rx="30" ry="18"/>
+    <ellipse cx="370" cy="220" rx="48" ry="23"/>
+    <ellipse cx="408" cy="208" rx="36" ry="21"/>
+    <ellipse cx="342" cy="214" rx="32" ry="19"/>
+  </g>
+
+  <!-- Grass hills background -->
+  <ellipse cx="240" cy="830" rx="380" ry="200" fill="#5dbb63" opacity="0.5"/>
+  <ellipse cx="-50" cy="820" rx="300" ry="180" fill="#4caa58" opacity="0.6"/>
+  <ellipse cx="530" cy="840" rx="280" ry="170" fill="#4caa58" opacity="0.6"/>
+
+  <!-- Ground -->
+  <rect x="0" y="760" width="480" height="200" fill="#7ec850"/>
+  <rect x="0" y="820" width="480" height="140" fill="#5daa40"/>
+  <rect x="0" y="870" width="480" height="90" fill="#3d8a28"/>
+
+  <!-- Dirt path -->
+  <ellipse cx="240" cy="930" rx="100" ry="35" fill="#c8a064" opacity="0.5"/>
+
+  <!-- Cartoon trees left -->
+  <!-- Tree trunk left -->
+  <rect x="30" y="600" width="28" height="200" rx="10" fill="#8B5E3C"/>
+  <rect x="28" y="600" width="32" height="120" rx="12" fill="#9b6d45"/>
+  <!-- Tree foliage left - layered circles -->
+  <circle cx="44" cy="520" r="85" fill="#2d9e4f"/>
+  <circle cx="18" cy="560" r="65" fill="#3dae5f"/>
+  <circle cx="72" cy="555" r="68" fill="#35a055"/>
+  <circle cx="44" cy="490" r="60" fill="#45bb6f"/>
+  <!-- Highlight -->
+  <circle cx="30" cy="490" r="25" fill="#6dd88a" opacity="0.5"/>
+
+  <!-- Tree trunk right -->
+  <rect x="420" y="580" width="30" height="220" rx="10" fill="#8B5E3C"/>
+  <rect x="418" y="580" width="34" height="130" rx="12" fill="#9b6d45"/>
+  <!-- Tree foliage right -->
+  <circle cx="435" cy="500" r="88" fill="#1e8c40"/>
+  <circle cx="408" cy="538" r="68" fill="#2d9e4f"/>
+  <circle cx="462" cy="532" r="70" fill="#28975a"/>
+  <circle cx="435" cy="468" r="62" fill="#3dae6a"/>
+  <circle cx="418" cy="468" r="28" fill="#5dd080" opacity="0.4"/>
+
+  <!-- Cartoon bush foreground -->
+  <circle cx="50" cy="790" r="45" fill="#4a9e38"/>
+  <circle cx="30" cy="800" r="38" fill="#5aae48"/>
+  <circle cx="78" cy="795" r="40" fill="#3d8e2c"/>
+  <circle cx="430" cy="795" r="48" fill="#4a9e38"/>
+  <circle cx="460" cy="805" r="38" fill="#5aae48"/>
+  <circle cx="405" cy="800" r="42" fill="#3d8e2c"/>
+  <circle cx="200" cy="800" r="35" fill="#4a9e38"/>
+  <circle cx="175" cy="808" r="30" fill="#5aae48"/>
+  <circle cx="225" cy="808" r="32" fill="#3d8e2c"/>
+  <circle cx="290" cy="798" r="38" fill="#5aae48"/>
+  <circle cx="268" cy="808" r="32" fill="#4a9e38"/>
+  <circle cx="316" cy="808" r="30" fill="#3d8e2c"/>
+
+  <!-- Cartoon flowers -->
+  <g opacity="0.9">
+    <!-- flower 1 -->
+    <circle cx="120" cy="770" r="7" fill="#FF5722"/>
+    <circle cx="120" cy="758" r="5" fill="#FF9800"/>
+    <circle cx="128" cy="765" r="5" fill="#FF9800"/>
+    <circle cx="112" cy="765" r="5" fill="#FF9800"/>
+    <circle cx="125" cy="775" r="5" fill="#FF9800"/>
+    <circle cx="115" cy="775" r="5" fill="#FF9800"/>
+    <!-- flower 2 -->
+    <circle cx="350" cy="768" r="7" fill="#E91E63"/>
+    <circle cx="350" cy="756" r="5" fill="#F06292"/>
+    <circle cx="358" cy="763" r="5" fill="#F06292"/>
+    <circle cx="342" cy="763" r="5" fill="#F06292"/>
+    <circle cx="355" cy="773" r="5" fill="#F06292"/>
+    <circle cx="345" cy="773" r="5" fill="#F06292"/>
+    <!-- flower 3 -->
+    <circle cx="240" cy="775" r="6" fill="#FFEB3B"/>
+    <circle cx="240" cy="764" r="5" fill="#fff176"/>
+    <circle cx="248" cy="770" r="5" fill="#fff176"/>
+    <circle cx="232" cy="770" r="5" fill="#fff176"/>
+  </g>
+
+  <!-- Cartoon butterflies -->
+  <g opacity="0.85">
+    <ellipse cx="160" cy="320" rx="18" ry="10" fill="#FF6B9D" transform="rotate(-25,160,320)"/>
+    <ellipse cx="178" cy="318" rx="15" ry="8" fill="#FF6B9D" transform="rotate(20,178,318)"/>
+    <circle cx="169" cy="320" r="4" fill="#333"/>
+    <!-- antennae -->
+    <line x1="167" y1="316" x2="160" y2="308" stroke="#333" stroke-width="1.5"/>
+    <line x1="171" y1="316" x2="178" y2="308" stroke="#333" stroke-width="1.5"/>
+    <circle cx="160" cy="307" r="2" fill="#333"/>
+    <circle cx="178" cy="307" r="2" fill="#333"/>
+  </g>
+  <g opacity="0.8">
+    <ellipse cx="310" cy="380" rx="16" ry="9" fill="#64B5F6" transform="rotate(-20,310,380)"/>
+    <ellipse cx="326" cy="378" rx="13" ry="7" fill="#64B5F6" transform="rotate(18,326,378)"/>
+    <circle cx="318" cy="380" r="3.5" fill="#222"/>
+    <line x1="316" y1="376" x2="310" y2="369" stroke="#222" stroke-width="1.5"/>
+    <line x1="320" y1="376" x2="326" y2="369" stroke="#222" stroke-width="1.5"/>
+    <circle cx="310" cy="368" r="2" fill="#222"/>
+    <circle cx="326" cy="368" r="2" fill="#222"/>
+  </g>
+
+  <!-- Paw prints on ground -->
+  <g fill="#2d6e1c" opacity="0.35">
+    <ellipse cx="150" cy="860" rx="8" ry="7"/>
+    <circle cx="140" cy="850" r="4"/>
+    <circle cx="150" cy="848" r="4"/>
+    <circle cx="160" cy="850" r="4"/>
+    <ellipse cx="310" cy="875" rx="8" ry="7"/>
+    <circle cx="300" cy="865" r="4"/>
+    <circle cx="310" cy="863" r="4"/>
+    <circle cx="320" cy="865" r="4"/>
+  </g>
+
+  <!-- Vignette edges -->
+  <defs>
+    <radialGradient id="vig3" cx="50%" cy="50%" r="75%">
+      <stop offset="55%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.3"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="960" fill="url(#vig3)"/>
+</svg>
