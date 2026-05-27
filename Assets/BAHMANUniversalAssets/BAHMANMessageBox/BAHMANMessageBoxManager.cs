@@ -204,7 +204,10 @@ public class BAHMANMessageBoxManager : MonoBehaviour
     /// Shows the message sprite if you want to show an image with the message, otherwise it will be hidden
     /// </summary>
     [SerializeField] Image _MessageSprite;
-
+    /// <summary>
+    /// the container of the message sprite, it will be shown or hidden based on the message sprite availability
+    /// </summary>
+    [SerializeField] GameObject _MessageImageContainer;
     /// <summary>
     /// message panel to show or hide
     /// </summary>
@@ -292,12 +295,13 @@ public class BAHMANMessageBoxManager : MonoBehaviour
                     _MessageText.color = message._color;
                     if (message._sprite != null)
                     {
+                        _MessageImageContainer.SetActive(true);
                         _MessageSprite.sprite = message._sprite;
-                        _MessageSprite.gameObject.SetActive(true);
+                        
                     }
                     else
                     {
-                        _MessageSprite.gameObject.SetActive(false);
+                        _MessageImageContainer.SetActive(false);
                     }
                     yield return new WaitForSeconds(message._interval);
                     _MessagePanel.SetActive(false);

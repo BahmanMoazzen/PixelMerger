@@ -1293,6 +1293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _MessageText: {fileID: 7623819881179396370}
   _MessageSprite: {fileID: 5355094698804206880}
+  _MessageContainer: {fileID: 4803899029733830346}
   _MessagePanel: {fileID: 8586510740803346120}
   _DefaultHideIntervalTime: 1.5
   _DefaultColor: {r: 0.9294118, g: 0.9333334, b: 0.62352943, a: 1}
@@ -1354,7 +1355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5165082355575112520
 RectTransform:
   m_ObjectHideFlags: 0

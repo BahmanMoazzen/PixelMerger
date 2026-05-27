@@ -44,8 +44,9 @@ public class GameSettingInfo : ScriptableObject
         }
         set
         {
-            OnMusicChange?.Invoke(value);
+            
             PlayerPrefs.SetInt(MUSICTAG, A.Tools.BoolToInt(value));
+            OnMusicChange?.Invoke(value);
         }
     }
 
