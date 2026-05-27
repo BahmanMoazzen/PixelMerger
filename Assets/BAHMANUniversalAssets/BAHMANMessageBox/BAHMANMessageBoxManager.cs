@@ -229,6 +229,10 @@ public class BAHMANMessageBoxManager : MonoBehaviour
     /// message queue for storing data
     /// </summary>
     Queue<MessageStruct> _messageQueue;
+    /// <summary>
+    /// the animator of the message box
+    /// </summary>
+    [SerializeField] Animator _messageBoxAnimator;
 
 
     YesNoPannelController _yesNoController;
@@ -297,13 +301,16 @@ public class BAHMANMessageBoxManager : MonoBehaviour
                     {
                         _MessageImageContainer.SetActive(true);
                         _MessageSprite.sprite = message._sprite;
-                        
+
                     }
                     else
                     {
                         _MessageImageContainer.SetActive(false);
                     }
                     yield return new WaitForSeconds(message._interval);
+
+                    _messageBoxAnimator.Play("MessageHide");
+                    yield return new WaitForSeconds(0.5f);
                     _MessagePanel.SetActive(false);
                     _MessageText.text = string.Empty;
                 }

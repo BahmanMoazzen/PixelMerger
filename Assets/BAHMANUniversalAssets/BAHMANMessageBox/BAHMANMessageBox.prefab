@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _MessageText: {fileID: 7623819881179396370}
   _MessageSprite: {fileID: 5355094698804206880}
-  _MessageContainer: {fileID: 4803899029733830346}
+  _MessageImageContainer: {fileID: 4803899029733830346}
   _MessagePanel: {fileID: 8586510740803346120}
   _DefaultHideIntervalTime: 1.5
   _DefaultColor: {r: 0.9294118, g: 0.9333334, b: 0.62352943, a: 1}
@@ -2430,6 +2430,7 @@ GameObject:
   - component: {fileID: 1944194210201008476}
   - component: {fileID: 2382893932080469110}
   - component: {fileID: 3818244634388169369}
+  - component: {fileID: 6006070940527982709}
   m_Layer: 5
   m_Name: MessageBoxPanel
   m_TagString: Untagged
@@ -2518,6 +2519,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &6006070940527982709
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586510740803346120}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8847095747821361638
 GameObject:
   m_ObjectHideFlags: 0
