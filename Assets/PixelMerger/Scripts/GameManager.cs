@@ -398,7 +398,10 @@ public class GameManager : MonoBehaviour
         //DeadlineController.OnContactLatency += MergersController_OnContactLatency;
         //DeadlineController.OnResetLatency += MergersController_OnResetLatency;
     }
-
+    public void _ButtomClicked()
+    {
+        SoundManager._Instance._PlaySound(GameSounds.ButtomClicked);
+    }
     private void MergersController_OnContactLatencyExceed()
     {
         SoundManager._Instance._PlaySound(GameSounds.GameOver);
