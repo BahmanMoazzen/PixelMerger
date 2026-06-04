@@ -591,11 +591,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3393399636186304760, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
+    - {fileID: 2079898047186799033, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1332566807573705200, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1008019568}
+    - targetCorrespondingSourceObject: {fileID: 1332566807573705200, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1008019567}
   m_SourcePrefab: {fileID: 100100000, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
+--- !u!1 &1008019566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1332566807573705200, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
+  m_PrefabInstance: {fileID: 1008019565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1008019567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008019566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06567c21643c484479eecd061fab20f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicPlayerController
+  _messageInterval: 2.5
+--- !u!114 &1008019568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008019566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708cbcbac9f7d704793bda9acba6b230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BAHMANMusicBox
+  _stopPlayingOnUndefinedScenes: 1
+  _configRepository: {fileID: 11400000, guid: 3ff78de6479336341a0eac83930a87ae, type: 2}
 --- !u!1 &1280229138
 GameObject:
   m_ObjectHideFlags: 0
