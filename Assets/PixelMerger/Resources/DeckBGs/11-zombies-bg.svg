@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="960" viewBox="0 0 480 960">
+  <defs>
+    <radialGradient id="zombie-sky" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1a0000"/>
+      <stop offset="40%" stop-color="#0d0000"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="blood-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#cc0000"/>
+      <stop offset="50%" stop-color="#8b0000" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="fog-center" cx="50%" cy="60%" r="60%">
+      <stop offset="0%" stop-color="#1a0000" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="vig11" cx="50%" cy="50%" r="75%">
+      <stop offset="35%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
+    </radialGradient>
+    <filter id="blood-glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fog-blur">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="480" height="960" fill="url(#zombie-sky)"/>
+
+  <!-- Blood moon -->
+  <circle cx="240" cy="150" r="110" fill="url(#blood-moon)" opacity="0.6"/>
+  <circle cx="240" cy="150" r="72" fill="#8b0000" opacity="0.85"/>
+  <circle cx="240" cy="150" r="62" fill="#a00000" opacity="0.9"/>
+  <!-- Moon surface craters -->
+  <circle cx="220" cy="135" r="10" fill="#6d0000" opacity="0.6"/>
+  <circle cx="252" cy="165" r="7" fill="#6d0000" opacity="0.5"/>
+  <circle cx="235" cy="158" r="12" fill="#7a0000" opacity="0.55"/>
+  <circle cx="258" cy="132" r="8" fill="#6d0000" opacity="0.5"/>
+  <!-- Moon glow ring -->
+  <circle cx="240" cy="150" r="78" fill="none" stroke="#cc0000" stroke-width="3" opacity="0.5"/>
+  <circle cx="240" cy="150" r="90" fill="none" stroke="#880000" stroke-width="4" opacity="0.3"/>
+
+  <!-- Dark clouds -->
+  <g fill="#110000" opacity="0.85">
+    <ellipse cx="60" cy="200" rx="95" ry="38"/>
+    <ellipse cx="130" cy="182" rx="75" ry="32"/>
+    <ellipse cx="20" cy="188" rx="58" ry="28"/>
+    <ellipse cx="400" cy="210" rx="90" ry="36"/>
+    <ellipse cx="455" cy="192" rx="68" ry="30"/>
+    <ellipse cx="350" cy="198" rx="60" ry="26"/>
+    <ellipse cx="240" cy="60" rx="80" ry="32"/>
+    <ellipse cx="195" cy="48" rx="60" ry="26"/>
+    <ellipse cx="285" cy="52" rx="58" ry="24"/>
+  </g>
+  <!-- Reddish cloud undersides -->
+  <g fill="#330000" opacity="0.6">
+    <ellipse cx="60" cy="225" rx="90" ry="20"/>
+    <ellipse cx="400" cy="235" rx="85" ry="18"/>
+    <ellipse cx="240" cy="82" rx="75" ry="16"/>
+  </g>
+
+  <!-- Dead trees silhouettes -->
+  <!-- Dead tree left 1 -->
+  <g fill="#0d0000" opacity="0.95">
+    <rect x="25" y="350" width="14" height="400" rx="5"/>
+    <!-- Branches -->
+    <rect x="25" y="380" width="50" height="7" rx="3" transform="rotate(-25,25,380)"/>
+    <rect x="35" y="370" width="40" height="5" rx="2" transform="rotate(-25,35,370)"/>
+    <rect x="25" y="420" width="45" height="6" rx="3" transform="rotate(20,25,420)"/>
+    <rect x="33" y="450" width="35" height="5" rx="2" transform="rotate(15,33,450)"/>
+    <rect x="25" y="490" width="38" height="6" rx="3" transform="rotate(-30,25,490)"/>
+    <rect x="30" y="510" width="30" height="4" rx="2" transform="rotate(-20,30,510)"/>
+    <rect x="25" y="540" width="35" height="5" rx="3" transform="rotate(25,25,540)"/>
+    <!-- Twigs -->
+    <rect x="50" y="368" width="22" height="3" rx="1" transform="rotate(-40,50,368)"/>
+    <rect x="48" y="376" width="18" height="3" rx="1" transform="rotate(-55,48,376)"/>
+    <rect x="48" y="418" width="20" height="3" rx="1" transform="rotate(35,48,418)"/>
+    <rect x="46" y="438" width="16" height="3" rx="1" transform="rotate(50,46,438)"/>
+    <rect x="45" y="480" width="22" height="3" rx="1" transform="rotate(-42,45,480)"/>
+  </g>
+
+  <!-- Dead tree right 1 -->
+  <g fill="#0d0000" opacity="0.95">
+    <rect x="441" y="370" width="14" height="380" rx="5"/>
+    <rect x="441" y="400" width="48" height="7" rx="3" transform="rotate(22,441,400)"/>
+    <rect x="449" y="388" width="38" height="5" rx="2" transform="rotate(22,449,388)"/>
+    <rect x="441" y="440" width="44" height="6" rx="3" transform="rotate(-18,441,440)"/>
+    <rect x="447" y="468" width="34" height="5" rx="2" transform="rotate(-14,447,468)"/>
+    <rect x="441" y="505" width="36" height="6" rx="3" transform="rotate(28,441,505)"/>
+    <rect x="446" y="528" width="28" height="4" rx="2" transform="rotate(18,446,528)"/>
+    <rect x="441" y="555" width="33" height="5" rx="3" transform="rotate(-22,441,555)"/>
+    <rect x="462" y="388" width="20" height="3" rx="1" transform="rotate(38,462,388)"/>
+    <rect x="460" y="396" width="16" height="3" rx="1" transform="rotate(52,460,396)"/>
+    <rect x="462" y="435" width="20" height="3" rx="1" transform="rotate(-32,462,435)"/>
+    <rect x="458" y="453" width="16" height="3" rx="1" transform="rotate(-48,458,453)"/>
+  </g>
+
+  <!-- Dead tree back left smaller -->
+  <g fill="#0d0000" opacity="0.7">
+    <rect x="100" y="450" width="9" height="330" rx="3"/>
+    <rect x="100" y="470" width="35" height="5" rx="2" transform="rotate(-28,100,470)"/>
+    <rect x="100" y="510" width="30" height="4" rx="2" transform="rotate(22,100,510)"/>
+    <rect x="100" y="545" width="28" height="4" rx="2" transform="rotate(-20,100,545)"/>
+  </g>
+  <!-- Dead tree back right smaller -->
+  <g fill="#0d0000" opacity="0.7">
+    <rect x="371" y="440" width="9" height="340" rx="3"/>
+    <rect x="371" y="462" width="34" height="5" rx="2" transform="rotate(26,371,462)"/>
+    <rect x="371" y="500" width="30" height="4" rx="2" transform="rotate(-20,371,500)"/>
+    <rect x="371" y="534" width="26" height="4" rx="2" transform="rotate(18,371,534)"/>
+  </g>
+
+  <!-- Gravestones / tombstones -->
+  <!-- Gravestone 1 left -->
+  <g fill="#0a0000" opacity="0.9">
+    <rect x="55" y="680" width="50" height="70" rx="25" ry="5"/>
+    <rect x="55" y="720" width="50" height="50" rx="4"/>
+    <rect x="75" y="748" width="10" height="30" rx="2"/>
+    <rect x="58" y="758" width="44" height="8" rx="2"/>
+    <!-- RIP text -->
+    <text x="80" y="710" font-family="serif" font-size="12" fill="#330000" text-anchor="middle" opacity="0.8">RIP</text>
+    <line x1="62" y1="718" x2="98" y2="718" stroke="#330000" stroke-width="1" opacity="0.5"/>
+  </g>
+  <!-- Gravestone 2 center -->
+  <g fill="#0a0000" opacity="0.9">
+    <rect x="200" y="660" width="80" height="100" rx="40" ry="5"/>
+    <rect x="200" y="720" width="80" height="80" rx="4"/>
+    <rect x="230" y="795" width="20" height="40" rx="3"/>
+    <rect x="202" y="810" width="76" height="10" rx="3"/>
+    <text x="240" y="700" font-family="serif" font-size="14" fill="#330000" text-anchor="middle" opacity="0.8">RIP</text>
+    <line x1="208" y1="712" x2="272" y2="712" stroke="#330000" stroke-width="1.2" opacity="0.5"/>
+    <text x="240" y="728" font-family="serif" font-size="9" fill="#330000" text-anchor="middle" opacity="0.6">REQUIESCAT</text>
+  </g>
+  <!-- Gravestone 3 right -->
+  <g fill="#0a0000" opacity="0.88">
+    <polygon points="360,680 400,680 400,750 360,750" fill="#0a0000"/>
+    <polygon points="380,660 400,680 360,680" fill="#0a0000"/>
+    <rect x="360" y="750" width="40" height="60"/>
+    <rect x="374" y="807" width="12" height="35" rx="2"/>
+    <rect x="362" y="818" width="36" height="8" rx="2"/>
+    <text x="380" y="710" font-family="serif" font-size="11" fill="#330000" text-anchor="middle" opacity="0.8">RIP</text>
+  </g>
+  <!-- Small gravestone far left -->
+  <g fill="#080000" opacity="0.75">
+    <rect x="20" y="760" width="30" height="44" rx="15" ry="3"/>
+    <rect x="20" y="790" width="30" height="30"/>
+    <text x="35" y="782" font-family="serif" font-size="8" fill="#220000" text-anchor="middle" opacity="0.7">RIP</text>
+  </g>
+  <!-- Small gravestone far right -->
+  <g fill="#080000" opacity="0.75">
+    <rect x="430" y="750" width="32" height="46" rx="16" ry="3"/>
+    <rect x="430" y="778" width="32" height="32"/>
+    <text x="446" y="770" font-family="serif" font-size="8" fill="#220000" text-anchor="middle" opacity="0.7">RIP</text>
+  </g>
+
+  <!-- Ground cracks -->
+  <g stroke="#330000" stroke-width="1.5" fill="none" opacity="0.7">
+    <path d="M120,850 Q140,840 155,860 Q170,880 180,870"/>
+    <path d="M140,845 Q145,858 138,870"/>
+    <path d="M280,840 Q300,832 310,848 Q320,865 340,858"/>
+    <path d="M295,838 Q298,855 290,866"/>
+    <path d="M60,870 Q85,860 100,878 Q115,895 130,885"/>
+    <path d="M380,865 Q400,856 415,872 Q425,884 440,878"/>
+  </g>
+
+  <!-- Ground -->
+  <rect x="0" y="840" width="480" height="120" fill="#080000"/>
+  <rect x="0" y="850" width="480" height="110" fill="#0a0000" opacity="0.8"/>
+
+  <!-- Fog layer -->
+  <g filter="url(#fog-blur)">
+    <ellipse cx="100" cy="790" rx="160" ry="50" fill="#220000" opacity="0.65"/>
+    <ellipse cx="380" cy="800" rx="140" ry="45" fill="#220000" opacity="0.6"/>
+    <ellipse cx="240" cy="830" rx="200" ry="55" fill="#1a0000" opacity="0.7"/>
+    <ellipse cx="60" cy="840" rx="100" ry="40" fill="#220000" opacity="0.55"/>
+    <ellipse cx="420" cy="845" rx="110" ry="42" fill="#220000" opacity="0.55"/>
+  </g>
+
+  <!-- Dripping blood accents -->
+  <g fill="#cc0000" filter="url(#blood-glow)" opacity="0.55">
+    <path d="M0,0 L8,0 L8,35 Q8,50 4,55 Q0,50 0,35Z"/>
+    <path d="M20,0 L28,0 L28,20 Q28,30 24,34 Q20,30 20,20Z"/>
+    <path d="M452,0 L460,0 L460,28 Q460,40 456,45 Q452,40 452,28Z"/>
+    <path d="M468,0 L476,0 L476,18 Q476,28 472,32 Q468,28 468,18Z"/>
+    <path d="M200,0 L210,0 L210,22 Q210,33 205,37 Q200,33 200,22Z"/>
+    <path d="M270,0 L278,0 L278,30 Q278,42 274,47 Q270,42 270,30Z"/>
+  </g>
+
+  <!-- Glowing eyes in darkness (zombie lurking) -->
+  <g filter="url(#blood-glow)" opacity="0.7">
+    <!-- Left side eyes -->
+    <ellipse cx="148" cy="600" rx="5" ry="3" fill="#ff0000"/>
+    <ellipse cx="163" cy="600" rx="5" ry="3" fill="#ff0000"/>
+    <!-- Right side eyes -->
+    <ellipse cx="308" cy="620" rx="5" ry="3" fill="#ff0000"/>
+    <ellipse cx="323" cy="620" rx="5" ry="3" fill="#ff0000"/>
+    <!-- Center back -->
+    <ellipse cx="232" cy="560" rx="4" ry="2.5" fill="#cc0000"/>
+    <ellipse cx="245" cy="560" rx="4" ry="2.5" fill="#cc0000"/>
+    <!-- Far edges -->
+    <ellipse cx="42" cy="640" rx="4" ry="2.5" fill="#ff0000"/>
+    <ellipse cx="54" cy="640" rx="4" ry="2.5" fill="#ff0000"/>
+    <ellipse cx="425" cy="630" rx="4" ry="2.5" fill="#ff0000"/>
+    <ellipse cx="437" cy="630" rx="4" ry="2.5" fill="#ff0000"/>
+  </g>
+
+  <!-- Blood splatter on ground -->
+  <g fill="#880000" opacity="0.5">
+    <circle cx="140" cy="865" r="8"/>
+    <circle cx="152" cy="870" r="5"/>
+    <circle cx="130" cy="872" r="4"/>
+    <circle cx="158" cy="862" r="3"/>
+    <circle cx="145" cy="878" r="6"/>
+    <circle cx="340" cy="858" r="7"/>
+    <circle cx="352" cy="864" r="4"/>
+    <circle cx="330" cy="866" r="5"/>
+    <circle cx="358" cy="856" r="3"/>
+  </g>
+
+  <!-- Scattered bones on ground -->
+  <g stroke="#1a0000" stroke-width="2" fill="none" opacity="0.55">
+    <ellipse cx="185" cy="862" rx="18" ry="6"/>
+    <line x1="167" y1="862" x2="203" y2="862"/>
+    <circle cx="167" cy="862" r="5" fill="#0d0000" stroke-width="0"/>
+    <circle cx="203" cy="862" r="5" fill="#0d0000" stroke-width="0"/>
+    <ellipse cx="310" cy="870" rx="16" ry="5"/>
+    <line x1="294" y1="870" x2="326" y2="870"/>
+    <circle cx="294" cy="870" r="4" fill="#0d0000" stroke-width="0"/>
+    <circle cx="326" cy="870" r="4" fill="#0d0000" stroke-width="0"/>
+  </g>
+
+  <!-- Crow silhouette on gravestone -->
+  <g fill="#050000" opacity="0.9">
+    <ellipse cx="222" cy="658" rx="12" ry="7"/>
+    <ellipse cx="234" cy="655" rx="8" ry="5"/>
+    <polygon points="242,655 250,653 240,651" fill="#050000"/>
+    <path d="M218,658 Q210,648 208,640" stroke="#050000" stroke-width="2" fill="none"/>
+    <path d="M226,658 Q225,645 222,638" stroke="#050000" stroke-width="2" fill="none"/>
+  </g>
+
+  <rect width="480" height="960" fill="url(#vig11)"/>
+
+  <!-- Blood red border -->
+  <rect x="0" y="0" width="480" height="4" fill="#cc0000" opacity="0.6" filter="url(#blood-glow)"/>
+  <rect x="0" y="956" width="480" height="4" fill="#cc0000" opacity="0.6" filter="url(#blood-glow)"/>
+  <rect x="0" y="0" width="4" height="960" fill="#880000" opacity="0.5"/>
+  <rect x="476" y="0" width="4" height="960" fill="#880000" opacity="0.5"/>
+</svg>

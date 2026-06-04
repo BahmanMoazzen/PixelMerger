@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 
@@ -27,7 +28,7 @@ public static class A
         }
         public static string ScoreSaveTag()
         {
-            return "BestScoreTag_"+((int)Levels.DifficultyLevel).ToString();
+            return "BestScoreTag_" + ((int)Levels.DifficultyLevel).ToString();
         }
 
 
@@ -171,7 +172,7 @@ public static class A
         {
             return (iOrder * massGrowthFactor) + massBaseFactor;
         }
-        
+
         public static GameObject PixelSkeleton
         {
             get
@@ -193,15 +194,23 @@ public static class A
         }
         public static PixelInfo NextPixel(PixelInfo iMerger)
         {
+            PixelInfo newPixel;
+            if (iMerger.MergerOrder < GameSettings.CurrentDeckMergers.Count)
+            {
+                newPixel = GameSettings.CurrentDeckMergers[iMerger.MergerOrder];
+
+
+            }
+            else
+                newPixel = null;
             if (topPixelBound < iMerger.MergerOrder + 1)
             {
                 topPixelBound = iMerger.MergerOrder + 1;
                 SoundManager._Instance._PlaySound(GameSounds.FirstMerge);
+                BAHMANMessageBoxManager._INSTANCE._ShowMessage(newPixel.MergerName, Color.white, 3f, newPixel.MergerSprite);
             }
-            if (iMerger.MergerOrder < GameSettings.CurrentDeckMergers.Count)
-                return GameSettings.CurrentDeckMergers[iMerger.MergerOrder];
-            else
-                return null;
+            
+            return newPixel;
         }
         public static float PixelGizmoRadious(int iPixelOrder)
         {
@@ -233,12 +242,34 @@ public static class A
 
     public static class GameSettings
     {
-        public static int CurrentDeckPosition = 0;
+        public static string CURRENTDECKTAG = "CurrentDeckTag";
+
+        public static int CurrentDeckPosition
+        {
+            get
+            {
+                return PlayerPrefs.GetInt(CURRENTDECKTAG, 0);
+            }
+            set
+            {
+                PlayerPrefs.SetInt(CURRENTDECKTAG, value);
+            }
+        }
+
+
+
         public static List<PixelInfo> CurrentDeckMergers
         {
             get
             {
                 return A.GameSetting.AllDecks[CurrentDeckPosition].DeckPixels;
+            }
+        }
+        public static Sprite InGameBackground
+        {
+            get
+            {
+                return A.GameSetting.AllDecks[CurrentDeckPosition].DeckGameBackGround;
             }
         }
 

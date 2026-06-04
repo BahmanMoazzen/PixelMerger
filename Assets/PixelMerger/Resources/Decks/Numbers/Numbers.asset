@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeckName: Numbers
   DeckBackGround: {fileID: -6695950386315148514, guid: 5c578c5d53cb4744fa358302efdeaf72, type: 3}
+  DeckGameBackGround: {fileID: 21300000, guid: 86157ea53858704459d243b6813b99fa, type: 3}
   DeckIcon: {fileID: -2224709050019747820, guid: 05413e2868833774d83e4717c6d6b45b, type: 3}
   DeckPixels:
   - {fileID: 11400000, guid: 8a237e2a04462b146a09a273f9b33466, type: 2}
@@ -30,3 +31,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a443c51dcafd6604ba6568e703f05155, type: 2}
   WeightIncreaseStep: 0.5
   RadiousIncreaseStep: 0.5
+  isLock: 0
+  Price: 0

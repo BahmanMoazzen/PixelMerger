@@ -12,6 +12,10 @@ public class PixelDeckInfo : ScriptableObject
     /// </summary>
     public Sprite DeckBackGround;
     /// <summary>
+    /// the background of the game when the deck is selected
+    /// </summary>
+    public Sprite DeckGameBackGround;
+    /// <summary>
     /// the display of deck in deck select
     /// </summary>
     public Sprite DeckIcon;

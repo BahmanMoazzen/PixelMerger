@@ -5,7 +5,6 @@ It should be loaded in the very first scene because it won't be destroyed on loa
 use the prefab provided in this folder to modify the look of the message box.
 */
 
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 

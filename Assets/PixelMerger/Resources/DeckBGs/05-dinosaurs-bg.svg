@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="960" viewBox="0 0 480 960">
+  <defs>
+    <radialGradient id="dino-sky" cx="50%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#2d1b00"/>
+      <stop offset="40%" stop-color="#1a0a00"/>
+      <stop offset="100%" stop-color="#0a0500"/>
+    </radialGradient>
+    <radialGradient id="volcano-glow" cx="50%" cy="100%" r="80%">
+      <stop offset="0%" stop-color="#ff4500" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#ff6d00" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="lava-pool" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6d00"/>
+      <stop offset="60%" stop-color="#bf360c"/>
+      <stop offset="100%" stop-color="#6d1900"/>
+    </radialGradient>
+    <radialGradient id="vig5" cx="50%" cy="50%" r="75%">
+      <stop offset="40%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.7"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Dark sky -->
+  <rect width="480" height="960" fill="url(#dino-sky)"/>
+
+  <!-- Volcanic glow from bottom -->
+  <rect x="0" y="500" width="480" height="460" fill="url(#volcano-glow)"/>
+
+  <!-- Moon/eclipse -->
+  <circle cx="360" cy="100" r="52" fill="#1a0a00"/>
+  <circle cx="360" cy="100" r="48" fill="#3d2200" opacity="0.9"/>
+  <circle cx="360" cy="100" r="44" fill="#4d2d00" opacity="0.7"/>
+  <!-- Glowing ring -->
+  <circle cx="360" cy="100" r="55" fill="none" stroke="#ff6d00" stroke-width="4" opacity="0.6"/>
+  <circle cx="360" cy="100" r="60" fill="none" stroke="#ff4500" stroke-width="2" opacity="0.3"/>
+
+  <!-- Stars -->
+  <g fill="#ffe082" opacity="0.5">
+    <circle cx="30" cy="50" r="1.5"/>
+    <circle cx="80" cy="30" r="1"/>
+    <circle cx="140" cy="70" r="1.5"/>
+    <circle cx="60" cy="120" r="1"/>
+    <circle cx="200" cy="40" r="1.5"/>
+    <circle cx="250" cy="80" r="1"/>
+    <circle cx="160" cy="160" r="1"/>
+    <circle cx="20" cy="200" r="1.5"/>
+    <circle cx="100" cy="220" r="1"/>
+    <circle cx="440" cy="40" r="1.5"/>
+    <circle cx="420" cy="180" r="1"/>
+    <circle cx="470" cy="130" r="1.5"/>
+    <circle cx="400" cy="250" r="1"/>
+  </g>
+
+  <!-- Volcano silhouette back -->
+  <polygon points="240,300 340,650 140,650" fill="#1a0800" opacity="0.9"/>
+  <polygon points="240,300 260,310 230,650 250,650" fill="#2d1200" opacity="0.5"/>
+  <!-- Lava at crater -->
+  <ellipse cx="240" cy="305" rx="20" ry="10" fill="#ff4500" opacity="0.9"/>
+  <ellipse cx="240" cy="305" rx="14" ry="7" fill="#ff6d00"/>
+  <!-- Lava drips -->
+  <path d="M230,305 Q225,340 222,360" stroke="#ff4500" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M248,308 Q253,345 256,370" stroke="#ff6d00" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M238,307 Q236,360 234,400 Q233,430 230,450" stroke="#ff4500" stroke-width="2" fill="none" opacity="0.5"/>
+
+  <!-- Volcanic smoke/ash clouds -->
+  <g opacity="0.5">
+    <ellipse cx="220" cy="255" rx="35" ry="22" fill="#3d3028"/>
+    <ellipse cx="255" cy="238" rx="40" ry="25" fill="#2d2018"/>
+    <ellipse cx="198" cy="232" rx="32" ry="20" fill="#3d3028"/>
+    <ellipse cx="240" cy="215" rx="38" ry="24" fill="#1e1408"/>
+    <ellipse cx="270" cy="220" rx="30" ry="18" fill="#3d3028"/>
+    <ellipse cx="215" cy="200" rx="28" ry="18" fill="#2d2018"/>
+  </g>
+
+  <!-- Lava pool at base -->
+  <ellipse cx="240" cy="910" rx="200" ry="80" fill="url(#lava-pool)" opacity="0.8"/>
+  <ellipse cx="240" cy="910" rx="160" ry="55" fill="#ff6d00" opacity="0.4"/>
+  <ellipse cx="240" cy="910" rx="90" ry="30" fill="#ff9a00" opacity="0.3"/>
+  <!-- Lava cracks -->
+  <g stroke="#ff4500" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M80,960 Q100,920 130,900 Q160,880 180,870"/>
+    <path d="M400,960 Q380,920 350,905 Q320,890 300,875"/>
+    <path d="M240,960 Q245,930 240,900 Q235,870 238,840"/>
+  </g>
+
+  <!-- Prehistoric ferns/plants foreground -->
+  <!-- Large fern left -->
+  <g fill="#1a4d0a" opacity="0.9">
+    <ellipse cx="-10" cy="820" rx="70" ry="25" transform="rotate(-30,-10,820)"/>
+    <ellipse cx="10" cy="780" rx="65" ry="20" transform="rotate(-20,10,780)"/>
+    <ellipse cx="-5" cy="750" rx="60" ry="18" transform="rotate(-15,-5,750)"/>
+    <ellipse cx="20" cy="720" rx="55" ry="16" transform="rotate(-10,20,720)"/>
+    <ellipse cx="5" cy="700" rx="50" ry="15" transform="rotate(-25,5,700)"/>
+    <rect x="0" y="700" width="12" height="160" rx="5" fill="#0d2d04"/>
+    <!-- Fern fronds -->
+    <ellipse cx="30" cy="820" rx="55" ry="18" transform="rotate(20,30,820)" fill="#256b14"/>
+    <ellipse cx="40" cy="790" rx="50" ry="16" transform="rotate(15,40,790)" fill="#2a7818"/>
+    <ellipse cx="25" cy="760" rx="45" ry="15" transform="rotate(10,25,760)" fill="#256b14"/>
+  </g>
+
+  <!-- Large fern right -->
+  <g fill="#1a4d0a" opacity="0.9">
+    <ellipse cx="490" cy="820" rx="70" ry="25" transform="rotate(30,490,820)"/>
+    <ellipse cx="470" cy="780" rx="65" ry="20" transform="rotate(20,470,780)"/>
+    <ellipse cx="475" cy="750" rx="60" ry="18" transform="rotate(15,475,750)"/>
+    <ellipse cx="460" cy="720" rx="55" ry="16" transform="rotate(10,460,720)"/>
+    <ellipse cx="475" cy="700" rx="50" ry="15" transform="rotate(25,475,700)"/>
+    <rect x="468" y="700" width="12" height="160" rx="5" fill="#0d2d04"/>
+    <ellipse cx="450" cy="820" rx="55" ry="18" transform="rotate(-20,450,820)" fill="#256b14"/>
+    <ellipse cx="440" cy="790" rx="50" ry="16" transform="rotate(-15,440,790)" fill="#2a7818"/>
+    <ellipse cx="455" cy="760" rx="45" ry="15" transform="rotate(-10,455,760)" fill="#256b14"/>
+  </g>
+
+  <!-- Tree fern trunk left bg -->
+  <rect x="70" y="550" width="18" height="280" rx="6" fill="#1a0e00" opacity="0.8"/>
+  <g fill="#1a4d0a" opacity="0.75">
+    <ellipse cx="79" cy="545" rx="55" ry="20" transform="rotate(-35,79,545)"/>
+    <ellipse cx="79" cy="545" rx="50" ry="18" transform="rotate(-15,79,545)"/>
+    <ellipse cx="79" cy="545" rx="48" ry="16" transform="rotate(10,79,545)"/>
+    <ellipse cx="79" cy="545" rx="45" ry="15" transform="rotate(35,79,545)"/>
+    <ellipse cx="79" cy="545" rx="40" ry="14" transform="rotate(60,79,545)"/>
+  </g>
+
+  <!-- Tree fern trunk right bg -->
+  <rect x="392" y="550" width="18" height="280" rx="6" fill="#1a0e00" opacity="0.8"/>
+  <g fill="#1a4d0a" opacity="0.75">
+    <ellipse cx="401" cy="545" rx="55" ry="20" transform="rotate(35,401,545)"/>
+    <ellipse cx="401" cy="545" rx="50" ry="18" transform="rotate(15,401,545)"/>
+    <ellipse cx="401" cy="545" rx="48" ry="16" transform="rotate(-10,401,545)"/>
+    <ellipse cx="401" cy="545" rx="45" ry="15" transform="rotate(-35,401,545)"/>
+    <ellipse cx="401" cy="545" rx="40" ry="14" transform="rotate(-60,401,545)"/>
+  </g>
+
+  <!-- Rock foreground boulders -->
+  <ellipse cx="60" cy="940" rx="80" ry="40" fill="#1a0e00" opacity="0.8"/>
+  <ellipse cx="420" cy="950" rx="90" ry="38" fill="#1a0e00" opacity="0.8"/>
+  <ellipse cx="240" cy="960" rx="120" ry="35" fill="#0d0700" opacity="0.9"/>
+
+  <!-- Glowing ember particles -->
+  <g opacity="0.7">
+    <circle cx="180" cy="420" r="3" fill="#ff6d00"/>
+    <circle cx="220" cy="380" r="2" fill="#ff9a00"/>
+    <circle cx="255" cy="340" r="2.5" fill="#ff6d00"/>
+    <circle cx="195" cy="360" r="2" fill="#ffb300"/>
+    <circle cx="270" cy="400" r="2" fill="#ff6d00"/>
+    <circle cx="210" cy="450" r="2.5" fill="#ff4500"/>
+    <circle cx="290" cy="370" r="2" fill="#ff9a00"/>
+    <circle cx="165" cy="480" r="2" fill="#ff6d00"/>
+    <circle cx="310" cy="430" r="2.5" fill="#ffb300"/>
+    <circle cx="240" cy="500" r="2" fill="#ff4500"/>
+  </g>
+
+  <!-- Ground -->
+  <rect x="0" y="850" width="480" height="110" fill="#1a0800" opacity="0.85"/>
+
+  <rect width="480" height="960" fill="url(#vig5)"/>
+
+  <!-- Orange glow border -->
+  <rect x="0" y="0" width="480" height="3" fill="#ff4500" opacity="0.5"/>
+  <rect x="0" y="957" width="480" height="3" fill="#ff6d00" opacity="0.5"/>
+</svg>

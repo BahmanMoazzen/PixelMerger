@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeckName: Lovely Insects
   DeckBackGround: {fileID: -6695950386315148514, guid: cae25c20e7e0d874a950f1fd967c66e2, type: 3}
+  DeckGameBackGround: {fileID: 21300000, guid: c2ba8b87dc636794996e905667343578, type: 3}
   DeckIcon: {fileID: 2544683767549116349, guid: 24467cc8efee54446aea7957cad3e083, type: 3}
   DeckPixels:
   - {fileID: 11400000, guid: cbd4ef5994121e5418932dbe657ff838, type: 2}

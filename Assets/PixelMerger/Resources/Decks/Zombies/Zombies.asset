@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeckName: Zombies
   DeckBackGround: {fileID: -2413806693520163455, guid: fdf4f03f21fcd2b43b04bfc5fb5e5f70, type: 3}
+  DeckGameBackGround: {fileID: 21300000, guid: 38d1f55cfd92fa9478ad2c9b0a5b521c, type: 3}
   DeckIcon: {fileID: 9131319800151397861, guid: b5129c02e13d8714ba1cac5686618352, type: 3}
   DeckPixels:
   - {fileID: 11400000, guid: ea9088a8d3429a64bb1811db92f9c8a4, type: 2}

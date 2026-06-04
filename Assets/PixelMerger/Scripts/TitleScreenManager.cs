@@ -10,7 +10,7 @@ public class TitleScreenManager : MonoBehaviour
     private void Start()
     {
         _soundFX.isOn = _gameSettingInfo.SoundFX;
-        _antialiasing.isOn = _gameSettingInfo.AntiAliasing;
+        //_antialiasing.isOn = _gameSettingInfo.AntiAliasing;
         _musicToggle.isOn = _gameSettingInfo.Music;
         //if (_gameSettingInfo.RatingURL == string.Empty)
         //{
@@ -21,15 +21,25 @@ public class TitleScreenManager : MonoBehaviour
         //    _ratingBottom.SetActive(true);
         //}
     }
-
+    /// <summary>
+    /// Starts the game by loading the game scene. This method is called when the player clicks the "Start Game" button on the title screen.
+    /// </summary>
+    public void _StartGame()
+    {
+        
+        BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.GameScene);
+    }
+    /// <summary>
+    /// opens up the menu when the player clicks the "Back" button on the title screen. This method is called when the player clicks the "Back" button on the title screen.
+    /// </summary>
     public void _BackButton()
     {
         BAHMANBackButtonManager._Instance._ShowMenu();
     }
     public void _SelectDeck(int iGameDifficulty)
     {
-        A.Levels.DifficultyLevel =(GameModes) iGameDifficulty;
-        SoundManager._Instance._PlaySound(GameSounds.ButtomClicked);
+        //A.Levels.DifficultyLevel =(GameModes) iGameDifficulty;
+        //SoundManager._Instance._PlaySound(GameSounds.ButtomClicked);
         //BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.DeckSelect);
 
     }

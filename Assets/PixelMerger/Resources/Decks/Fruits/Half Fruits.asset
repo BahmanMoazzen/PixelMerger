@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeckName: Half Fruits
   DeckBackGround: {fileID: -6695950386315148514, guid: c5d6b67a205ece74f95e9ca5ee2797db, type: 3}
+  DeckGameBackGround: {fileID: 21300000, guid: f43e1b2af7bf25443ba3b85695499f6c, type: 3}
   DeckIcon: {fileID: -5890180436634068874, guid: c0eccfcefafd74442a638036cde979ff, type: 3}
   DeckPixels:
   - {fileID: 11400000, guid: 88bc83e02d3cd8342b0adc97afc96538, type: 2}

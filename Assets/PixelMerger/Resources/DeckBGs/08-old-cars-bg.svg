@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="960" viewBox="0 0 480 960">
+  <defs>
+    <radialGradient id="car-sky" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#1a0a00"/>
+      <stop offset="40%" stop-color="#2d1800"/>
+      <stop offset="70%" stop-color="#3d2800"/>
+      <stop offset="100%" stop-color="#5a3a10"/>
+    </radialGradient>
+    <radialGradient id="vig8" cx="50%" cy="50%" r="75%">
+      <stop offset="40%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.65"/>
+    </radialGradient>
+    <radialGradient id="headlight-l" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffde7" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#fffde7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="headlight-r" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffde7" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#fffde7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Night sky -->
+  <rect width="480" height="960" fill="url(#car-sky)"/>
+
+  <!-- Stars -->
+  <g fill="#ffe082" opacity="0.45">
+    <circle cx="40" cy="60" r="1.5"/>
+    <circle cx="100" cy="30" r="1"/>
+    <circle cx="200" cy="50" r="1.5"/>
+    <circle cx="280" cy="20" r="1"/>
+    <circle cx="350" cy="70" r="1.5"/>
+    <circle cx="430" cy="40" r="1"/>
+    <circle cx="460" cy="90" r="1.5"/>
+    <circle cx="20" cy="130" r="1"/>
+    <circle cx="150" cy="110" r="1.5"/>
+    <circle cx="310" cy="130" r="1"/>
+    <circle cx="420" cy="150" r="1.5"/>
+    <circle cx="70" cy="200" r="1"/>
+    <circle cx="240" cy="180" r="1.5"/>
+    <circle cx="470" cy="220" r="1"/>
+  </g>
+
+  <!-- Neon signs background -->
+  <!-- Big DINER sign -->
+  <g opacity="0.7">
+    <rect x="15" y="120" width="140" height="55" rx="6" fill="#0a0a0a" stroke="#ff4444" stroke-width="2"/>
+    <text x="85" y="155" font-family="'Courier New', monospace" font-size="26" font-weight="bold" fill="#ff4444" text-anchor="middle" opacity="0.9">DINER</text>
+    <!-- neon glow lines -->
+    <rect x="15" y="120" width="140" height="55" rx="6" fill="none" stroke="#ff8888" stroke-width="1" opacity="0.4"/>
+  </g>
+  <!-- GAS sign -->
+  <g opacity="0.65">
+    <rect x="325" y="105" width="120" height="50" rx="5" fill="#0a0a0a" stroke="#00ccff" stroke-width="2"/>
+    <text x="385" y="138" font-family="'Courier New', monospace" font-size="24" font-weight="bold" fill="#00ccff" text-anchor="middle" opacity="0.9">GAS</text>
+    <rect x="325" y="105" width="120" height="50" rx="5" fill="none" stroke="#88eeff" stroke-width="1" opacity="0.35"/>
+  </g>
+  <!-- MOTEL sign -->
+  <g opacity="0.6">
+    <rect x="160" y="60" width="160" height="55" rx="6" fill="#0a0a0a" stroke="#ffcc00" stroke-width="2"/>
+    <text x="240" y="95" font-family="'Courier New', monospace" font-size="23" font-weight="bold" fill="#ffcc00" text-anchor="middle" opacity="0.9">MOTEL</text>
+    <rect x="160" y="60" width="160" height="55" rx="6" fill="none" stroke="#ffee88" stroke-width="1" opacity="0.35"/>
+  </g>
+  <!-- VACANCY neon -->
+  <g opacity="0.55">
+    <text x="240" y="135" font-family="'Courier New', monospace" font-size="15" fill="#ff6600" text-anchor="middle">VACANCY</text>
+  </g>
+
+  <!-- Telephone/power poles left -->
+  <g stroke="#3d2800" stroke-width="4" opacity="0.7">
+    <line x1="30" y1="200" x2="30" y2="650"/>
+    <line x1="10" y1="260" x2="50" y2="260"/>
+    <line x1="10" y1="300" x2="50" y2="300"/>
+  </g>
+  <g stroke="#3d2800" stroke-width="3" opacity="0.5">
+    <line x1="80" y1="230" x2="80" y2="660"/>
+    <line x1="62" y1="285" x2="98" y2="285"/>
+    <line x1="62" y1="320" x2="98" y2="320"/>
+  </g>
+  <!-- Power pole right -->
+  <g stroke="#3d2800" stroke-width="4" opacity="0.7">
+    <line x1="450" y1="200" x2="450" y2="650"/>
+    <line x1="430" y1="260" x2="470" y2="260"/>
+    <line x1="430" y1="300" x2="470" y2="300"/>
+  </g>
+  <!-- Wires -->
+  <g stroke="#2d1800" stroke-width="1.2" fill="none" opacity="0.5">
+    <path d="M30,260 Q240,280 450,260"/>
+    <path d="M30,300 Q240,320 450,300"/>
+  </g>
+
+  <!-- Silhouette buildings horizon -->
+  <g fill="#1a0e00" opacity="0.85">
+    <!-- Buildings left -->
+    <rect x="0" y="380" width="60" height="180"/>
+    <rect x="10" y="355" width="40" height="30"/>
+    <rect x="65" y="410" width="45" height="150"/>
+    <rect x="70" y="390" width="30" height="25"/>
+    <!-- Building right -->
+    <rect x="380" y="370" width="65" height="190"/>
+    <rect x="390" y="345" width="45" height="30"/>
+    <rect x="350" y="400" width="35" height="160"/>
+    <!-- Windows lit up -->
+    <rect x="15" y="390" width="10" height="8" fill="#ffcc00" opacity="0.4"/>
+    <rect x="35" y="390" width="10" height="8" fill="#ffcc00" opacity="0.3"/>
+    <rect x="15" y="410" width="10" height="8" fill="#ff6600" opacity="0.3"/>
+    <rect x="35" y="430" width="10" height="8" fill="#ffcc00" opacity="0.4"/>
+    <rect x="395" y="385" width="10" height="8" fill="#ffcc00" opacity="0.35"/>
+    <rect x="415" y="385" width="10" height="8" fill="#ff6600" opacity="0.3"/>
+    <rect x="430" y="405" width="10" height="8" fill="#ffcc00" opacity="0.4"/>
+    <rect x="395" y="410" width="10" height="8" fill="#ffcc00" opacity="0.3"/>
+  </g>
+
+  <!-- Asphalt road -->
+  <rect x="0" y="580" width="480" height="380" fill="#1a1a1a"/>
+  <rect x="0" y="580" width="480" height="15" fill="#2a2a2a"/>
+
+  <!-- Road perspective lines (vanishing point center) -->
+  <g fill="#3a3a3a" opacity="0.5">
+    <!-- Lane markings -->
+    <rect x="226" y="600" width="28" height="55" rx="2"/>
+    <rect x="226" y="680" width="28" height="55" rx="2"/>
+    <rect x="226" y="760" width="28" height="55" rx="2"/>
+    <rect x="226" y="840" width="28" height="55" rx="2"/>
+    <rect x="226" y="920" width="28" height="55" rx="2"/>
+  </g>
+
+  <!-- Road shoulder lines -->
+  <line x1="60" y1="580" x2="0" y2="960" stroke="#ffcc00" stroke-width="3" opacity="0.65"/>
+  <line x1="420" y1="580" x2="480" y2="960" stroke="#ffcc00" stroke-width="3" opacity="0.65"/>
+
+  <!-- Headlight cones shining forward -->
+  <ellipse cx="160" cy="580" rx="140" ry="200" fill="url(#headlight-l)" opacity="0.18"/>
+  <ellipse cx="320" cy="580" rx="140" ry="200" fill="url(#headlight-r)" opacity="0.18"/>
+
+  <!-- Retro car silhouette (2CV style) in center road -->
+  <g opacity="0.85">
+    <!-- Shadow -->
+    <ellipse cx="240" cy="645" rx="110" ry="18" fill="#000" opacity="0.5"/>
+    <!-- Body -->
+    <rect x="130" y="580" width="220" height="65" rx="22" fill="#1c4a0a"/>
+    <!-- Roof/cabin -->
+    <rect x="158" y="543" width="155" height="48" rx="20" fill="#1c4a0a"/>
+    <!-- Windshield dark -->
+    <rect x="168" y="547" width="60" height="38" rx="8" fill="#2d6e1a" opacity="0.7"/>
+    <rect x="248" y="547" width="60" height="38" rx="8" fill="#2d6e1a" opacity="0.7"/>
+    <!-- Door line -->
+    <line x1="240" y1="548" x2="240" y2="642" stroke="#156005" stroke-width="2" opacity="0.5"/>
+    <!-- Number 1 on door -->
+    <circle cx="200" cy="595" r="18" fill="#cc0000" opacity="0.9"/>
+    <text x="200" y="601" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">1</text>
+    <!-- Wheels -->
+    <circle cx="165" cy="645" r="28" fill="#111"/>
+    <circle cx="165" cy="645" r="20" fill="#222"/>
+    <circle cx="165" cy="645" r="12" fill="#333"/>
+    <circle cx="165" cy="645" r="5" fill="#555"/>
+    <circle cx="315" cy="645" r="28" fill="#111"/>
+    <circle cx="315" cy="645" r="20" fill="#222"/>
+    <circle cx="315" cy="645" r="12" fill="#333"/>
+    <circle cx="315" cy="645" r="5" fill="#555"/>
+    <!-- Headlights -->
+    <circle cx="136" cy="595" r="12" fill="#fffde7" opacity="0.9"/>
+    <circle cx="344" cy="595" r="12" fill="#fffde7" opacity="0.9"/>
+    <circle cx="136" cy="595" r="8" fill="#ffffff"/>
+    <circle cx="344" cy="595" r="8" fill="#ffffff"/>
+    <!-- Bumper -->
+    <rect x="128" y="620" width="30" height="8" rx="3" fill="#888"/>
+    <rect x="322" y="620" width="30" height="8" rx="3" fill="#888"/>
+  </g>
+
+  <!-- Speed lines on road -->
+  <g stroke="#ffffff" stroke-width="1.5" opacity="0.08">
+    <line x1="30" y1="700" x2="180" y2="700"/>
+    <line x1="40" y1="740" x2="175" y2="740"/>
+    <line x1="300" y1="700" x2="450" y2="700"/>
+    <line x1="305" y1="740" x2="440" y2="740"/>
+  </g>
+
+  <!-- Palm tree silhouette left -->
+  <g opacity="0.6">
+    <rect x="22" y="400" width="10" height="200" rx="4" fill="#2d1800" transform="rotate(3,27,500)"/>
+    <ellipse cx="27" cy="395" rx="38" ry="14" fill="#1a3d0a" transform="rotate(-20,27,395)"/>
+    <ellipse cx="27" cy="395" rx="35" ry="12" fill="#1a3d0a" transform="rotate(10,27,395)"/>
+    <ellipse cx="27" cy="395" rx="32" ry="11" fill="#256b14" transform="rotate(35,27,395)"/>
+    <ellipse cx="27" cy="395" rx="30" ry="10" fill="#1a3d0a" transform="rotate(-45,27,395)"/>
+    <ellipse cx="27" cy="395" rx="28" ry="10" fill="#256b14" transform="rotate(60,27,395)"/>
+  </g>
+  <!-- Palm tree right -->
+  <g opacity="0.6">
+    <rect x="448" y="410" width="10" height="190" rx="4" fill="#2d1800" transform="rotate(-3,453,505)"/>
+    <ellipse cx="453" cy="405" rx="38" ry="14" fill="#1a3d0a" transform="rotate(20,453,405)"/>
+    <ellipse cx="453" cy="405" rx="35" ry="12" fill="#1a3d0a" transform="rotate(-10,453,405)"/>
+    <ellipse cx="453" cy="405" rx="32" ry="11" fill="#256b14" transform="rotate(-35,453,405)"/>
+    <ellipse cx="453" cy="405" rx="30" ry="10" fill="#1a3d0a" transform="rotate(45,453,405)"/>
+    <ellipse cx="453" cy="405" rx="28" ry="10" fill="#256b14" transform="rotate(-60,453,405)"/>
+  </g>
+
+  <!-- ROUTE 66 sign -->
+  <g opacity="0.75">
+    <circle cx="240" cy="400" r="36" fill="#0a0a0a" stroke="#ff4444" stroke-width="3"/>
+    <circle cx="240" cy="400" r="29" fill="#0a0a0a" stroke="#ff4444" stroke-width="1.5"/>
+    <text x="240" y="394" font-family="'Courier New', monospace" font-size="9" fill="#ff4444" text-anchor="middle" font-weight="bold">ROUTE</text>
+    <text x="240" y="410" font-family="'Courier New', monospace" font-size="14" fill="#ff4444" text-anchor="middle" font-weight="bold">66</text>
+  </g>
+
+  <rect width="480" height="960" fill="url(#vig8)"/>
+
+  <!-- Neon border -->
+  <rect x="0" y="0" width="480" height="3" fill="#ff4444" opacity="0.6"/>
+  <rect x="0" y="957" width="480" height="3" fill="#ff4444" opacity="0.6"/>
+  <rect x="0" y="0" width="3" height="960" fill="#ffcc00" opacity="0.4"/>
+  <rect x="477" y="0" width="3" height="960" fill="#ffcc00" opacity="0.4"/>
+</svg>

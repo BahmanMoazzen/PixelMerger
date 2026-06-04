@@ -69,41 +69,44 @@ public class BAHMANMusicBox : MonoBehaviour
     }
     IEnumerator _sceneLoaded(int iSceneBuildIndex)
     {
-        //find current scene setting
-        int sceneMusicIndex = INVALID_INDEX_NUMBER;
-        for (byte i = 0; i < _musicBoxSceneInfos.Length; i++)
+        if (A.GameSetting.Music)
         {
-            if ((int)_musicBoxSceneInfos[i]._SceneName == iSceneBuildIndex)
+            //find current scene setting
+            int sceneMusicIndex = INVALID_INDEX_NUMBER;
+            for (byte i = 0; i < _musicBoxSceneInfos.Length; i++)
             {
-                if (_musicBoxSceneInfos[i]._SceneMusics.Length > 0)
-                    sceneMusicIndex = i;
-                break;
+                if ((int)_musicBoxSceneInfos[i]._SceneName == iSceneBuildIndex)
+                {
+                    if (_musicBoxSceneInfos[i]._SceneMusics.Length > 0)
+                        sceneMusicIndex = i;
+                    break;
+                }
             }
-        }
-        if (sceneMusicIndex > INVALID_INDEX_NUMBER)
-        {
-            //scene info is available
-            if (_musicPlayerClass == null)
+            if (sceneMusicIndex > INVALID_INDEX_NUMBER)
             {
-                _musicPlayerClass = GetComponent<MusicPlayer>();
+                //scene info is available
+                if (_musicPlayerClass == null)
+                {
+                    _musicPlayerClass = GetComponent<MusicPlayer>();
 
+                }
+                StartCoroutine(_musicPlayerClass._SceneChanged(_musicBoxSceneInfos[sceneMusicIndex]));
             }
-            StartCoroutine(_musicPlayerClass._SceneChanged(_musicBoxSceneInfos[sceneMusicIndex]));
-        }
-        else
-        {
-            //scene info is not available
-            if (_StopPlayingOnUndefinedScenes)
+            else
             {
-                _musicPlayerClass?._StopPlaying();
+                //scene info is not available
+                if (_StopPlayingOnUndefinedScenes)
+                {
+                    _musicPlayerClass?._StopPlaying();
+                }
             }
         }
         yield return null;
     }
-    
+
     public void _ChangePlayingStat([Tooltip("True = Start Play; False=Stop Play")] bool iPlayingStat)
     {
-        if (iPlayingStat)
+        if (A.GameSetting.Music)
         {
             StartCoroutine(_sceneLoaded(SceneManager.GetActiveScene().buildIndex));
         }
