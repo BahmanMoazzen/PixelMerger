@@ -539,103 +539,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1281195345}
   m_SourcePrefab: {fileID: 100100000, guid: 5212918ef7960e24f8c1da38ce474c31, type: 3}
---- !u!1001 &1008019565
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1332566807573705200, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_Name
-      value: BAHMANMusicBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403295534290484858, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403295534290484858, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403295534290484858, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403295534290484858, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403295534290484858, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403295534290484858, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403295534290484858, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403295534290484858, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403295534290484858, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403295534290484858, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3393399636186304760, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-    - {fileID: 2079898047186799033, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1332566807573705200, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1008019568}
-    - targetCorrespondingSourceObject: {fileID: 1332566807573705200, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1008019567}
-  m_SourcePrefab: {fileID: 100100000, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
---- !u!1 &1008019566 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1332566807573705200, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
-  m_PrefabInstance: {fileID: 1008019565}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1008019567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008019566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06567c21643c484479eecd061fab20f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MusicPlayerController
-  _messageInterval: 2.5
---- !u!114 &1008019568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008019566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 708cbcbac9f7d704793bda9acba6b230, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BAHMANMusicBox
-  _stopPlayingOnUndefinedScenes: 1
-  _configRepository: {fileID: 11400000, guid: 3ff78de6479336341a0eac83930a87ae, type: 2}
 --- !u!1 &1280229138
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +711,63 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &1311429512
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2246730273625228119, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.66461
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246730273625228119, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.56881
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246730273625228119, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246730273625228119, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246730273625228119, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246730273625228119, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246730273625228119, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246730273625228119, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246730273625228119, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246730273625228119, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857967628556040644, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
+      propertyPath: m_Name
+      value: BAHMANMusicBox
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 902be9f461f1905468ecb077a3a29af1, type: 3}
 --- !u!224 &1715742127 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4301338575395906085, guid: 5212918ef7960e24f8c1da38ce474c31, type: 3}
@@ -1208,8 +1168,8 @@ SceneRoots:
   - {fileID: 929474661}
   - {fileID: 760296049}
   - {fileID: 227976423}
-  - {fileID: 1008019565}
   - {fileID: 317522668369403138}
   - {fileID: 2435839318145295957}
   - {fileID: 7268885466182756475}
   - {fileID: 1786838790}
+  - {fileID: 1311429512}
