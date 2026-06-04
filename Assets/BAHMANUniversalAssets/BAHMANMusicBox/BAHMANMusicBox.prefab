@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1332566807573705200
+--- !u!1 &5857967628556040644
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4403295534290484858}
-  - component: {fileID: 2733050210954266358}
-  - component: {fileID: 3017422505428278347}
-  - component: {fileID: 3393399636186304760}
+  - component: {fileID: 2246730273625228119}
+  - component: {fileID: 3837046429077614047}
+  - component: {fileID: 4606398084298071287}
+  - component: {fileID: 3332331410564625678}
   m_Layer: 0
   m_Name: BAHMANMusicBox
   m_TagString: Untagged
@@ -19,31 +19,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4403295534290484858
+--- !u!4 &2246730273625228119
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332566807573705200}
+  m_GameObject: {fileID: 5857967628556040644}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 454.3534, y: 236.73059, z: 3.7622995}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2733050210954266358
+--- !u!82 &3837046429077614047
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332566807573705200}
+  m_GameObject: {fileID: 5857967628556040644}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4194307046911635124, guid: 8a6de9f0b0d9f9146bf440276d1832e6, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -131,31 +131,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3017422505428278347
+--- !u!114 &4606398084298071287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332566807573705200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94096fb9a48c762429aac20d0773f065, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3393399636186304760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332566807573705200}
+  m_GameObject: {fileID: 5857967628556040644}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 708cbcbac9f7d704793bda9acba6b230, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  _StopPlayingOnUndefinedScenes: 1
-  _musicBoxSceneInfos:
-  - {fileID: 11400000, guid: 20fe52cc09754ab428cedb3d777e612d, type: 2}
-  - {fileID: 11400000, guid: 6890469ffb3a90840a54e488c5f7472c, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::BAHMANMusicBox
+  _stopPlayingOnUndefinedScenes: 1
+  _configRepository: {fileID: 11400000, guid: 3ff78de6479336341a0eac83930a87ae, type: 2}
+--- !u!114 &3332331410564625678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5857967628556040644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06567c21643c484479eecd061fab20f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicPlayerController
+  _audioMixer: {fileID: 24100000, guid: 8a6de9f0b0d9f9146bf440276d1832e6, type: 2}
+  _volumeParameter: MusicVolume
+  _messageInterval: 2.5

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09abda66f3e4be4f8f5238889dc2c6c, type: 3}
+  m_Name: MusicBoxRepo
+  m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjectMusicBoxConfigRepository
+  _sceneInfos:
+  - {fileID: 11400000, guid: 82ae9d7d0112be94e9a5347586955aaf, type: 2}
+  - {fileID: 11400000, guid: 20fe52cc09754ab428cedb3d777e612d, type: 2}
