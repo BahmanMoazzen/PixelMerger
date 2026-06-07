@@ -19,6 +19,9 @@ public static class A
         public static string BuyDeckTag = "To unlock <b>&&&</b> you need <b>$$$</b> score. Do you want to unlock now?";
         public static string IsLockedTag = "Locked";
         public static string CheckInternetConnection = "Check Your Internet Connection.";
+        public static string WelcomeBack = "Welcome Back!";
+
+
         public static class LootLocker
         {
             public static string ShowRankSuccess = "Data Recieved Successfuly";
