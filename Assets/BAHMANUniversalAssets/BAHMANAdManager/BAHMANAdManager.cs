@@ -5,21 +5,38 @@ using UnityEngine.Events;
 using System.Collections.Generic;
 public class BAHMANAdManager : MonoBehaviour
 {
-    public static event UnityAction _OnAdSuccess;
-    public static event UnityAction _OnAdFailed;
+    /// <summary>
+    /// triggered when an ad is shown successfully, you can use this event to reward the player for watching the ad, for example, you can give the player some in-game currency or items as a reward for watching the ad
+    /// </summary>
+    public static event UnityAction OnAdSuccess;
+    /// <summary>
+    /// triggered when an ad failed to show, you can use this event to show a message to the player that the ad failed to show, and also to log the error message for debugging purposes
+    /// </summary>
+    public static event UnityAction OnAdFailed;
+    /// <summary>
+    /// Singleton instance of the BAHMANAdManager, you can use this instance to show interstitial and rewarded ads, and also to check if the ads are ready or not, for example, you can check if the rewarded ad is ready before showing it to the player, and also to show a loading screen while the ad is loading
+    /// </summary>
+    public static BAHMANAdManager Instance;
 
-    public static BAHMANAdManager _Instance;
-
-
-    [SerializeField] Text _debugText; [SerializeField] bool _provideDebug;
+    /// <summary>
+    /// a Text component to show the debug messages in the UI, you can assign a Text component to this field to show the debug messages in the UI, and also set the _provideDebug field to true, otherwise the debug messages will be shown in the console only
+    /// </summary>
+    [SerializeField] Text _debugText;
+    /// <summary>
+    /// whether to show the debug messages in the UI or not, if you want to show the debug messages in the UI, you need to assign a Text component to the _debugText field, and also set this field to true, otherwise the debug messages will be shown in the console only
+    /// </summary>
+    [SerializeField] bool _provideDebug;
+    /// <summary>
+    /// a GameObject to show a loading screen while the ad is loading, you can assign a GameObject to this field to show a loading screen while the ad is loading, and also to hide it when the ad is loaded successfully or failed to load
+    /// </summary>
     [SerializeField] GameObject _loadScreen;
     UnityAction _adSuccessAction, _adFailAction, _purchaseSuccess, _purchaseFail;
     string _currentSKU;
     private void Awake()
     {
-        if (_Instance == null)
+        if (Instance == null)
         {
-            _Instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else

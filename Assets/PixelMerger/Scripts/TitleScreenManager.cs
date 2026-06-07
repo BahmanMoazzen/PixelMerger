@@ -45,11 +45,11 @@ public class TitleScreenManager : MonoBehaviour
     }
     public void _ShowRewarded()
     {
-        BAHMANAdManager._Instance._ShowRewardedAd();
+        BAHMANAdManager.Instance._ShowRewardedAd();
     }
     public void _ShowInterstitial()
     {
-        BAHMANAdManager._Instance._ShowInterstitialAd();
+        BAHMANAdManager.Instance._ShowInterstitialAd();
     }
     public void _OnSoundFXChanged()
     {

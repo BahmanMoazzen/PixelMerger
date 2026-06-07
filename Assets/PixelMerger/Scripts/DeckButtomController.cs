@@ -48,7 +48,7 @@ public class DeckButtomController : MonoBehaviour
     }
     void _unlockWithAd()
     {
-        BAHMANAdManager._Instance._ShowRewardedAd(AdManager__OnAdSuccess, AdManager__OnAdFailed);
+        BAHMANAdManager.Instance._ShowRewardedAd(AdManager__OnAdSuccess, AdManager__OnAdFailed);
 
     }
     private void _hideLock()
