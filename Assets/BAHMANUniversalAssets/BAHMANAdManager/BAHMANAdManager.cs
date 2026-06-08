@@ -22,10 +22,11 @@ public class BAHMANAdManager : MonoBehaviour
     /// a Text component to show the debug messages in the UI, you can assign a Text component to this field to show the debug messages in the UI, and also set the _provideDebug field to true, otherwise the debug messages will be shown in the console only
     /// </summary>
     [SerializeField] Text _debugText;
+    [SerializeField] bool _giveNoAd = false;
     /// <summary>
     /// whether to show the debug messages in the UI or not, if you want to show the debug messages in the UI, you need to assign a Text component to the _debugText field, and also set this field to true, otherwise the debug messages will be shown in the console only
     /// </summary>
-    [SerializeField] bool _provideDebug;
+    [SerializeField] bool _provideDebug = false;
     /// <summary>
     /// a GameObject to show a loading screen while the ad is loading, you can assign a GameObject to this field to show a loading screen while the ad is loading, and also to hide it when the ad is loaded successfully or failed to load
     /// </summary>
@@ -123,6 +124,11 @@ public class BAHMANAdManager : MonoBehaviour
     /// </summary>
     void _showInterstitialAd()
     {
+        if (_giveNoAd)
+        {
+            _adFailAction?.Invoke();
+            return;
+        }
         _loadScreen.SetActive(true);
         _interstitialAd.LoadAd();
     }
@@ -144,6 +150,11 @@ public class BAHMANAdManager : MonoBehaviour
     /// </summary>
     void _showRewardedAd()
     {
+        if (_giveNoAd)
+        {
+            _adFailAction?.Invoke();
+            return;
+        }
         _loadScreen.SetActive(true);
         _rewardedVideoAd.LoadAd();
 
@@ -179,6 +190,11 @@ public class BAHMANAdManager : MonoBehaviour
     /// </summary>
     private void _showBannerAd()
     {
+        if(_giveNoAd)
+        {
+            _adFailAction?.Invoke();
+            return;
+        }
         _bannerAd.LoadAd();
     }
     void _enableAds()
@@ -224,7 +240,7 @@ public class BAHMANAdManager : MonoBehaviour
         _interstitialAd.OnAdClosed += InterstitialOnAdClosedEvent;
         _interstitialAd.OnAdInfoChanged += InterstitialOnAdInfoChangedEvent;
 
-        
+
     }
     void _closeLoadingPanel()
     {

@@ -118,7 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _debugText: {fileID: 3196519607933918625}
-  _provideDebug: 1
+  _giveNoAd: 1
+  _provideDebug: 0
   _loadScreen: {fileID: 7495168503294684542}
 --- !u!1 &481434381003964292
 GameObject:
@@ -602,7 +603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1106084767962023030
 RectTransform:
   m_ObjectHideFlags: 0

@@ -861,7 +861,7 @@ PrefabInstance:
       value: BAHMANAdManager
       objectReference: {fileID: 0}
     - target: {fileID: 2253831222470221226, guid: 02c0562668681e541b9abe9632c18c49, type: 3}
-      propertyPath: _provideDebug
+      propertyPath: _giveNoAd
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3256778502534817902, guid: 02c0562668681e541b9abe9632c18c49, type: 3}
@@ -942,10 +942,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3256778502534817902, guid: 02c0562668681e541b9abe9632c18c49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7495168503294684542, guid: 02c0562668681e541b9abe9632c18c49, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -24,6 +24,8 @@ public class AftermathManager : MonoBehaviour
     /// </summary>
     [SerializeField] GameObject _newBestRecordText;
     //[SerializeField] LootLockerRankingManager _rankingManager;
+
+    [SerializeField] GameObject _claimButton, _claimDoubleButton;
     public void _Back()
     {
         BAHMANBackButtonManager._Instance._ShowMenu();
@@ -102,10 +104,13 @@ public class AftermathManager : MonoBehaviour
     void _adShowedSuccessful()
     {
         _claimReward(A.Levels.ThisRoundScore * 2);
+        _claimButton.gameObject.SetActive(false);
+        _claimDoubleButton.gameObject.SetActive(false);
     }
     void _adShowedFailure()
     {
         BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
+        _claimDoubleButton.gameObject.SetActive(false);
 
     }
     void _claimReward(int iReward)
