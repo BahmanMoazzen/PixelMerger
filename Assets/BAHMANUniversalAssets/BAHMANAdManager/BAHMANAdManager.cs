@@ -1,8 +1,8 @@
 using System.Collections;
+using Unity.Services.LevelPlay;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
-using System.Collections.Generic;
+using UnityEngine.UI;
 public class BAHMANAdManager : MonoBehaviour
 {
     /// <summary>
@@ -32,6 +32,12 @@ public class BAHMANAdManager : MonoBehaviour
     [SerializeField] GameObject _loadScreen;
     UnityAction _adSuccessAction, _adFailAction, _purchaseSuccess, _purchaseFail;
     string _currentSKU;
+    bool _isReadytoShowAd = false;
+
+    private LevelPlayBannerAd _bannerAd ;
+    private LevelPlayInterstitialAd _interstitialAd;
+    private LevelPlayRewardedAd _rewardedVideoAd;
+    public bool IsReady { get { return _isReadytoShowAd; } }
     private void Awake()
     {
         if (Instance == null)
@@ -46,30 +52,46 @@ public class BAHMANAdManager : MonoBehaviour
 
 
     }
+    public void _ShowRewardedVideoDebug()
+    {
+        _showRewardedAd();
+    }
+    public void _ShowBannerAdDebug()
+    {
+        _showBannerAd();
+    }
+    public void _ShowInterstatialDebug()
+    {
+        _showInterstitialAd();
+    }
+    void _initializeAd()
+    {
+        _dlog("[LevelPlaySample] LevelPlay.ValidateIntegration");
+        LevelPlay.ValidateIntegration();
 
+        _dlog($"[LevelPlaySample] Unity version {LevelPlay.UnityVersion}");
 
+        _dlog("[LevelPlaySample] Register initialization callbacks");
+        LevelPlay.OnInitSuccess += SdkInitializationCompletedEvent;
+        LevelPlay.OnInitFailed += SdkInitializationFailedEvent;
 
+        // SDK init
+        _dlog("[LevelPlaySample] LevelPlay SDK initialization");
+        LevelPlay.Init(AdConfig.AppKey);
+    }
 
-#if UNITY_ANDROID
-    string _adUnitId = "ca-app-pub-8025891393939268/7721488986";
-    string _adAppId = "";
-    string _adInterstitialID = "";
-    string _adRewardedID = "";
-    string _ShopKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCx83AZ5dczCKny3fFN9HDxsc53/qkrqRqVUfgV67G/QrKLnY7rsWceOQRH1odOPSzErSkkO3GHnrLKPbW62QxgJ791agkOpdvpAM9cZo7tBKJmX4fS0Ki+bqJgPuEaeA1LG/c2Yvtqpwunc7PFRZiwkECer0nb/MCclpOzTZn23wIDAQAB";
+    private void SdkInitializationFailedEvent(LevelPlayInitError error)
+    {
+        _dlog($"[LevelPlaySample] SDK initialization failed with error: {error}");
+    }
 
-#elif UNITY_IPHONE
-  string _adUnitId = "ca-app-pub-8025891393939268/5460365146";
-  string _adAppId = "";
-  string _adInterstitialID = "";
-    string _adRewardedID = "";
-    string _ShopKey = "";
-#else
-  string _adUnitId = "ca-app-pub-8025891393939268/5460365146";
-  string _adAppId = "";
-  string _adInterstitialID = "";
-    string _adRewardedID = "";
-    string _ShopKey = "";
-#endif
+    private void SdkInitializationCompletedEvent(LevelPlayConfiguration configuration)
+    {
+        _dlog("[LevelPlaySample] SDK initialization completed successfully");
+        _enableAds();
+        _isReadytoShowAd = true;
+
+    }
 
     IEnumerator Start()
     {
@@ -85,217 +107,265 @@ public class BAHMANAdManager : MonoBehaviour
                 _debugText.gameObject.SetActive(true);
             }
         }
+        _initializeAd();
     }
 
     void _dlog(string iMsg)
     {
         if (_debugText != null)
         {
-            _debugText.text = iMsg;
+            _debugText.text += "\n" + iMsg;
         }
         Debug.Log(iMsg);
     }
-
-    public void _ShowInterstitialAd()
+    /// <summary>
+    /// this method is used to show the interstitial ad, you can call this method to show the interstitial ad, and also to pass the success and fail actions as parameters, for example, you can call this method when the player finishes a level, and you want to show an interstitial ad before showing the next level, and also to reward the player for watching the ad, or to show a message if the ad failed to show
+    /// </summary>
+    void _showInterstitialAd()
     {
-
+        _interstitialAd.LoadAd();
     }
+    /// <summary>
+    /// this method is used to show the interstitial ad, you can call this method to show the interstitial ad, and also to pass the success and fail actions as parameters, for example, you can call this method when the player finishes a level, and you want to show an interstitial ad before showing the next level, and also to reward the player for watching the ad, or to show a message if the ad failed to show
+    /// </summary>
+    /// <param name="iSuccessAction">action to run when the ad is shown successfully</param>
+    /// <param name="iFailAction">action to run when the ad fails to show</param>
     public void _ShowInterstitialAd(UnityAction iSuccessAction, UnityAction iFailAction)
     {
         _adSuccessAction = iSuccessAction;
         _adFailAction = iFailAction;
-        _ShowInterstitialAd();
+        _showInterstitialAd();
 
     }
 
-    public bool _IsRewardedAddReady()
+    /// <summary>
+    /// this method is used to show the rewarded ad, you can call this method to show the rewarded ad, and also to pass the success and fail actions as parameters, for example, you can call this method when the player wants to watch a rewarded ad to get some in-game currency or items as a reward, and also to show a message if the ad failed to show
+    /// </summary>
+    void _showRewardedAd()
     {
-
-        return false;
-    }
-    public bool _IsInterstitialAddReady()
-    {
-        return false;
-    }
-
-    public void _ShowRewardedAd()
-    {
+        _rewardedVideoAd.LoadAd();
 
     }
-
-
-    public void _BuySKU(string iSKU, UnityAction iPurchaseSuccess, UnityAction iPurchaseFail)
-    {
-        _loadScreen.SetActive(true);
-        //MyketIAB.init(_ShopKey);
-        _currentSKU = iSKU;
-        _purchaseFail = iPurchaseFail;
-        _purchaseSuccess = iPurchaseSuccess;
-    }
+    /// <summary>
+    /// this method is used to show the rewarded ad, you can call this method to show the rewarded ad, and also to pass the success and fail actions as parameters, for example, you can call this method when the player wants to watch a rewarded ad to get some in-game currency or items as a reward, and also to show a message if the ad failed to show
+    /// </summary>
+    /// <param name="iSuccessAction">action to run when the ad is shown successfully</param>
+    /// <param name="iFailAction">action to run when the ad fails to show</param>
     public void _ShowRewardedAd(UnityAction iSuccessAction, UnityAction iFailAction)
     {
         _adSuccessAction = iSuccessAction;
         _adFailAction = iFailAction;
-        _ShowRewardedAd();
+        _showRewardedAd();
     }
-    void _finishBuyProcess()
+    /// <summary>
+    /// this method is used to show the banner ad, you can call this method to show the banner ad, and also to pass the success and fail actions as parameters, for example, you can call this method when the player wants to see a banner ad at the bottom of the screen, and also to show a message if the ad failed to show
+    /// </summary>
+    /// <param name="iSuccessAction">action to run when the ad is shown successfully</param>
+    /// <param name="iFailAction">action to run when the ad fails to show</param>
+    public void _ShowBannerAd(UnityAction iSuccessAction, UnityAction iFailAction)
     {
-        _adSuccessAction = null;
-        _adFailAction = null;
-        _loadScreen.SetActive(false);
-        //MyketIAB.unbindService();
+        _adSuccessAction = iSuccessAction;
+        _adFailAction = iFailAction;
+        _showBannerAd();
     }
-
-#if UNITY_ANDROID
-
-    void OnEnable()
+    /// <summary>
+    /// starts to show the banner ad, you can call this method to start showing the banner ad, and also to pass the success
+    /// </summary>
+    private void _showBannerAd()
     {
-        // Listen to all events for illustration purposes
-        //IABEventManager.billingSupportedEvent += billingSupportedEvent;
-        //IABEventManager.billingNotSupportedEvent += billingNotSupportedEvent;
-        //IABEventManager.queryInventorySucceededEvent += queryInventorySucceededEvent;
-        //IABEventManager.queryInventoryFailedEvent += queryInventoryFailedEvent;
-        //IABEventManager.querySkuDetailsSucceededEvent += querySkuDetailsSucceededEvent;
-        //IABEventManager.querySkuDetailsFailedEvent += querySkuDetailsFailedEvent;
-        //IABEventManager.queryPurchasesSucceededEvent += queryPurchasesSucceededEvent;
-        //IABEventManager.queryPurchasesFailedEvent += queryPurchasesFailedEvent;
-        //IABEventManager.purchaseSucceededEvent += purchaseSucceededEvent;
-        //IABEventManager.purchaseFailedEvent += purchaseFailedEvent;
-        //IABEventManager.consumePurchaseSucceededEvent += consumePurchaseSucceededEvent;
-        //IABEventManager.consumePurchaseFailedEvent += consumePurchaseFailedEvent;
+        _bannerAd.LoadAd();
     }
-
-
-
-    void OnDisable()
+    void _enableAds()
     {
-        // Remove all event handlers
-        //IABEventManager.billingSupportedEvent -= billingSupportedEvent;
-        //IABEventManager.billingNotSupportedEvent -= billingNotSupportedEvent;
-        //IABEventManager.queryInventorySucceededEvent -= queryInventorySucceededEvent;
-        //IABEventManager.queryInventoryFailedEvent -= queryInventoryFailedEvent;
-        //IABEventManager.querySkuDetailsSucceededEvent -= querySkuDetailsSucceededEvent;
-        //IABEventManager.querySkuDetailsFailedEvent -= querySkuDetailsFailedEvent;
-        //IABEventManager.queryPurchasesSucceededEvent -= queryPurchasesSucceededEvent;
-        //IABEventManager.queryPurchasesFailedEvent -= queryPurchasesFailedEvent;
-        //IABEventManager.purchaseSucceededEvent -= purchaseSucceededEvent;
-        //IABEventManager.purchaseFailedEvent -= purchaseFailedEvent;
-        //IABEventManager.consumePurchaseSucceededEvent -= consumePurchaseSucceededEvent;
-        //IABEventManager.consumePurchaseFailedEvent -= consumePurchaseFailedEvent;
+        // Register to ImpressionDataReadyEvent
+        LevelPlay.OnImpressionDataReady += ImpressionDataReadyEvent;
+
+        // Create Rewarded Video object
+        _rewardedVideoAd = new LevelPlayRewardedAd(AdConfig.RewardedVideoAdUnitId);
+
+        // Register to Rewarded Video events
+        _rewardedVideoAd.OnAdLoaded += RewardedVideoOnLoadedEvent;
+        _rewardedVideoAd.OnAdLoadFailed += RewardedVideoOnAdLoadFailedEvent;
+        _rewardedVideoAd.OnAdDisplayed += RewardedVideoOnAdDisplayedEvent;
+        _rewardedVideoAd.OnAdDisplayFailed += RewardedVideoOnAdDisplayedFailedEvent;
+        _rewardedVideoAd.OnAdRewarded += RewardedVideoOnAdRewardedEvent;
+        _rewardedVideoAd.OnAdClicked += RewardedVideoOnAdClickedEvent;
+        _rewardedVideoAd.OnAdClosed += RewardedVideoOnAdClosedEvent;
+        _rewardedVideoAd.OnAdInfoChanged += RewardedVideoOnAdInfoChangedEvent;
+
+        // Create Banner object
+        _bannerAd = new LevelPlayBannerAd(AdConfig.BannerAdUnitId);
+
+        // Register to Banner events
+        _bannerAd.OnAdLoaded += BannerOnAdLoadedEvent;
+        _bannerAd.OnAdLoadFailed += BannerOnAdLoadFailedEvent;
+        _bannerAd.OnAdDisplayed += BannerOnAdDisplayedEvent;
+        _bannerAd.OnAdDisplayFailed += BannerOnAdDisplayFailedEvent;
+        _bannerAd.OnAdClicked += BannerOnAdClickedEvent;
+        _bannerAd.OnAdCollapsed += BannerOnAdCollapsedEvent;
+        _bannerAd.OnAdLeftApplication += BannerOnAdLeftApplicationEvent;
+        _bannerAd.OnAdExpanded += BannerOnAdExpandedEvent;
+
+        // Create Interstitial object
+        _interstitialAd = new LevelPlayInterstitialAd(AdConfig.InterstitalAdUnitId);
+
+        // Register to Interstitial events
+        _interstitialAd.OnAdLoaded += InterstitialOnAdLoadedEvent;
+        _interstitialAd.OnAdLoadFailed += InterstitialOnAdLoadFailedEvent;
+        _interstitialAd.OnAdDisplayed += InterstitialOnAdDisplayedEvent;
+        _interstitialAd.OnAdDisplayFailed += InterstitialOnAdDisplayFailedEvent;
+        _interstitialAd.OnAdClicked += InterstitialOnAdClickedEvent;
+        _interstitialAd.OnAdClosed += InterstitialOnAdClosedEvent;
+        _interstitialAd.OnAdInfoChanged += InterstitialOnAdInfoChangedEvent;
+
+
     }
 
-
-    void billingSupportedEvent()
+    #region Rewarded Ad Callbacks
+    void RewardedVideoOnLoadedEvent(LevelPlayAdInfo adInfo)
     {
-        _dlog("billingSupportedEvent");
-        //MyketIAB.queryPurchases();
-        //BAHMANMessageBoxManager._INSTANCE._ShowMessage("Myket ini success");
+        _dlog($"[LevelPlaySample] Received RewardedVideoOnLoadedEvent With AdInfo: {adInfo}");
+        _rewardedVideoAd.ShowAd();
     }
 
-    void billingNotSupportedEvent(string error)
+    void RewardedVideoOnAdLoadFailedEvent(LevelPlayAdError error)
     {
-        _dlog("billingNotSupportedEvent: " + error);
-        _purchaseFail?.Invoke();
-        _finishBuyProcess();
-        //BAHMANMessageBoxManager._INSTANCE._ShowMessage("Myket ini fail");
+        _dlog($"[LevelPlaySample] Received RewardedVideoOnAdLoadFailedEvent With Error: {error}");
+        _adFailAction?.Invoke();
     }
 
-    //void queryInventorySucceededEvent(List<MyketPurchase> purchases, List<MyketSkuInfo> skus)
-    //{
-    //    _dlog(string.Format("queryInventorySucceededEvent. total purchases: {0}, total skus: {1}", purchases.Count, skus.Count));
-
-    //    for (int i = 0; i < purchases.Count; ++i)
-    //    {
-    //        _dlog(purchases[i].ToString());
-    //    }
-
-    //    _dlog("-----------------------------");
-
-    //    for (int i = 0; i < skus.Count; ++i)
-    //    {
-    //        _dlog(skus[i].ToString());
-    //    }
-    //}
-
-    void queryInventoryFailedEvent(string error)
+    void RewardedVideoOnAdDisplayedEvent(LevelPlayAdInfo adInfo)
     {
-        _dlog("queryInventoryFailedEvent: " + error);
+        _dlog($"[LevelPlaySample] Received RewardedVideoOnAdDisplayedEvent With AdInfo: {adInfo}");
 
     }
 
-    //private void querySkuDetailsSucceededEvent(List<MyketSkuInfo> skus)
-    //{
-    //    _dlog(string.Format("querySkuDetailsSucceededEvent. total skus: {0}", skus.Count));
-
-    //    for (int i = 0; i < skus.Count; ++i)
-    //    {
-    //        _dlog(skus[i].ToString());
-    //    }
-    //}
-
-    private void querySkuDetailsFailedEvent(string error)
+    void RewardedVideoOnAdDisplayedFailedEvent(LevelPlayAdInfo adInfo, LevelPlayAdError error)
     {
-        _dlog("querySkuDetailsFailedEvent: " + error);
+        _dlog($"[LevelPlaySample] Received RewardedVideoOnAdDisplayedFailedEvent With AdInfo: {adInfo} and Error: {error}");
+        _adFailAction?.Invoke();
     }
 
-    //private void queryPurchasesSucceededEvent(List<MyketPurchase> purchases)
-    //{
-    //    _dlog(string.Format("queryPurchasesSucceededEvent. total purchases: {0}", purchases.Count));
-
-    //    for (int i = 0; i < purchases.Count; ++i)
-    //    {
-    //        _dlog(purchases[i].ToString());
-    //        if (purchases[i].ProductId == _currentSKU)
-    //        {
-    //            _purchaseSuccess?.Invoke();
-    //            _finishBuyProcess();
-    //            return;
-    //        }
-
-    //    }
-    //    MyketIAB.purchaseProduct(_currentSKU);
-    //}
-
-    //private void queryPurchasesFailedEvent(string error)
-    //{
-    //    _dlog("queryPurchasesFailedEvent: " + error);
-    //    MyketIAB.purchaseProduct(_currentSKU);
-    //}
-
-    //void purchaseSucceededEvent(MyketPurchase purchase)
-    //{
-    //    _dlog("purchaseSucceededEvent: " + purchase);
-    //    //BAHMANMessageBoxManager._INSTANCE._ShowMessage("purchase success");
-    //    MyketIAB.consumeProduct(purchase.ProductId);
-    //    //BAHMANMessageBoxManager._INSTANCE._ShowMessage("starting consume");
-    //}
-
-    void purchaseFailedEvent(string error)
+    void RewardedVideoOnAdRewardedEvent(LevelPlayAdInfo adInfo, LevelPlayReward reward)
     {
-        _dlog("purchaseFailedEvent: " + error);
-        //BAHMANMessageBoxManager._INSTANCE._ShowMessage("purchase failed");
-        _purchaseFail?.Invoke();
-        //BAHMANMessageBoxManager._INSTANCE._ShowMessage("nulling actions");
-        _finishBuyProcess();
+        _dlog($"[LevelPlaySample] Received RewardedVideoOnAdRewardedEvent With AdInfo: {adInfo} and Reward: {reward}");
+        _adSuccessAction?.Invoke();
     }
 
-    //void consumePurchaseSucceededEvent(MyketPurchase purchase)
-    //{
-    //    _dlog("consumePurchaseSucceededEvent: " + purchase);
-    //    //BAHMANMessageBoxManager._INSTANCE._ShowMessage("consume success");
-    //    _purchaseSuccess?.Invoke();
-    //    //BAHMANMessageBoxManager._INSTANCE._ShowMessage("nulling actions");
-    //    _finishBuyProcess();
-
-    //}
-    void consumePurchaseFailedEvent(string error)
+    void RewardedVideoOnAdClickedEvent(LevelPlayAdInfo adInfo)
     {
-        _dlog("consumePurchaseFailedEvent: " + error);
-        //BAHMANMessageBoxManager._INSTANCE._ShowMessage("consume failed");
-        _purchaseFail?.Invoke();
-        _finishBuyProcess();
+        _dlog($"[LevelPlaySample] Received RewardedVideoOnAdClickedEvent With AdInfo: {adInfo}");
     }
 
-#endif
+    void RewardedVideoOnAdClosedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received RewardedVideoOnAdClosedEvent With AdInfo: {adInfo}");
+        _adFailAction?.Invoke();
+    }
+
+    void RewardedVideoOnAdInfoChangedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received RewardedVideoOnAdInfoChangedEvent With AdInfo {adInfo}");
+    }
+    #endregion
+
+    #region Interstitial Ad Callbacks
+    void InterstitialOnAdLoadedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received InterstitialOnAdLoadedEvent With AdInfo: {adInfo}");
+        _interstitialAd.ShowAd();
+    }
+
+    void InterstitialOnAdLoadFailedEvent(LevelPlayAdError error)
+    {
+        _dlog($"[LevelPlaySample] Received InterstitialOnAdLoadFailedEvent With Error: {error}");
+        _adFailAction?.Invoke();
+    }
+
+    void InterstitialOnAdDisplayedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received InterstitialOnAdDisplayedEvent With AdInfo: {adInfo}");
+    }
+
+    void InterstitialOnAdDisplayFailedEvent(LevelPlayAdInfo adInfo, LevelPlayAdError error)
+    {
+        _dlog($"[LevelPlaySample] Received InterstitialOnAdDisplayFailedEvent With AdInfo: {adInfo} and Error: {error}");
+        _adFailAction?.Invoke();
+    }
+
+    void InterstitialOnAdClickedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received InterstitialOnAdClickedEvent With AdInfo: {adInfo}");
+
+    }
+
+    void InterstitialOnAdClosedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received InterstitialOnAdClosedEvent With AdInfo: {adInfo}");
+        _adSuccessAction?.Invoke();
+    }
+
+    void InterstitialOnAdInfoChangedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received InterstitialOnAdInfoChangedEvent With AdInfo: {adInfo}");
+    }
+    #endregion
+
+
+    #region Banner Ad Callbacks
+    void BannerOnAdLoadedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received BannerOnAdLoadedEvent With AdInfo: {adInfo}");
+        _bannerAd.ShowAd();
+    }
+
+    void BannerOnAdLoadFailedEvent(LevelPlayAdError error)
+    {
+        _dlog($"[LevelPlaySample] Received BannerOnAdLoadFailedEvent With Error: {error}");
+        _adFailAction?.Invoke();
+    }
+
+    void BannerOnAdClickedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received BannerOnAdClickedEvent With AdInfo: {adInfo}");
+    }
+
+    void BannerOnAdDisplayedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received BannerOnAdDisplayedEvent With AdInfo: {adInfo}");
+        _adSuccessAction?.Invoke();
+    }
+
+    void BannerOnAdDisplayFailedEvent(LevelPlayAdInfo adInfo, LevelPlayAdError error)
+    {
+        _dlog($"[LevelPlaySample] Received BannerOnAdDisplayFailedEvent With AdInfo: {adInfo} and Error: {error}");
+        _adFailAction?.Invoke();
+    }
+
+    void BannerOnAdCollapsedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received BannerOnAdCollapsedEvent With AdInfo: {adInfo}");
+    }
+
+    void BannerOnAdLeftApplicationEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received BannerOnAdLeftApplicationEvent With AdInfo: {adInfo}");
+    }
+
+    void BannerOnAdExpandedEvent(LevelPlayAdInfo adInfo)
+    {
+        _dlog($"[LevelPlaySample] Received BannerOnAdExpandedEvent With AdInfo: {adInfo}");
+    }
+    #endregion
+    void ImpressionDataReadyEvent(LevelPlayImpressionData impressionData)
+    {
+        _dlog($"[LevelPlaySample] Received ImpressionDataReadyEvent ToString(): {impressionData}");
+        _dlog($"[LevelPlaySample] Received ImpressionDataReadyEvent allData: {impressionData.AllData}");
+    }
+
+    private void OnDisable()
+    {
+
+    }
 
 }
