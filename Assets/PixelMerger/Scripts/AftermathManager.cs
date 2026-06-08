@@ -35,8 +35,8 @@ public class AftermathManager : MonoBehaviour
 
 
         //_rankingManager._SetActiveLeaderBoard((int)A.Levels.DifficultyLevel, A.Levels.ThisRoundScore);
-        
-        
+
+
 
         if (A.Levels.SetBestScore(A.Levels.ThisRoundScore))
         {
@@ -51,7 +51,7 @@ public class AftermathManager : MonoBehaviour
         _thisRunScore.text = A.Tools.ScoreToTitle(A.Levels.ThisRoundScore);
         _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreTotal._Stock);
 
-        
+
     }
     //public void _ShowRanks()
     //{
@@ -59,7 +59,7 @@ public class AftermathManager : MonoBehaviour
     //}
     //public void _SubmitScore()
     //{
-        
+
     //    //_rankingManager._ShowSubmitForm(_submitRankSuccess,_submitRankFailed);
     //}
     //void _showRankFailed()
@@ -97,7 +97,16 @@ public class AftermathManager : MonoBehaviour
     }
     public void _ClaimDoubleReward()
     {
+        BAHMANAdManager.Instance._ShowRewardedAd(_adShowedSuccessful, _adShowedFailure);
+    }
+    void _adShowedSuccessful()
+    {
         _claimReward(A.Levels.ThisRoundScore * 2);
+    }
+    void _adShowedFailure()
+    {
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
+
     }
     void _claimReward(int iReward)
     {

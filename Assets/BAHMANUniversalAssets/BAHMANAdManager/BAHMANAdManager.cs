@@ -157,6 +157,8 @@ public class BAHMANAdManager : MonoBehaviour
     {
         _adSuccessAction = iSuccessAction;
         _adFailAction = iFailAction;
+        _adFailAction += _closeLoadingPanel;
+        _adSuccessAction += _closeLoadingPanel;
         _showRewardedAd();
     }
     /// <summary>
@@ -168,6 +170,8 @@ public class BAHMANAdManager : MonoBehaviour
     {
         _adSuccessAction = iSuccessAction;
         _adFailAction = iFailAction;
+        _adFailAction += _closeLoadingPanel;
+        _adSuccessAction += _closeLoadingPanel;
         _showBannerAd();
     }
     /// <summary>
@@ -220,17 +224,14 @@ public class BAHMANAdManager : MonoBehaviour
         _interstitialAd.OnAdClosed += InterstitialOnAdClosedEvent;
         _interstitialAd.OnAdInfoChanged += InterstitialOnAdInfoChangedEvent;
 
-        _adFailAction += () =>
-        {
-            _loadScreen.SetActive(false);
-
-        };
-        _adSuccessAction += () =>
-        {
-            _loadScreen.SetActive(false);
-        };
+        
     }
+    void _closeLoadingPanel()
+    {
+        _loadScreen.SetActive(false);
 
+
+    }
     #region Rewarded Ad Callbacks
     void RewardedVideoOnLoadedEvent(LevelPlayAdInfo adInfo)
     {
@@ -270,7 +271,7 @@ public class BAHMANAdManager : MonoBehaviour
     void RewardedVideoOnAdClosedEvent(LevelPlayAdInfo adInfo)
     {
         _dlog($"[LevelPlaySample] Received RewardedVideoOnAdClosedEvent With AdInfo: {adInfo}");
-        _adFailAction?.Invoke();
+        //_adFailAction?.Invoke();
     }
 
     void RewardedVideoOnAdInfoChangedEvent(LevelPlayAdInfo adInfo)
