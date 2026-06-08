@@ -51,7 +51,7 @@ public class AftermathManager : MonoBehaviour
 
         _bestScore.text = A.Tools.ScoreToTitle(A.Levels.BestScore);
         _thisRunScore.text = A.Tools.ScoreToTitle(A.Levels.ThisRoundScore);
-        _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreTotal._Stock);
+        _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreSavable._Stock);
 
 
     }
@@ -115,7 +115,7 @@ public class AftermathManager : MonoBehaviour
     }
     void _claimReward(int iReward)
     {
-        A.GameSetting.ScoreTotal._ChangeAmount(iReward);
-        _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreTotal._Stock);
+        A.GameSetting.ScoreSavable._ChangeAmount(iReward);
+        _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreSavable._Stock);
     }
 }

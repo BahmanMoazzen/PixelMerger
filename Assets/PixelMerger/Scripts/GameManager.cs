@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -104,6 +105,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     [SerializeField] GameObject _pointTextMesh;
 
+    [SerializeField] GameObject _tiltLeftPlusImage;
+    [SerializeField] GameObject _tiltRightPlusImage;
+    [SerializeField] GameObject _unicolorPlusImage;
+    [SerializeField] GameObject _hammerPlusImage;
 
     /// <summary>
     /// level starup routine
@@ -122,7 +127,16 @@ public class GameManager : MonoBehaviour
         _line.SetPosition(1, new Vector2(_bottomRight.position.x, _deadLines[(int)A.Levels.DifficultyLevel].transform.position.y));
         yield return null;
         _loadPixel();
+        _alignPlusImages();
 
+    }
+
+    void _alignPlusImages()
+    {
+        _hammerPlusImage.SetActive(!A.GameSetting.HammerSavable._HaveStock);
+        _unicolorPlusImage.SetActive(!A.GameSetting.UnicolorSavable._HaveStock);
+        _tiltLeftPlusImage.SetActive(!A.GameSetting.TiltLeftSavable._HaveStock);    
+        _tiltRightPlusImage.SetActive(!A.GameSetting.TiltRightSavable._HaveStock);
 
     }
     public void _EndGame()
@@ -136,36 +150,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    //public void _ItemClicked(SaveableItem iItem)
-    //{
-    //    _activeItem = iItem;
-    //    if (iItem._HaveStock)
-    //    {
-    //        switch (iItem._Tag)
-    //        {
-    //            case "Hammer":
-    //                _UseHammer();
-    //                break;
-    //            case "TiltLeft":
-    //                _Tilt(-1);
-    //                iItem._ChangeAmount(-1, false);
-    //                break;
-    //            case "TiltRight":
-    //                iItem._ChangeAmount(-1, false);
-    //                _Tilt(1);
-    //                break;
-    //            case "UniColor":
-    //                iItem._ChangeAmount(-1, false);
-    //                _LoadUnicolor();
-    //                break;
-    //        }
-    //    }
-    //    else
-    //    {
 
-    //        BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyOneTag, _itemClickedConfirmShowAd);
-    //    }
-    //}
     public void _ItemClicked(ShoptItemInfo iItem)
     {
         _activeShopItem = iItem;
@@ -179,16 +164,32 @@ public class GameManager : MonoBehaviour
                 case "TiltLeft":
                     _Tilt(-1);
                     iItem._ItemInfo._ChangeAmount(-1, false);
+                    if (!iItem._ItemInfo._HaveStock)
+                    {
+                        _tiltLeftPlusImage.SetActive(true);
+
+                    }
                     break;
                 case "TiltRight":
                     iItem._ItemInfo._ChangeAmount(-1, false);
                     _Tilt(1);
+                    if (!iItem._ItemInfo._HaveStock)
+                    {
+                        _tiltRightPlusImage.SetActive(true);
+
+                    }
                     break;
                 case "UniColor":
                     iItem._ItemInfo._ChangeAmount(-1, false);
+                    if (!iItem._ItemInfo._HaveStock)
+                    {
+                        _unicolorPlusImage.SetActive(true);
+
+                    }
                     _LoadUnicolor();
                     break;
             }
+
         }
         else
         {
@@ -199,7 +200,7 @@ public class GameManager : MonoBehaviour
     void _itemClickedConfirmShowAd()
     {
         _disableShopShowing();
-        if (A.GameSetting.ScoreTotal._ChangeAmount(-_activeShopItem._intPrice))
+        if (A.GameSetting.ScoreSavable._ChangeAmount(-_activeShopItem._intPrice))
         {
             AdManager__OnAdRewarded();
         }
@@ -312,6 +313,10 @@ public class GameManager : MonoBehaviour
 
         MergersController.OnPixelClicked -= MergersController_OnPixelClicked;
         _activeShopItem._ItemInfo._ChangeAmount(-1, false);
+        if (!_activeShopItem._ItemInfo._HaveStock)
+        {
+            _hammerPlusImage.SetActive(true);
+        }
         _levelPixels.Remove(iPixel);
         Destroy(iPixel);
         StartCoroutine(_deactivateHammerRoutine());

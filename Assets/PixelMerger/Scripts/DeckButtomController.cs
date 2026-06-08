@@ -25,7 +25,7 @@ public class DeckButtomController : MonoBehaviour
         //Debug.Log("Name:" + _deckInfo.DeckName + " Lock:" + _deckInfo.IsLocked);
         if (_deckInfo.IsLocked)
         {
-            if (A.GameSetting.ScoreTotal._HaveAmount(_deckInfo.Price))
+            if (A.GameSetting.ScoreSavable._HaveAmount(_deckInfo.Price))
             {
                 _unlockSlider.gameObject.SetActive(false);
                 _unlockButton.SetActive(true);
@@ -36,7 +36,7 @@ public class DeckButtomController : MonoBehaviour
             {
                 _lockGameObject.SetActive(true);
                 _unlockSlider.maxValue = _deckInfo.Price;
-                _unlockSlider.value = A.GameSetting.ScoreTotal._Stock;
+                _unlockSlider.value = A.GameSetting.ScoreSavable._Stock;
                 _unlockPointText.text = A.Tools.TousandSeprator(_deckInfo.Price.ToString(), ',');
             }
         }
@@ -59,7 +59,7 @@ public class DeckButtomController : MonoBehaviour
     }
     void _unlockWithPurchase()
     {
-        if (A.GameSetting.ScoreTotal._ChangeAmount(-_deckInfo.Price))
+        if (A.GameSetting.ScoreSavable._ChangeAmount(-_deckInfo.Price))
         {
             _perchaseSuccess();
         }

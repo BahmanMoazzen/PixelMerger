@@ -20,7 +20,11 @@ public class GameSettingInfo : ScriptableObject
     [SerializeField] bool soundFX;
     [SerializeField] bool music;
 
-    public SaveableItem ScoreTotal;
+    public SaveableItem ScoreSavable;
+    public SaveableItem TiltRightSavable;
+    public SaveableItem TiltLeftSavable;
+    public SaveableItem UnicolorSavable;
+    public SaveableItem HammerSavable;
 
     public bool SoundFX
     {
