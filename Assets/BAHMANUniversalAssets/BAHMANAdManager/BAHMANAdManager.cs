@@ -34,7 +34,7 @@ public class BAHMANAdManager : MonoBehaviour
     string _currentSKU;
     bool _isReadytoShowAd = false;
 
-    private LevelPlayBannerAd _bannerAd ;
+    private LevelPlayBannerAd _bannerAd;
     private LevelPlayInterstitialAd _interstitialAd;
     private LevelPlayRewardedAd _rewardedVideoAd;
     public bool IsReady { get { return _isReadytoShowAd; } }
@@ -123,6 +123,7 @@ public class BAHMANAdManager : MonoBehaviour
     /// </summary>
     void _showInterstitialAd()
     {
+        _loadScreen.SetActive(true);
         _interstitialAd.LoadAd();
     }
     /// <summary>
@@ -143,6 +144,7 @@ public class BAHMANAdManager : MonoBehaviour
     /// </summary>
     void _showRewardedAd()
     {
+        _loadScreen.SetActive(true);
         _rewardedVideoAd.LoadAd();
 
     }
@@ -218,7 +220,15 @@ public class BAHMANAdManager : MonoBehaviour
         _interstitialAd.OnAdClosed += InterstitialOnAdClosedEvent;
         _interstitialAd.OnAdInfoChanged += InterstitialOnAdInfoChangedEvent;
 
+        _adFailAction += () =>
+        {
+            _loadScreen.SetActive(false);
 
+        };
+        _adSuccessAction += () =>
+        {
+            _loadScreen.SetActive(false);
+        };
     }
 
     #region Rewarded Ad Callbacks
