@@ -37,7 +37,7 @@ public class DeckButtomController : MonoBehaviour
                 _lockGameObject.SetActive(true);
                 _unlockSlider.maxValue = _deckInfo.Price;
                 _unlockSlider.value = A.GameSetting.ScoreSavable._Stock;
-                _unlockPointText.text = A.Tools.TousandSeprator(_deckInfo.Price.ToString(), ',');
+                _unlockPointText.text = A.Tools.ThousandSeparator(_deckInfo.Price);
             }
         }
         else
@@ -82,7 +82,7 @@ public class DeckButtomController : MonoBehaviour
     {
         if (_deckInfo.IsLocked)
         {
-            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(A.Tags.IsLockedTag, A.Tags.BuyDeckTag.Replace("&&&", _deckInfo.DeckName).Replace("$$$", A.Tools.TousandSeprator(_deckInfo.Price.ToString(), ',')), _unlockWithPurchase);
+            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(A.Tags.IsLockedTag, A.Tags.BuyDeckTag.Replace("&&&", _deckInfo.DeckName).Replace("$$$", A.Tools.ThousandSeparator(_deckInfo.Price)), _unlockWithPurchase);
 
         }
         else

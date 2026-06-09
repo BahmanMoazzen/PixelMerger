@@ -368,9 +368,8 @@ public class GameManager : MonoBehaviour
     /// <returns>nothing</returns>
     IEnumerator _dropDownPixel()
     {
-        SoundManager._Instance._PlaySound(GameSounds.Throw);
-        yield return null;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        SoundManager._Instance._PlaySound(GameSounds.Throw);
         _currentPixel.transform.position = new Vector3(Mathf.Clamp(mousePos.x, _topLeft.position.x, _bottomRight.position.x), _currentPixel.transform.position.y, 0);
         _currentPixel.GetComponent<MergersController>()._Drop();
         yield return new WaitForSeconds(_dropInterval);
