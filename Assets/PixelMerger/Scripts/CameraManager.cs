@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField] GameSettingInfo _gameSettingInfo;
+    
     Animator _animator;
     private void OnEnable()
     {
@@ -23,7 +21,7 @@ public class CameraManager : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _animator.SetBool("AntiAliasing", _gameSettingInfo.AntiAliasing);
+        _animator.SetBool("AntiAliasing", A.GameSetting.AntiAliasing);
 
     }
 }
