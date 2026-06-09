@@ -24,6 +24,8 @@ public class AftermathManager : MonoBehaviour
     /// </summary>
     [SerializeField] GameObject _newBestRecordText;
     //[SerializeField] LootLockerRankingManager _rankingManager;
+
+    [SerializeField] GameObject _claimButton, _claimDoubleButton;
     public void _Back()
     {
         BAHMANBackButtonManager._Instance._ShowMenu();
@@ -35,8 +37,8 @@ public class AftermathManager : MonoBehaviour
 
 
         //_rankingManager._SetActiveLeaderBoard((int)A.Levels.DifficultyLevel, A.Levels.ThisRoundScore);
-        
-        
+
+
 
         if (A.Levels.SetBestScore(A.Levels.ThisRoundScore))
         {
@@ -49,9 +51,9 @@ public class AftermathManager : MonoBehaviour
 
         _bestScore.text = A.Tools.ScoreToTitle(A.Levels.BestScore);
         _thisRunScore.text = A.Tools.ScoreToTitle(A.Levels.ThisRoundScore);
-        _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreTotal._Stock);
+        _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreSavable._Stock);
 
-        
+
     }
     //public void _ShowRanks()
     //{
@@ -59,7 +61,7 @@ public class AftermathManager : MonoBehaviour
     //}
     //public void _SubmitScore()
     //{
-        
+
     //    //_rankingManager._ShowSubmitForm(_submitRankSuccess,_submitRankFailed);
     //}
     //void _showRankFailed()
@@ -97,11 +99,23 @@ public class AftermathManager : MonoBehaviour
     }
     public void _ClaimDoubleReward()
     {
+        BAHMANAdManager.Instance._ShowRewardedAd(_adShowedSuccessful, _adShowedFailure);
+    }
+    void _adShowedSuccessful()
+    {
         _claimReward(A.Levels.ThisRoundScore * 2);
+        _claimButton.gameObject.SetActive(false);
+        _claimDoubleButton.gameObject.SetActive(false);
+    }
+    void _adShowedFailure()
+    {
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
+        _claimDoubleButton.gameObject.SetActive(false);
+
     }
     void _claimReward(int iReward)
     {
-        A.GameSetting.ScoreTotal._ChangeAmount(iReward);
-        _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreTotal._Stock);
+        A.GameSetting.ScoreSavable._ChangeAmount(iReward);
+        _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreSavable._Stock);
     }
 }

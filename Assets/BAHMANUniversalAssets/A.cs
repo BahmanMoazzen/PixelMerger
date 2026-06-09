@@ -1,11 +1,61 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 
 public static class A
 {
+    public static class AdConfig
+    {
+        public static string AppKey => GetAppKey();
+        public static string BannerAdUnitId => GetBannerAdUnitId();
+        public static string InterstitalAdUnitId => GetInterstitialAdUnitId();
+        public static string RewardedVideoAdUnitId => GetRewardedVideoAdUnitId();
+
+        static string GetAppKey()
+        {
+#if UNITY_ANDROID
+            return "26a283e35";
+#elif UNITY_IPHONE
+            return "26a283e35";
+#else
+            return "unexpected_platform";
+#endif
+        }
+
+        static string GetBannerAdUnitId()
+        {
+#if UNITY_ANDROID
+            return "ez66tsglezwrtf2y";
+#elif UNITY_IPHONE
+            return "ez66tsglezwrtf2y";
+#else
+            return "unexpected_platform";
+#endif
+        }
+        static string GetInterstitialAdUnitId()
+        {
+#if UNITY_ANDROID
+            return "1ydocduh39wq3343";
+#elif UNITY_IPHONE
+            return "1ydocduh39wq3343";
+#else
+            return "unexpected_platform";
+#endif
+        }
+
+        static string GetRewardedVideoAdUnitId()
+        {
+#if UNITY_ANDROID
+            return "i92t0p1zqft2hwmp";
+#elif UNITY_IPHONE
+            return "i92t0p1zqft2hwmp";
+#else
+            return "unexpected_platform";
+#endif
+        }
+    }
+
     public static class Tags
     {
         public static char PLUS_SIGN = '+';

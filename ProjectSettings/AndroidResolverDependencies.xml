@@ -1,12 +1,14 @@
 <dependencies>
   <packages>
-    <package>com.google.android.gms:play-services-ads:22.6.0</package>
-    <package>com.google.android.ump:user-messaging-platform:2.1.0</package>
+    <package>com.google.android.gms:play-services-ads-identifier:18.1.0</package>
+    <package>com.unity3d.ads:unity-ads:4.18.1</package>
+    <package>com.unity3d.ads-mediation:mediation-sdk:9.4.3</package>
+    <package>com.unity3d.ads-mediation:unityads-adapter:5.9.0</package>
   </packages>
   <files />
   <settings>
-    <setting name="androidAbis" value="armeabi-v7a" />
-    <setting name="bundleId" value="ir.helengamefactory.pixelmerger" />
+    <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
+    <setting name="bundleId" value="helengamefactory.pixelmerger" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="True" />

@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     //SaveableItem _activeItem;
     ShoptItemInfo _activeShopItem;
+    int _activePrice;
     /// <summary>
     /// to show the point gaind by this merge on the screen
     /// </summary>
@@ -122,9 +123,18 @@ public class GameManager : MonoBehaviour
         _line.SetPosition(1, new Vector2(_bottomRight.position.x, _deadLines[(int)A.Levels.DifficultyLevel].transform.position.y));
         yield return null;
         _loadPixel();
-
+        //_alignPlusImages();
 
     }
+
+    //void _alignPlusImages()
+    //{
+    //    _hammerPlusImage.SetActive(!A.GameSetting.HammerSavable._HaveStock);
+    //    _unicolorPlusImage.SetActive(!A.GameSetting.UnicolorSavable._HaveStock);
+    //    _tiltLeftPlusImage.SetActive(!A.GameSetting.TiltLeftSavable._HaveStock);    
+    //    _tiltRightPlusImage.SetActive(!A.GameSetting.TiltRightSavable._HaveStock);
+
+    //}
     public void _EndGame()
     {
         if (!_isGameOvered)
@@ -136,36 +146,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    //public void _ItemClicked(SaveableItem iItem)
-    //{
-    //    _activeItem = iItem;
-    //    if (iItem._HaveStock)
-    //    {
-    //        switch (iItem._Tag)
-    //        {
-    //            case "Hammer":
-    //                _UseHammer();
-    //                break;
-    //            case "TiltLeft":
-    //                _Tilt(-1);
-    //                iItem._ChangeAmount(-1, false);
-    //                break;
-    //            case "TiltRight":
-    //                iItem._ChangeAmount(-1, false);
-    //                _Tilt(1);
-    //                break;
-    //            case "UniColor":
-    //                iItem._ChangeAmount(-1, false);
-    //                _LoadUnicolor();
-    //                break;
-    //        }
-    //    }
-    //    else
-    //    {
 
-    //        BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyOneTag, _itemClickedConfirmShowAd);
-    //    }
-    //}
     public void _ItemClicked(ShoptItemInfo iItem)
     {
         _activeShopItem = iItem;
@@ -177,38 +158,59 @@ public class GameManager : MonoBehaviour
                     _UseHammer();
                     break;
                 case "TiltLeft":
-                    _Tilt(-1);
                     iItem._ItemInfo._ChangeAmount(-1, false);
+                    _Tilt(-1);
+                    
                     break;
                 case "TiltRight":
                     iItem._ItemInfo._ChangeAmount(-1, false);
                     _Tilt(1);
+                    
                     break;
                 case "UniColor":
                     iItem._ItemInfo._ChangeAmount(-1, false);
+                    
                     _LoadUnicolor();
                     break;
             }
+
         }
         else
         {
             _isShopShowing = true;
-            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()), _disableShopShowing, _itemClickedConfirmShowAd, _disableShopShowing);
+            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()),"Buy with Points","Half Price (Ad)",true,true, _disableShopShowing, _withoutAdRoutine, _withAdRoutine);
         }
     }
-    void _itemClickedConfirmShowAd()
+
+    void _withAdRoutine()
     {
-        _disableShopShowing();
-        if (A.GameSetting.ScoreTotal._ChangeAmount(-_activeShopItem._intPrice))
+        _activePrice = (int)MathF.Round(_activeShopItem._intPrice * 0.5f, 0);
+        if (A.GameSetting.ScoreSavable._HaveAmount(_activePrice))
         {
-            AdManager__OnAdRewarded();
+            BAHMANAdManager.Instance._ShowRewardedAd(_showAdSuccess, _showAdFailed);
         }
         else
         {
-            AdManager__OnAdFailed();
+            _failedToAddStock();
         }
 
     }
+    void _withoutAdRoutine()
+    {
+        _activePrice = (int)MathF.Round(_activeShopItem._intPrice, 0);
+        if (A.GameSetting.ScoreSavable._HaveAmount(_activePrice))
+        {
+            _successToAddStock();
+        }
+        else
+        {
+            _failedToAddStock();
+        }
+    }
+    
+
+    
+
 
     void _disableShopShowing()
     {
@@ -224,19 +226,30 @@ public class GameManager : MonoBehaviour
         _isShopShowing = false;
 
     }
-
-    private void AdManager__OnAdFailed()
+    void _showAdSuccess()
+    {
+        _successToAddStock();
+    }
+    void _showAdFailed()
+    {
+        _failedToAddStock();
+    }
+    private void _failedToAddStock()
     {
         BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseFailedTag);
+        _disableShopShowing();
         //BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
 
 
     }
-
-    private void AdManager__OnAdRewarded()
+    
+    private void _successToAddStock()
     {
-        BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseSuccessTag);
+        BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseSuccessTag+" "+_activeShopItem._ItemName);
+        A.GameSetting.ScoreSavable._ChangeAmount(-_activePrice);
         _activeShopItem._ItemInfo._ChangeAmount(1, false);
+        //_alignPlusImages();
+        _disableShopShowing();
 
 
     }
@@ -312,6 +325,7 @@ public class GameManager : MonoBehaviour
 
         MergersController.OnPixelClicked -= MergersController_OnPixelClicked;
         _activeShopItem._ItemInfo._ChangeAmount(-1, false);
+        
         _levelPixels.Remove(iPixel);
         Destroy(iPixel);
         StartCoroutine(_deactivateHammerRoutine());

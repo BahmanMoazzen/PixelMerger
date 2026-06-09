@@ -20,6 +20,8 @@ public class TitleScreenManager : MonoBehaviour
         //{
         //    _ratingBottom.SetActive(true);
         //}
+        
+                    
     }
     /// <summary>
     /// Starts the game by loading the game scene. This method is called when the player clicks the "Start Game" button on the title screen.
@@ -43,14 +45,8 @@ public class TitleScreenManager : MonoBehaviour
         //BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.DeckSelect);
 
     }
-    public void _ShowRewarded()
-    {
-        BAHMANAdManager._Instance._ShowRewardedAd();
-    }
-    public void _ShowInterstitial()
-    {
-        BAHMANAdManager._Instance._ShowInterstitialAd();
-    }
+    
+    
     public void _OnSoundFXChanged()
     {
         _gameSettingInfo.SoundFX = _soundFX.isOn;

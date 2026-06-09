@@ -20,6 +20,7 @@ public struct InventoryItem
     public Text _AmountPlaceholderText;
     public Text _ChangeAmountPlaceholderText;
     public SaveableItem _Item;
+    public GameObject _PlusImage;
 }
 public class InventoryManager : MonoBehaviour
 {
@@ -135,6 +136,7 @@ public class InventoryManager : MonoBehaviour
         {
             item._PlaceHolderImage.sprite = item._Item._Icon;
             item._AmountPlaceholderText.text = item._Item._Stock.ToString();
+            item._PlusImage.SetActive(!item._Item._HaveStock);
         }
     }
     void FixedUpdate()

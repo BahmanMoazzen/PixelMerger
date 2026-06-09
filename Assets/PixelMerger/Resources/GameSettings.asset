@@ -44,4 +44,8 @@ MonoBehaviour:
   antiAliasing: 1
   soundFX: 1
   music: 1
-  ScoreTotal: {fileID: 11400000, guid: bd8f19f90d7dd7b478758ef665f93c3e, type: 2}
+  ScoreSavable: {fileID: 11400000, guid: bd8f19f90d7dd7b478758ef665f93c3e, type: 2}
+  TiltRightSavable: {fileID: 11400000, guid: b9a650610eab673478b8730a6b89255f, type: 2}
+  TiltLeftSavable: {fileID: 11400000, guid: e8c810ac69fa14e45a10be018d0104e3, type: 2}
+  UnicolorSavable: {fileID: 11400000, guid: bdca5ef989f49b74fb6e37e0d9eac915, type: 2}
+  HammerSavable: {fileID: 11400000, guid: 8275432ea3dec6f4191c2b41692debae, type: 2}
