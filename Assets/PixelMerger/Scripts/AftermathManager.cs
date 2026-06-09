@@ -17,7 +17,7 @@ public class AftermathManager : MonoBehaviour
     /// </summary>
     /// <remarks>Assigned in the Unity Inspector via SerializeField. May be null if not assigned at
     /// runtime.</remarks>
-    [SerializeField] Text _totalScore;
+    //[SerializeField] Text _totalScore;
 
     /// <summary>
     /// it is visible only when the player has a new best score, and it is invisible otherwise. it is used to show the player that he has a new best score and to encourage him to try again to beat his best score.
@@ -51,7 +51,7 @@ public class AftermathManager : MonoBehaviour
 
         _bestScore.text = A.Tools.ScoreToTitle(A.Levels.BestScore);
         _thisRunScore.text = A.Tools.ScoreToTitle(A.Levels.ThisRoundScore);
-        _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreSavable._Stock);
+        //_totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreSavable._Stock);
 
 
     }
@@ -116,6 +116,6 @@ public class AftermathManager : MonoBehaviour
     void _claimReward(int iReward)
     {
         A.GameSetting.ScoreSavable._ChangeAmount(iReward);
-        _totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreSavable._Stock);
+        //_totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreSavable._Stock);
     }
 }
