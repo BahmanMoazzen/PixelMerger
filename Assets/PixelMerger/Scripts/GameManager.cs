@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
         else
         {
             _isShopShowing = true;
-            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()),"Buy with Points","Half Price (Ad)",true,true, _disableShopShowing, _withoutAdRoutine, _withAdRoutine);
+            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()),"Buy with Points","Half Price AD",true,true, _disableShopShowing, _withoutAdRoutine, _withAdRoutine);
         }
     }
 
