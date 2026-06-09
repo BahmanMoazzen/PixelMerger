@@ -103,27 +103,36 @@ public static class A
 
     public static class Tools
     {
-        public static string TousandSeprator(string iNumber, char iSeparator)
+        public static string ThousandSeparator(int iNumber)
         {
-            string TSS = string.Empty;
-            int c = 0;
-            for (int i = iNumber.Length - 1; i >= 0; i--)
-            {
-                TSS += iNumber[i];
-                c++;
-                if (c == 3)
-                {
-                    c = 0;
-                    TSS += iSeparator;
-                }
-            }
-            if (TSS[TSS.Length - 1].Equals(iSeparator))
-            {
-                TSS = TSS.Remove(TSS.Length - 1);
-            }
-
-            return _ReverseString(TSS);
+            return iNumber.ToString("N0");
         }
+        public static string ThousandSeparator(string iNumber)
+        {
+            int value = int.Parse(iNumber);
+            return value.ToString("N0");
+        }
+        //public static string ThousandSeparator(string iNumber, char iSeparator)
+        //{
+        //    string TSS = string.Empty;
+        //    int c = 0;
+        //    for (int i = iNumber.Length - 1; i >= 0; i--)
+        //    {
+        //        TSS += iNumber[i];
+        //        c++;
+        //        if (c == 3)
+        //        {
+        //            c = 0;
+        //            TSS += iSeparator;
+        //        }
+        //    }
+        //    if (TSS[TSS.Length - 1].Equals(iSeparator))
+        //    {
+        //        TSS = TSS.Remove(TSS.Length - 1);
+        //    }
+
+        //    return _ReverseString(TSS);
+        //}
         public static string _ReverseString(string iString)
         {
             string ns = string.Empty;
@@ -218,7 +227,7 @@ public static class A
         }
         public static int PixelScore(int iOrder)
         {
-            return gameSetting.PixelMergeScores[iOrder];
+            return A.GameSetting.PixelMergeScores[iOrder];
         }
 
         public static float PixelMass(int iOrder)
@@ -267,7 +276,7 @@ public static class A
         }
         public static float PixelGizmoRadious(int iPixelOrder)
         {
-            return gameSetting.PixelGizmoRadious[iPixelOrder];
+            return A.GameSetting.PixelGizmoRadious[iPixelOrder];
         }
         public static string PixelNameFromFileName(string iFileName)
         {

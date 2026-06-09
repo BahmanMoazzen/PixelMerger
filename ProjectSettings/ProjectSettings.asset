@@ -154,9 +154,7 @@ PlayerSettings:
   - {fileID: 4301338575341637775, guid: 5212918ef7960e24f8c1da38ce474c31, type: 3}
   - {fileID: 4863839193686444955, guid: 4dfaf5264b84ae442a28b263ba3a6eb1, type: 3}
   - {fileID: 8509007685087656450, guid: 0ed69897a3c42ad4f91cecc81fdff9f2, type: 3}
-  - {fileID: 5691996461057120165, guid: 02c0562668681e541b9abe9632c18c49, type: 3}
   - {fileID: 5117802511455209460, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
-  - {fileID: 1332566807573705200, guid: 3e4287cfccfdaae48bf4ee236b4d48e6, type: 3}
   - {fileID: 7151882458078286805, guid: da7653545e3aa3745a0a08aad9f3bdc3, type: 3}
   - {fileID: 102900000, guid: 9b694c58b7e0ed941b068f8b307d2459, type: 3}
   - {fileID: 102900000, guid: 3396a71fc1ecf694b94d3951d1357507, type: 3}
@@ -280,11 +278,11 @@ PlayerSettings:
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   useCustomMainManifest: 0
   useCustomLauncherManifest: 0
-  useCustomMainGradleTemplate: 0
+  useCustomMainGradleTemplate: 1
   useCustomLauncherGradleManifest: 0
   useCustomBaseGradleTemplate: 0
-  useCustomGradlePropertiesTemplate: 0
-  useCustomGradleSettingsTemplate: 0
+  useCustomGradlePropertiesTemplate: 1
+  useCustomGradleSettingsTemplate: 1
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 3
   AndroidAllowedArchitectures: -1

@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
         else
         {
             _isShopShowing = true;
-            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()),"Buy with Points","Half Price (Ad)",true,true, _disableShopShowing, _withoutAdRoutine, _withAdRoutine);
+            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()),"Buy with Points","Half Price AD",true,true, _disableShopShowing, _withoutAdRoutine, _withAdRoutine);
         }
     }
 
@@ -368,9 +368,8 @@ public class GameManager : MonoBehaviour
     /// <returns>nothing</returns>
     IEnumerator _dropDownPixel()
     {
-        SoundManager._Instance._PlaySound(GameSounds.Throw);
-        yield return null;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        SoundManager._Instance._PlaySound(GameSounds.Throw);
         _currentPixel.transform.position = new Vector3(Mathf.Clamp(mousePos.x, _topLeft.position.x, _bottomRight.position.x), _currentPixel.transform.position.y, 0);
         _currentPixel.GetComponent<MergersController>()._Drop();
         yield return new WaitForSeconds(_dropInterval);

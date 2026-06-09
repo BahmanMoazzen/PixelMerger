@@ -23,18 +23,15 @@ public class SoundManager : MonoBehaviour
     {
 
         GameSettingInfo.OnSoundFXChange += GameSettingInfo_OnSoundFXChange;
-        GameSettingInfo.OnMusicChange += GameSettingInfo_OnMusicChange;
+        //GameSettingInfo.OnMusicChange += GameSettingInfo_OnMusicChange;
     }
 
-    private void GameSettingInfo_OnMusicChange(bool iEnable)
-    {
-        
-    }
+    
 
     private void OnDisable()
     {
         GameSettingInfo.OnSoundFXChange -= GameSettingInfo_OnSoundFXChange;
-        GameSettingInfo.OnMusicChange -= GameSettingInfo_OnMusicChange;
+        //GameSettingInfo.OnMusicChange -= GameSettingInfo_OnMusicChange;
     }
 
     private void GameSettingInfo_OnSoundFXChange(bool iEnable)

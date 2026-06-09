@@ -78,7 +78,7 @@ public class BAHMANAdManager : MonoBehaviour
 
         // SDK init
         _dlog("[LevelPlaySample] LevelPlay SDK initialization");
-        LevelPlay.Init(AdConfig.AppKey);
+        LevelPlay.Init(A.AdConfig.AppKey);
     }
 
     private void SdkInitializationFailedEvent(LevelPlayInitError error)
@@ -203,7 +203,7 @@ public class BAHMANAdManager : MonoBehaviour
         LevelPlay.OnImpressionDataReady += ImpressionDataReadyEvent;
 
         // Create Rewarded Video object
-        _rewardedVideoAd = new LevelPlayRewardedAd(AdConfig.RewardedVideoAdUnitId);
+        _rewardedVideoAd = new LevelPlayRewardedAd(A.AdConfig.RewardedVideoAdUnitId);
 
         // Register to Rewarded Video events
         _rewardedVideoAd.OnAdLoaded += RewardedVideoOnLoadedEvent;
@@ -216,7 +216,7 @@ public class BAHMANAdManager : MonoBehaviour
         _rewardedVideoAd.OnAdInfoChanged += RewardedVideoOnAdInfoChangedEvent;
 
         // Create Banner object
-        _bannerAd = new LevelPlayBannerAd(AdConfig.BannerAdUnitId);
+        _bannerAd = new LevelPlayBannerAd(A.AdConfig.BannerAdUnitId);
 
         // Register to Banner events
         _bannerAd.OnAdLoaded += BannerOnAdLoadedEvent;
@@ -229,7 +229,7 @@ public class BAHMANAdManager : MonoBehaviour
         _bannerAd.OnAdExpanded += BannerOnAdExpandedEvent;
 
         // Create Interstitial object
-        _interstitialAd = new LevelPlayInterstitialAd(AdConfig.InterstitalAdUnitId);
+        _interstitialAd = new LevelPlayInterstitialAd(A.AdConfig.InterstitalAdUnitId);
 
         // Register to Interstitial events
         _interstitialAd.OnAdLoaded += InterstitialOnAdLoadedEvent;

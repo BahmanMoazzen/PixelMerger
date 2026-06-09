@@ -20,7 +20,7 @@ public class ShoptItemInfo : ScriptableObject
             if (IsTousandSeprated)
             {
                 
-                return A.Tools.TousandSeprator(_itemPrice, TOUSANDSEPRATOR);
+                return A.Tools.ThousandSeparator(_itemPrice);
             }
             else
             {
