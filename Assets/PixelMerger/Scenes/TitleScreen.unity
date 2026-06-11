@@ -10483,6 +10483,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 775015648}
     m_Modifications:
+    - target: {fileID: 555856300218755957, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.73600006
+      objectReference: {fileID: 0}
+    - target: {fileID: 555856300218755957, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.90462506
+      objectReference: {fileID: 0}
+    - target: {fileID: 555856300218755957, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.55000305
+      objectReference: {fileID: 0}
+    - target: {fileID: 555856300218755957, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.79000854
+      objectReference: {fileID: 0}
+    - target: {fileID: 555856300218755957, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.022491455
+      objectReference: {fileID: 0}
+    - target: {fileID: 555856300218755957, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.23999023
+      objectReference: {fileID: 0}
     - target: {fileID: 842155452255134637, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10566,6 +10590,30 @@ PrefabInstance:
     - target: {fileID: 5988093280047181175, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
       propertyPath: m_Name
       value: CoinPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042203094349266424, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.96800005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042203094349266424, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.41033337
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042203094349266424, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1.6600037
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042203094349266424, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042203094349266424, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.16999817
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042203094349266424, guid: dd1f780a4706c5143aeb175d7af83138, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

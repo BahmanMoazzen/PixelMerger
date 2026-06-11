@@ -104,7 +104,10 @@ public class GameManager : MonoBehaviour
     /// to show the point gaind by this merge on the screen
     /// </summary>
     [SerializeField] GameObject _pointTextMesh;
-
+    /// <summary>
+    /// the buttons to disable when the hammer mode is activated to prevent any miss click while the hammer mode is on
+    /// </summary>
+    [SerializeField] Button[] _buttonsToDisableOnHammerMode;
 
     /// <summary>
     /// level starup routine
@@ -150,14 +153,17 @@ public class GameManager : MonoBehaviour
     public void _ItemClicked(ShoptItemInfo iItem)
     {
         _activeShopItem = iItem;
+        
         if (iItem._ItemInfo._HaveStock)
         {
+
             switch (iItem._ItemInfo._Tag)
             {
                 case "Hammer":
                     _UseHammer();
                     break;
                 case "TiltLeft":
+
                     iItem._ItemInfo._ChangeAmount(-1, false);
                     _Tilt(-1);
                     
@@ -298,9 +304,15 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void _UseHammer()
     {
+        
         _isHammerActivated = !_isHammerActivated;
+        foreach (Button btn in _buttonsToDisableOnHammerMode)
+        {
+            btn.interactable = !_isHammerActivated;
+        }
         if (_isHammerActivated)
         {
+            
             MergersController.OnPixelClicked += MergersController_OnPixelClicked;
             _hammerObject.SetActive(true);
             _hammerText.SetActive(true);
@@ -341,6 +353,10 @@ public class GameManager : MonoBehaviour
         _isHammerActivated = false;
         _hammerObject.SetActive(false);
         _hammerText.SetActive(false);
+        foreach (Button btn in _buttonsToDisableOnHammerMode)
+        {
+            btn.interactable = !_isHammerActivated;
+        }
     }
 
     private void Update()
