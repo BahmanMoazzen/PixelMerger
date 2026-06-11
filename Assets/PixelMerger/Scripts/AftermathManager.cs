@@ -109,7 +109,7 @@ public class AftermathManager : MonoBehaviour
     }
     void _adShowedFailure()
     {
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
+        BAHMANMessageBoxManager.Instance._ShowMessage(A.Tags.CheckInternetConnection);
         _claimDoubleButton.gameObject.SetActive(false);
 
     }

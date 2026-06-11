@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 /// <summary>
 /// Message structure to show on screen
@@ -28,7 +30,7 @@ public class BAHMANMessageBoxManager : MonoBehaviour
     /// <summary>
     /// instance to call message box manager
     /// </summary>
-    public static BAHMANMessageBoxManager _INSTANCE;
+    public static BAHMANMessageBoxManager Instance;
 
     public bool IsReady
     {
@@ -233,6 +235,11 @@ public class BAHMANMessageBoxManager : MonoBehaviour
     /// the animator of the message box
     /// </summary>
     [SerializeField] Animator _messageBoxAnimator;
+    /// <summary>
+    /// whether reset the message queue on scene changes or not, if true, all the messages in the queue will be cleared on scene changes, and if false, the messages will be kept in the queue and shown after scene changes. you can set this variable based on your game needs, for example, if you want to show a message after loading a new scene, you can set this variable to false, and if you want to clear all the messages on scene changes, you can set this variable to true.
+    /// </summary>
+    [SerializeField] bool _resetMessagesOnSceneChange = true;
+
 
 
     YesNoPannelController _yesNoController;
@@ -247,13 +254,13 @@ public class BAHMANMessageBoxManager : MonoBehaviour
     void Awake()
     {
 
-        if (_INSTANCE == null)
+        if (Instance == null)
         {
-            _INSTANCE = this;
+            Instance = this;
             _confirmController = GetComponent<ConfirmPanelController>();
             _yesNoController = GetComponent<YesNoPannelController>();
             StartCoroutine(_startupRoutine());
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -263,9 +270,25 @@ public class BAHMANMessageBoxManager : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
+    private void OnSceneLoaded(Scene iScene, LoadSceneMode iLoadMode)
+    {
+        if (_resetMessagesOnSceneChange)
+        {
+            _messageQueue?.Clear();
+            _MessagePanel.SetActive(false);
+            _MessageText.text = string.Empty;
+        }
+    }
 
-
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     IEnumerator _startupRoutine()
     {
         yield return 0;

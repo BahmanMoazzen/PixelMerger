@@ -269,7 +269,7 @@ public static class A
             {
                 topPixelBound = iMerger.MergerOrder + 1;
                 SoundManager._Instance._PlaySound(GameSounds.FirstMerge);
-                BAHMANMessageBoxManager._INSTANCE._ShowMessage(newPixel.MergerName, Color.white, 3f, newPixel.MergerSprite);
+                BAHMANMessageBoxManager.Instance._ShowMessage(newPixel.MergerName, Color.white, 3f, newPixel.MergerSprite);
             }
             
             return newPixel;

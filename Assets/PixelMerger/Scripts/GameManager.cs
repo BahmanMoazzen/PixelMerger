@@ -184,7 +184,7 @@ public class GameManager : MonoBehaviour
         else
         {
             _isShopShowing = true;
-            BAHMANMessageBoxManager._INSTANCE?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()),"Buy with Points","Half Price AD",true,true, _disableShopShowing, _withoutAdRoutine, _withAdRoutine);
+            BAHMANMessageBoxManager.Instance?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()),"Buy with Points","Half Price AD",true,true, _disableShopShowing, _withoutAdRoutine, _withAdRoutine);
         }
     }
 
@@ -242,7 +242,7 @@ public class GameManager : MonoBehaviour
     }
     private void _failedToAddStock()
     {
-        BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseFailedTag);
+        BAHMANMessageBoxManager.Instance?._ShowMessage(A.Tags.PurchaseFailedTag);
         _disableShopShowing();
         //BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
 
@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour
     
     private void _successToAddStock()
     {
-        BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseSuccessTag+" "+_activeShopItem._ItemName);
+        BAHMANMessageBoxManager.Instance?._ShowMessage(A.Tags.PurchaseSuccessTag+" "+_activeShopItem._ItemName);
         A.GameSetting.ScoreSavable._ChangeAmount(-_activePrice);
         _activeShopItem._ItemInfo._ChangeAmount(1, false);
         //_alignPlusImages();

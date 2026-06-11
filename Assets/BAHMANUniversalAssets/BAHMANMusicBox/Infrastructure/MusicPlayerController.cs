@@ -86,9 +86,9 @@ public class MusicPlayerController : MonoBehaviour
             //_audioSource.volume = _currentConfig.GlobalVolume;
             _audioSource.Play();
 
-            if (BAHMANMessageBoxManager._INSTANCE.IsReady)
+            if (BAHMANMessageBoxManager.Instance.IsReady)
             {
-                BAHMANMessageBoxManager._INSTANCE._ShowMessage(
+                BAHMANMessageBoxManager.Instance._ShowMessage(
                     _audioSource.clip.name,
                     _messageInterval);
             }
