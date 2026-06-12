@@ -12,12 +12,7 @@ public class AftermathManager : MonoBehaviour
     /// the score of the current run
     /// </summary>
     [SerializeField] Text _thisRunScore;
-    /// <summary>
-    /// UI Text component that displays the total score.
-    /// </summary>
-    /// <remarks>Assigned in the Unity Inspector via SerializeField. May be null if not assigned at
-    /// runtime.</remarks>
-    //[SerializeField] Text _totalScore;
+
 
     /// <summary>
     /// it is visible only when the player has a new best score, and it is invisible otherwise. it is used to show the player that he has a new best score and to encourage him to try again to beat his best score.
@@ -36,10 +31,6 @@ public class AftermathManager : MonoBehaviour
         yield return null;
 
 
-        //_rankingManager._SetActiveLeaderBoard((int)A.Levels.DifficultyLevel, A.Levels.ThisRoundScore);
-
-
-
         if (A.Levels.SetBestScore(A.Levels.ThisRoundScore))
         {
             _newBestRecordText.SetActive(true);
@@ -51,38 +42,14 @@ public class AftermathManager : MonoBehaviour
 
         _bestScore.text = A.Tools.ScoreToTitle(A.Levels.BestScore);
         _thisRunScore.text = A.Tools.ScoreToTitle(A.Levels.ThisRoundScore);
-        //_totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreSavable._Stock);
-
+        if (A.Levels.ThisRoundScore <= 0)
+        {
+            _claimButton.SetActive(false);
+            _claimDoubleButton.SetActive(false);
+        }
 
     }
-    //public void _ShowRanks()
-    //{
-    //    //_rankingManager._LoadRanking((int)A.Levels.DifficultyLevel, _showRankSuccess, _showRankFailed);
-    //}
-    //public void _SubmitScore()
-    //{
 
-    //    //_rankingManager._ShowSubmitForm(_submitRankSuccess,_submitRankFailed);
-    //}
-    //void _showRankFailed()
-    //{
-    //    BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.LootLocker.ShowRankFailed);
-    //}
-    //void _showRankSuccess()
-    //{
-    //    BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.LootLocker.ShowRankSuccess);
-    //}
-    //void _submitRankSuccess()
-    //{
-    //    _submitScoreButton.SetActive(false);
-    //    BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.LootLocker.SubmitRankSuccess);
-    //    _ShowRanks();
-    //}
-    //void _submitRankFailed()
-    //{
-    //    BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.LootLocker.SubmitRankFailed);
-    //    BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
-    //}
     public void _TryAgain()
     {
 
@@ -109,7 +76,7 @@ public class AftermathManager : MonoBehaviour
     }
     void _adShowedFailure()
     {
-        BAHMANMessageBoxManager.Instance._ShowMessage(A.Tags.CheckInternetConnection);
+        BAHMANMessageBoxManager.Instance._ShowMessage(A.Tags.AdverFailedTag);
         _claimDoubleButton.gameObject.SetActive(false);
 
     }

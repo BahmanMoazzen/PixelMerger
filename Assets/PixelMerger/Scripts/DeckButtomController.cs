@@ -46,11 +46,7 @@ public class DeckButtomController : MonoBehaviour
 
         }
     }
-    void _unlockWithAd()
-    {
-        BAHMANAdManager.Instance._ShowRewardedAd(AdManager__OnAdSuccess, AdManager__OnAdFailed);
-
-    }
+    
     private void _hideLock()
     {
         _lockGameObject.SetActive(false);
@@ -75,8 +71,7 @@ public class DeckButtomController : MonoBehaviour
     }
     void _purchaseFailed()
     {
-        BAHMANMessageBoxManager.Instance._ShowMessage(A.Tags.PurchaseFailedTag);
-        BAHMANMessageBoxManager.Instance._ShowMessage(A.Tags.NotEnoughScoreTag);
+        BAHMANMessageBoxManager.Instance._ShowMessage(A.Tags.NotEnoughCoinTag);
     }
     public void _ButtomClicked()
     {

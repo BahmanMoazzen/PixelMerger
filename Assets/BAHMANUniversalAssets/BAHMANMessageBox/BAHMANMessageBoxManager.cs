@@ -280,8 +280,8 @@ public class BAHMANMessageBoxManager : MonoBehaviour
         if (_resetMessagesOnSceneChange)
         {
             _messageQueue?.Clear();
-            _MessagePanel.SetActive(false);
-            _MessageText.text = string.Empty;
+            //_MessagePanel.SetActive(false);
+            //_MessageText.text = string.Empty;
         }
     }
 

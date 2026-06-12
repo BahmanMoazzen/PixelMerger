@@ -130,14 +130,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    //void _alignPlusImages()
-    //{
-    //    _hammerPlusImage.SetActive(!A.GameSetting.HammerSavable._HaveStock);
-    //    _unicolorPlusImage.SetActive(!A.GameSetting.UnicolorSavable._HaveStock);
-    //    _tiltLeftPlusImage.SetActive(!A.GameSetting.TiltLeftSavable._HaveStock);    
-    //    _tiltRightPlusImage.SetActive(!A.GameSetting.TiltRightSavable._HaveStock);
-
-    //}
+    
     public void _EndGame()
     {
         if (!_isGameOvered)
@@ -184,7 +177,7 @@ public class GameManager : MonoBehaviour
         else
         {
             _isShopShowing = true;
-            BAHMANMessageBoxManager.Instance?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()),"Buy with Points","Half Price AD",true,true, _disableShopShowing, _withoutAdRoutine, _withAdRoutine);
+            BAHMANMessageBoxManager.Instance?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()),A.Tags.BuyWithCoinsTag,A.Tags.HalfPriceAdTag,true,true, _disableShopShowing, _withoutAdRoutine, _withAdRoutine);
         }
     }
 
@@ -210,6 +203,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            BAHMANMessageBoxManager.Instance?._ShowMessage(A.Tags.NotEnoughCoinTag);
             _failedToAddStock();
         }
     }
@@ -238,11 +232,12 @@ public class GameManager : MonoBehaviour
     }
     void _showAdFailed()
     {
+        BAHMANMessageBoxManager.Instance?._ShowMessage(A.Tags.AdverFailedTag);
         _failedToAddStock();
     }
     private void _failedToAddStock()
     {
-        BAHMANMessageBoxManager.Instance?._ShowMessage(A.Tags.PurchaseFailedTag);
+        
         _disableShopShowing();
         //BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
 
