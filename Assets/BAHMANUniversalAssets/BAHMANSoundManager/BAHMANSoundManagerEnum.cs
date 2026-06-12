@@ -1,0 +1,1 @@
+public enum GameSounds { FirstMerge, Throw, Merge, GameOver, ButtomClicked, DeckSelect, CoinIncrease, CoinDecrease, CloseWindow }

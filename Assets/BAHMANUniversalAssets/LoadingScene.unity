@@ -167,6 +167,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: _setting
+      value: 
+      objectReference: {fileID: 11400000, guid: c7ae2c167fc68a94e9410f258b97dfc3, type: 2}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: _sounds.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: _sounds.Array.data[6].Sound
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: _sounds.Array.data[7].Sound
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: _sounds.Array.data[8].Sound
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: _sounds.Array.data[6].AudioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: _sounds.Array.data[7].AudioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: _sounds.Array.data[8].AudioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: '_sounds.Array.data[6].AudioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 18e7a977900e54e27a8c431b34ffc659, type: 3}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: '_sounds.Array.data[7].AudioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d277e116012604f73833af4d67a01fa0, type: 3}
+    - target: {fileID: 4798408207377175638, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: '_sounds.Array.data[8].AudioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d277e116012604f73833af4d67a01fa0, type: 3}
+    - target: {fileID: 8068769905566968193, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5140921289209086200, guid: 2a1f03364d00ae54099c85a5a28b6ee0, type: 2}
     - target: {fileID: 8098102985455376045, guid: 9b0c616cb37575b48bb8999cb8a1b466, type: 3}
       propertyPath: m_Name
       value: BAHMANSoundManager

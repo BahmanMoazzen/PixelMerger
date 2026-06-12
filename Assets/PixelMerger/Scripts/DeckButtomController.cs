@@ -85,7 +85,7 @@ public class DeckButtomController : MonoBehaviour
 
             A.GameSettings.CurrentDeckPosition = _deckOrder;
             OnDeckSelected?.Invoke();
-            SoundManager._Instance._PlaySound(GameSounds.DeckSelect);
+            BAHMANSoundManager.Instance._PlaySound(GameSounds.DeckSelect);
             //AdManager._Instance.ShowInterstitialAd();
             //BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.GameScene);
         }

@@ -57,7 +57,7 @@ public class AftermathManager : MonoBehaviour
     }
     public void _ButtonClicked()
     {
-        SoundManager._Instance._PlaySound(GameSounds.ButtomClicked);
+        BAHMANSoundManager.Instance._PlaySound(GameSounds.ButtomClicked);
     }
 
     public void _ClaimReward()

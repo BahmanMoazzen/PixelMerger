@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         {
             _isGameOvered = true;
             A.Levels.ThisRoundScore = _totalScore;
-            SoundManager._Instance._PlaySound(GameSounds.GameOver);
+            BAHMANSoundManager.Instance._PlaySound(GameSounds.GameOver);
             BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.AftermathScene);
         }
 
@@ -380,7 +380,7 @@ public class GameManager : MonoBehaviour
     IEnumerator _dropDownPixel()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        SoundManager._Instance._PlaySound(GameSounds.Throw);
+        BAHMANSoundManager.Instance._PlaySound(GameSounds.Throw);
         _currentPixel.transform.position = new Vector3(Mathf.Clamp(mousePos.x, _topLeft.position.x, _bottomRight.position.x), _currentPixel.transform.position.y, 0);
         _currentPixel.GetComponent<MergersController>()._Drop();
         yield return new WaitForSeconds(_dropInterval);
@@ -424,11 +424,11 @@ public class GameManager : MonoBehaviour
     }
     public void _ButtomClicked()
     {
-        SoundManager._Instance._PlaySound(GameSounds.ButtomClicked);
+        BAHMANSoundManager.Instance._PlaySound(GameSounds.ButtomClicked);
     }
     private void MergersController_OnContactLatencyExceed()
     {
-        SoundManager._Instance._PlaySound(GameSounds.GameOver);
+        BAHMANSoundManager.Instance._PlaySound(GameSounds.GameOver);
         _EndGame();
     }
 

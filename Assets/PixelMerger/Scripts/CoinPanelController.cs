@@ -34,6 +34,7 @@ public class CoinPanelController : MonoBehaviour
 
             if (iAmountChanged < 0)
             {
+                BAHMANSoundManager.Instance._PlaySound(GameSounds.CoinDecrease);
                 _changeText.text = iAmountChanged.ToString();
                 _changeText.color = _decreaseColor;
 
@@ -41,6 +42,7 @@ public class CoinPanelController : MonoBehaviour
             }
             else
             {
+                BAHMANSoundManager.Instance._PlaySound(GameSounds.CoinIncrease);
                 _changeText.text = A.Tags.PLUS_SIGN + iAmountChanged.ToString();
                 _changeText.color = _increaseColor;
             }

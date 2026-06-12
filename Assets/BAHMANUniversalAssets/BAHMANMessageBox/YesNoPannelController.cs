@@ -71,5 +71,6 @@ public class YesNoPannelController : MonoBehaviour
     void _closePanel()
     {
         _yesNoPanel.SetActive(false);
+        BAHMANSoundManager.Instance._PlaySound(GameSounds.CloseWindow);
     }
 }

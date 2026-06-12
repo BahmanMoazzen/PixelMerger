@@ -62,12 +62,12 @@ public class TitleScreenManager : MonoBehaviour
     }
     public void _RateUs()
     {
-        SoundManager._Instance._PlaySound(GameSounds.ButtomClicked);
+        BAHMANSoundManager.Instance._PlaySound(GameSounds.ButtomClicked);
         //Application.OpenURL(string.Format(_gameSettingInfo.RatingURL, Application.identifier));
     }
 
     public void _ButtomClicked()
     {
-        SoundManager._Instance._PlaySound(GameSounds.ButtomClicked);
+        BAHMANSoundManager.Instance._PlaySound(GameSounds.ButtomClicked);
     }
 }

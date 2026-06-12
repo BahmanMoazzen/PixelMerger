@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4798408207377175638}
   - component: {fileID: 8068769905566968193}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: BAHMANSoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

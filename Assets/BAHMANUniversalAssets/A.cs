@@ -272,7 +272,7 @@ public static class A
             if (topPixelBound < iMerger.MergerOrder + 1)
             {
                 topPixelBound = iMerger.MergerOrder + 1;
-                SoundManager._Instance._PlaySound(GameSounds.FirstMerge);
+                BAHMANSoundManager.Instance._PlaySound(GameSounds.FirstMerge);
                 BAHMANMessageBoxManager.Instance._ShowMessage(newPixel.MergerName, Color.white, 3f, newPixel.MergerSprite);
             }
             
@@ -345,10 +345,4 @@ public static class A
 }
 public enum GameModes { Easy, Normal, Insane }
 
-[Serializable]
-public struct GameSoundStructure
-{
-    public GameSounds Sound;
-    public List<AudioClip> AudioClips;
-}
-public enum GameSounds { FirstMerge, Throw, Merge, GameOver, ButtomClicked, DeckSelect }
+

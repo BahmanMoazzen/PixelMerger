@@ -129,7 +129,7 @@ public class MergersController : MonoBehaviour
                 if (c2d.tag.StartsWith("M"))
                 {
                     _isMerging = true;
-                    SoundManager._Instance._PlaySound(GameSounds.Merge);
+                    BAHMANSoundManager.Instance._PlaySound(GameSounds.Merge);
                     PixelInfo newPixel = A.Pixels.NextPixel(c2d.GetComponent<MergersController>()._MergerInfo);
                     GameObject newGo = null;
                     if (newPixel != null)
@@ -152,7 +152,7 @@ public class MergersController : MonoBehaviour
                     if (c2d.CompareTag(transform.tag))
                     {
                         _isMerging = true;
-                        SoundManager._Instance._PlaySound(GameSounds.Merge);
+                        BAHMANSoundManager.Instance._PlaySound(GameSounds.Merge);
                         Vector3 newPos;
                         Vector2 rbVelocity;
                         float angVelocity;

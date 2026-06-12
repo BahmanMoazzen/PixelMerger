@@ -40,7 +40,10 @@ public class DeckSelectManager : MonoBehaviour
             Instantiate(A.GameSetting.DeckButtonTemplate, _ButtomParentObject.transform).GetComponent<DeckButtomController>()._CreateButtom(A.GameSetting.AllDecks[i], i);
         }
     }
-    
+    public void _CloseWindow()
+    {
+        BAHMANSoundManager.Instance._PlaySound(GameSounds.CloseWindow);
+    }
 
     public void _Back()
     {
