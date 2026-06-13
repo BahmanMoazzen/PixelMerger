@@ -88,19 +88,12 @@ public class PixelDeckInfo : ScriptableObject
         }
         return int.Parse(order);
     }
-
+    /// <summary>
+    /// unlock the deck
+    /// </summary>
     public void UnLock()
     {
         IsLocked = false;
     }
 }
-/// <summary>
-/// the structrure of 
-/// </summary>
-//public struct MergerDeck
-//{
-//    public string MergerName;
-//    public Sprite MergerSprite;
-//    public int MergerOrder;
-//    public PixelDeckInfo MergerDeckInfo;
-//}
+
