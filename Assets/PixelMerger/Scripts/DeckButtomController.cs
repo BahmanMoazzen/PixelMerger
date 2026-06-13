@@ -46,11 +46,7 @@ public class DeckButtomController : MonoBehaviour
 
         }
     }
-    void _unlockWithAd()
-    {
-        BAHMANAdManager.Instance._ShowRewardedAd(AdManager__OnAdSuccess, AdManager__OnAdFailed);
-
-    }
+    
     private void _hideLock()
     {
         _lockGameObject.SetActive(false);
@@ -75,14 +71,13 @@ public class DeckButtomController : MonoBehaviour
     }
     void _purchaseFailed()
     {
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.PurchaseFailedTag);
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.NotEnoughScoreTag);
+        BAHMANMessageBoxManager.Instance._ShowMessage(A.Tags.NotEnoughCoinTag);
     }
     public void _ButtomClicked()
     {
         if (_deckInfo.IsLocked)
         {
-            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(A.Tags.IsLockedTag, A.Tags.BuyDeckTag.Replace("&&&", _deckInfo.DeckName).Replace("$$$", A.Tools.ThousandSeparator(_deckInfo.Price)), _unlockWithPurchase);
+            BAHMANMessageBoxManager.Instance._ShowYesNoBox(A.Tags.IsLockedTag, A.Tags.BuyDeckTag.Replace("&&&", _deckInfo.DeckName).Replace("$$$", A.Tools.ThousandSeparator(_deckInfo.Price)), _unlockWithPurchase);
 
         }
         else
@@ -90,7 +85,7 @@ public class DeckButtomController : MonoBehaviour
 
             A.GameSettings.CurrentDeckPosition = _deckOrder;
             OnDeckSelected?.Invoke();
-            SoundManager._Instance._PlaySound(GameSounds.DeckSelect);
+            BAHMANSoundManager.Instance._PlaySound(GameSounds.DeckSelect);
             //AdManager._Instance.ShowInterstitialAd();
             //BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.GameScene);
         }
@@ -98,12 +93,12 @@ public class DeckButtomController : MonoBehaviour
     private void AdManager__OnAdFailed()
     {
 
-        BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseFailedTag);
+        BAHMANMessageBoxManager.Instance?._ShowMessage(A.Tags.PurchaseFailedTag);
         //BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
     }
     private void AdManager__OnAdSuccess()
     {
-        BAHMANMessageBoxManager._INSTANCE?._ShowMessage(A.Tags.PurchaseSuccessTag);
+        BAHMANMessageBoxManager.Instance?._ShowMessage(A.Tags.PurchaseSuccessTag);
         _deckInfo.IsLocked = false;
         _hideLock();
 

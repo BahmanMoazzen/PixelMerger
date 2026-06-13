@@ -31,8 +31,7 @@ public class BAHMANAdManager : MonoBehaviour
     /// a GameObject to show a loading screen while the ad is loading, you can assign a GameObject to this field to show a loading screen while the ad is loading, and also to hide it when the ad is loaded successfully or failed to load
     /// </summary>
     [SerializeField] GameObject _loadScreen;
-    UnityAction _adSuccessAction, _adFailAction, _purchaseSuccess, _purchaseFail;
-    string _currentSKU;
+    UnityAction _adSuccessAction, _adFailAction;
     bool _isReadytoShowAd = false;
 
     private LevelPlayBannerAd _bannerAd;
@@ -168,8 +167,7 @@ public class BAHMANAdManager : MonoBehaviour
     {
         _adSuccessAction = iSuccessAction;
         _adFailAction = iFailAction;
-        _adFailAction += _closeLoadingPanel;
-        _adSuccessAction += _closeLoadingPanel;
+
         _showRewardedAd();
     }
     /// <summary>
@@ -181,8 +179,7 @@ public class BAHMANAdManager : MonoBehaviour
     {
         _adSuccessAction = iSuccessAction;
         _adFailAction = iFailAction;
-        _adFailAction += _closeLoadingPanel;
-        _adSuccessAction += _closeLoadingPanel;
+
         _showBannerAd();
     }
     /// <summary>
@@ -190,7 +187,7 @@ public class BAHMANAdManager : MonoBehaviour
     /// </summary>
     private void _showBannerAd()
     {
-        if(_giveNoAd)
+        if (_giveNoAd)
         {
             _adFailAction?.Invoke();
             return;
@@ -253,12 +250,14 @@ public class BAHMANAdManager : MonoBehaviour
     {
         _dlog($"[LevelPlaySample] Received RewardedVideoOnLoadedEvent With AdInfo: {adInfo}");
         _rewardedVideoAd.ShowAd();
+        _closeLoadingPanel();
     }
 
     void RewardedVideoOnAdLoadFailedEvent(LevelPlayAdError error)
     {
         _dlog($"[LevelPlaySample] Received RewardedVideoOnAdLoadFailedEvent With Error: {error}");
         _adFailAction?.Invoke();
+        _closeLoadingPanel();
     }
 
     void RewardedVideoOnAdDisplayedEvent(LevelPlayAdInfo adInfo)
@@ -301,12 +300,14 @@ public class BAHMANAdManager : MonoBehaviour
     {
         _dlog($"[LevelPlaySample] Received InterstitialOnAdLoadedEvent With AdInfo: {adInfo}");
         _interstitialAd.ShowAd();
+        _closeLoadingPanel();
     }
 
     void InterstitialOnAdLoadFailedEvent(LevelPlayAdError error)
     {
         _dlog($"[LevelPlaySample] Received InterstitialOnAdLoadFailedEvent With Error: {error}");
         _adFailAction?.Invoke();
+        _closeLoadingPanel();
     }
 
     void InterstitialOnAdDisplayedEvent(LevelPlayAdInfo adInfo)

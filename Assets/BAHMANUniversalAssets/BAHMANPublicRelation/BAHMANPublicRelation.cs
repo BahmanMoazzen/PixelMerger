@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public enum PublicRelationType { Share, Rate, OtherProduct, Donate ,Message}
@@ -84,22 +82,22 @@ public class BAHMANPublicRelation : MonoBehaviour
                     switch (prs.RelationType)
                     {
                         case PublicRelationType.Share:
-                            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(_PRTitle[(int)prs.RelationType].Title, _PRTitle[(int)prs.RelationType].Message, _ShareClicked);
+                            BAHMANMessageBoxManager.Instance._ShowYesNoBox(_PRTitle[(int)prs.RelationType].Title, _PRTitle[(int)prs.RelationType].Message, _ShareClicked);
                             
                             break;
                         case PublicRelationType.Rate:
-                            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(_PRTitle[(int)prs.RelationType].Title, _PRTitle[(int)prs.RelationType].Message, _RateClicked);
+                            BAHMANMessageBoxManager.Instance._ShowYesNoBox(_PRTitle[(int)prs.RelationType].Title, _PRTitle[(int)prs.RelationType].Message, _RateClicked);
                             
                             break;
                         case PublicRelationType.OtherProduct:
-                            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(_PRTitle[(int)prs.RelationType].Title, _PRTitle[(int)prs.RelationType].Message, _OtherProductClicked);
+                            BAHMANMessageBoxManager.Instance._ShowYesNoBox(_PRTitle[(int)prs.RelationType].Title, _PRTitle[(int)prs.RelationType].Message, _OtherProductClicked);
                             
                             break;
                         case PublicRelationType.Donate:
-                            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(_PRTitle[(int)prs.RelationType].Title, _PRTitle[(int)prs.RelationType].Message, _DonateClicked);
+                            BAHMANMessageBoxManager.Instance._ShowYesNoBox(_PRTitle[(int)prs.RelationType].Title, _PRTitle[(int)prs.RelationType].Message, _DonateClicked);
                             break;
                         case PublicRelationType.Message:
-                            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(_PRTitle[(int)prs.RelationType].Title, _PRTitle[(int)prs.RelationType].Message, _MessageClicked);
+                            BAHMANMessageBoxManager.Instance._ShowYesNoBox(_PRTitle[(int)prs.RelationType].Title, _PRTitle[(int)prs.RelationType].Message, _MessageClicked);
                             break;
                     }
                     break;

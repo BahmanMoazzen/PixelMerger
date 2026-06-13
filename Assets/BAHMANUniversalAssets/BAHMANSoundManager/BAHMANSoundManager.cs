@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class BAHMANSoundManager : MonoBehaviour
 {
-    public static SoundManager _Instance;
-    [SerializeField] GameSoundStructure[] _sounds;
+    public static BAHMANSoundManager Instance;
+    //[SerializeField] GameSoundStructure[] _sounds;
+    [SerializeField] BAHMANSoundSettingInfo _setting;
     [SerializeField] AudioSource _audioSource;
-    [SerializeField] GameSettingInfo _gameSetting;
     private void Awake()
     {
-        if (_Instance == null)
-            _Instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(gameObject);
 
@@ -38,16 +38,16 @@ public class SoundManager : MonoBehaviour
     {
         if (iEnable)
         {
-            _audioSource.PlayOneShot(_sounds[(int)GameSounds.FirstMerge].AudioClips[0]);
+            _audioSource.PlayOneShot(_setting.Sounds[(int)GameSounds.FirstMerge].AudioClips[0]);
         }
 
     }
 
     public void _PlaySound(GameSounds iSound)
     {
-        if (_gameSetting.SoundFX)
+        if (A.GameSetting.SoundFX)
         {
-            foreach (var sound in _sounds)
+            foreach (var sound in _setting.Sounds)
             {
                 if (sound.Sound == iSound)
                 {
@@ -59,5 +59,6 @@ public class SoundManager : MonoBehaviour
     }
 
 }
+
 
 

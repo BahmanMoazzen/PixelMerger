@@ -37,6 +37,6 @@ public class PixelPreviewManager : MonoBehaviour
     }
     public void _ShowPixelPreview(int iIndex)
     {
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.GameSetting.AllDecks[A.GameSettings.CurrentDeckPosition].DeckPixels[iIndex].MergerName, Color.white, 1.5f, A.GameSetting.AllDecks[A.GameSettings.CurrentDeckPosition].DeckPixels[iIndex].MergerSprite);
+        BAHMANMessageBoxManager.Instance._ShowMessage(A.GameSetting.AllDecks[A.GameSettings.CurrentDeckPosition].DeckPixels[iIndex].MergerName, Color.white, 1.5f, A.GameSetting.AllDecks[A.GameSettings.CurrentDeckPosition].DeckPixels[iIndex].MergerSprite);
     }
 }

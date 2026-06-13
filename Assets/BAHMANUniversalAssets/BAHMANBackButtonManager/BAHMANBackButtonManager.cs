@@ -75,7 +75,7 @@ public class BAHMANBackButtonManager : MonoBehaviour
     public void _ShowMenu()
     {
         _isBackPanelActive = true;
-        BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox("End Game","Do You Want To Quit Game Or Go To Home Screen?","Exit","Home",true,true,_closeClicked,_Exit,_Home);
+        BAHMANMessageBoxManager.Instance._ShowYesNoBox("End Game","Do You Want To Quit Game Or Go To Home Screen?","Exit","Home",true,true,_closeClicked,_Exit,_Home);
         OnBackButtonMenuShowed?.Invoke();
     }
     public void _Exit()

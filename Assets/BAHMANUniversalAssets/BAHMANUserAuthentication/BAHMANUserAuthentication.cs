@@ -102,7 +102,7 @@ public class BAHMANUserAuthentication : MonoBehaviour
 
                 if (_isTokenExists && _showWelcomeMessage)
                 {
-                    BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.WelcomeBack);
+                    BAHMANMessageBoxManager.Instance._ShowMessage(A.Tags.WelcomeBackTag);
                 }
 
             }

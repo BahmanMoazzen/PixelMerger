@@ -59,8 +59,9 @@ public static class A
     public static class Tags
     {
         public static char PLUS_SIGN = '+';
+        public static char MINUS_SIGN = '-';
         public static string OutOfStockTag = "Out Of Stock";
-        public static string NotEnoughScoreTag = "Not Enough Score!";
+        public static string NotEnoughCoinTag = "Not Enough Coins!";
         public static string PurchaseFailedTag = "Purchase Failed!";
         public static string PurchaseSuccessTag = "Purchase Succeeded!";
         public static string ShopIsNotReadyTag = "Shop is not ready!";
@@ -68,8 +69,11 @@ public static class A
         public static string BuyShopItemTag = "You do not have enough <b>&&&</b> to activate. Buy one &&& in exchange of <b>$$$</b> score?";
         public static string BuyDeckTag = "To unlock <b>&&&</b> you need <b>$$$</b> score. Do you want to unlock now?";
         public static string IsLockedTag = "Locked";
-        public static string CheckInternetConnection = "Check Your Internet Connection.";
-        public static string WelcomeBack = "Welcome Back!";
+        public static string CheckInternetConnectionTag = "Check Your Internet Connection.";
+        public static string WelcomeBackTag = "Welcome Back!";
+        public static string AdverFailedTag = "Error Loading AD";
+        public static string BuyWithCoinsTag = "Buy With Coins";
+        public static string HalfPriceAdTag = "Half Price AD";
 
 
         public static class LootLocker
@@ -268,8 +272,8 @@ public static class A
             if (topPixelBound < iMerger.MergerOrder + 1)
             {
                 topPixelBound = iMerger.MergerOrder + 1;
-                SoundManager._Instance._PlaySound(GameSounds.FirstMerge);
-                BAHMANMessageBoxManager._INSTANCE._ShowMessage(newPixel.MergerName, Color.white, 3f, newPixel.MergerSprite);
+                BAHMANSoundManager.Instance._PlaySound(GameSounds.FirstMerge);
+                BAHMANMessageBoxManager.Instance._ShowMessage(newPixel.MergerName, Color.white, 3f, newPixel.MergerSprite);
             }
             
             return newPixel;
@@ -341,10 +345,4 @@ public static class A
 }
 public enum GameModes { Easy, Normal, Insane }
 
-[Serializable]
-public struct GameSoundStructure
-{
-    public GameSounds Sound;
-    public List<AudioClip> AudioClips;
-}
-public enum GameSounds { FirstMerge, Throw, Merge, GameOver, ButtomClicked, DeckSelect }
+

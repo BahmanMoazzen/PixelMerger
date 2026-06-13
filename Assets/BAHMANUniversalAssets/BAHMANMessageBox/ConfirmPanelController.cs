@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -58,5 +56,6 @@ public class ConfirmPanelController : MonoBehaviour
     void _closePanel()
     {
         _confirmPanel.SetActive(false);
+        BAHMANSoundManager.Instance._PlaySound(GameSounds.CloseWindow);
     }
 }
