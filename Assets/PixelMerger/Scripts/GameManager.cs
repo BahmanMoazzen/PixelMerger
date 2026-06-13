@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// if the purchase process is being done
     /// </summary>
-    bool _isShopShowing = false;
+    bool _isWindowShowing = false;
     /// <summary>
     /// is game overed
     /// </summary>
@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    
+
     public void _EndGame()
     {
         if (!_isGameOvered)
@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
     public void _ItemClicked(ShoptItemInfo iItem)
     {
         _activeShopItem = iItem;
-        
+
         if (iItem._ItemInfo._HaveStock)
         {
 
@@ -159,16 +159,16 @@ public class GameManager : MonoBehaviour
 
                     iItem._ItemInfo._ChangeAmount(-1, false);
                     _Tilt(-1);
-                    
+
                     break;
                 case "TiltRight":
                     iItem._ItemInfo._ChangeAmount(-1, false);
                     _Tilt(1);
-                    
+
                     break;
                 case "UniColor":
                     iItem._ItemInfo._ChangeAmount(-1, false);
-                    
+
                     _LoadUnicolor();
                     break;
             }
@@ -176,11 +176,18 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            _isShopShowing = true;
-            BAHMANMessageBoxManager.Instance?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()),A.Tags.BuyWithCoinsTag,A.Tags.HalfPriceAdTag,true,true, _disableShopShowing, _withoutAdRoutine, _withAdRoutine);
+            _EnableWindowShowing();
+            BAHMANMessageBoxManager.Instance?._ShowYesNoBox(A.Tags.OutOfStockTag, A.Tags.BuyShopItemTag.Replace("&&&", iItem._ItemName).Replace("$$$", iItem._ItemPrice.ToString()), A.Tags.BuyWithCoinsTag, A.Tags.HalfPriceAdTag, true, true, _disableWindowShowing, _withoutAdRoutine, _withAdRoutine);
         }
     }
-
+    public void _EnableWindowShowing()
+    {
+        _isWindowShowing = true;
+    }
+    public void _DisableWindowShowing()
+    {
+        StartCoroutine(_disableWindowShowingRoutine());
+    }
     void _withAdRoutine()
     {
         _activePrice = (int)MathF.Round(_activeShopItem._intPrice * 0.5f, 0);
@@ -207,24 +214,23 @@ public class GameManager : MonoBehaviour
             _failedToAddStock();
         }
     }
-    
-
-    
 
 
-    void _disableShopShowing()
+
+
+
+    void _disableWindowShowing()
     {
-        StartCoroutine(_disableShoppingMode());
+        StartCoroutine(_disableWindowShowingRoutine());
     }
     /// <summary>
     /// we need this coroutine to prevent accidental release of pixels while the shop is showing.
     /// </summary>
     /// <returns>waits until the end of next frame</returns>
-    IEnumerator _disableShoppingMode()
+    IEnumerator _disableWindowShowingRoutine()
     {
         yield return new WaitForEndOfFrame();
-        _isShopShowing = false;
-
+        _isWindowShowing = false;
     }
     void _showAdSuccess()
     {
@@ -237,20 +243,20 @@ public class GameManager : MonoBehaviour
     }
     private void _failedToAddStock()
     {
-        
-        _disableShopShowing();
+
+        _disableWindowShowing();
         //BAHMANMessageBoxManager._INSTANCE._ShowMessage(A.Tags.CheckInternetConnection);
 
 
     }
-    
+
     private void _successToAddStock()
     {
-        BAHMANMessageBoxManager.Instance?._ShowMessage(A.Tags.PurchaseSuccessTag+" "+_activeShopItem._ItemName);
+        BAHMANMessageBoxManager.Instance?._ShowMessage(A.Tags.PurchaseSuccessTag + " " + _activeShopItem._ItemName);
         A.GameSetting.ScoreSavable._ChangeAmount(-_activePrice);
         _activeShopItem._ItemInfo._ChangeAmount(1, false);
         //_alignPlusImages();
-        _disableShopShowing();
+        _disableWindowShowing();
 
 
     }
@@ -299,7 +305,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void _UseHammer()
     {
-        
+
         _isHammerActivated = !_isHammerActivated;
         foreach (Button btn in _buttonsToDisableOnHammerMode)
         {
@@ -307,7 +313,7 @@ public class GameManager : MonoBehaviour
         }
         if (_isHammerActivated)
         {
-            
+
             MergersController.OnPixelClicked += MergersController_OnPixelClicked;
             _hammerObject.SetActive(true);
             _hammerText.SetActive(true);
@@ -332,7 +338,7 @@ public class GameManager : MonoBehaviour
 
         MergersController.OnPixelClicked -= MergersController_OnPixelClicked;
         _activeShopItem._ItemInfo._ChangeAmount(-1, false);
-        
+
         _levelPixels.Remove(iPixel);
         Destroy(iPixel);
         StartCoroutine(_deactivateHammerRoutine());
@@ -362,12 +368,12 @@ public class GameManager : MonoBehaviour
             Vector2 newpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _hammerObject.transform.position = newpos;
         }
-        if (Input.GetMouseButton(0) && !_isDroping && _insideArena && !_isHammerActivated && !_isAdverShowing && !_isShopShowing)
+        if (Input.GetMouseButton(0) && !_isDroping && _insideArena && !_isHammerActivated && !_isAdverShowing && !_isWindowShowing)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             _currentPixel.transform.position = new Vector2(mousePos.x, _currentPixel.transform.position.y);
         }
-        if (Input.GetMouseButtonUp(0) && !_isDroping && _insideArena && !_isHammerActivated && !_isAdverShowing && !_isShopShowing)
+        if (Input.GetMouseButtonUp(0) && !_isDroping && _insideArena && !_isHammerActivated && !_isAdverShowing && !_isWindowShowing)
         {
             _isDroping = true;
             StartCoroutine(_dropDownPixel());
