@@ -2,26 +2,25 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    
+    int _magnetude = 0;
     Animator _animator;
     private void OnEnable()
     {
-        GameSettingInfo.OnAntialiasingChange += GameSettingInfo_OnAntialiasingChange;
+        MergersController.OnMerge += MergersController_OnMerge;
     }
 
-    private void GameSettingInfo_OnAntialiasingChange(bool iEnable)
+    private void MergersController_OnMerge(GameObject iOldPixel1, GameObject iOldPixel2, GameObject iNewPixel)
     {
-        _animator.SetBool("AntiAliasing", iEnable);
+        
     }
 
     private void OnDisable()
     {
-        GameSettingInfo.OnAntialiasingChange -= GameSettingInfo_OnAntialiasingChange;
+        MergersController.OnMerge -= MergersController_OnMerge;
     }
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _animator.SetBool("AntiAliasing", A.GameSetting.AntiAliasing);
 
     }
 }

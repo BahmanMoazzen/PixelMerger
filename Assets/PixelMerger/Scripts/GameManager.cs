@@ -338,7 +338,7 @@ public class GameManager : MonoBehaviour
 
         MergersController.OnPixelClicked -= MergersController_OnPixelClicked;
         _activeShopItem._ItemInfo._ChangeAmount(-1, false);
-
+        Instantiate(_particle, iPixel.transform.position, Quaternion.identity);
         _levelPixels.Remove(iPixel);
         Destroy(iPixel);
         StartCoroutine(_deactivateHammerRoutine());
