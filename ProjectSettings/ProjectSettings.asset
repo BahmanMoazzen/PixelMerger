@@ -94,7 +94,7 @@ PlayerSettings:
   submitAnalytics: 1
   usePlayerLog: 1
   dedicatedServerOptimizations: 0
-  bakeCollisionMeshes: 0
+  bakeCollisionMeshes: 1
   forceSingleInstance: 0
   useFlipModelSwapchain: 1
   resizableWindow: 0
@@ -146,23 +146,7 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 2.1
-  preloadedAssets:
-  - {fileID: 11400000, guid: db59bf300228632499a67058c54769f4, type: 2}
-  - {fileID: 908096860654092236, guid: d797b8ab3fb764c40a1271d211ffe3e8, type: 3}
-  - {fileID: 787280919594967684, guid: 7ca77b235da848b439784d68eea53db2, type: 3}
-  - {fileID: 2439050191689754534, guid: 0aa99ed3b5f27c64e997d852d502a098, type: 3}
-  - {fileID: 4301338575341637775, guid: 5212918ef7960e24f8c1da38ce474c31, type: 3}
-  - {fileID: 4863839193686444955, guid: 4dfaf5264b84ae442a28b263ba3a6eb1, type: 3}
-  - {fileID: 8509007685087656450, guid: 0ed69897a3c42ad4f91cecc81fdff9f2, type: 3}
-  - {fileID: 5117802511455209460, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
-  - {fileID: 7151882458078286805, guid: da7653545e3aa3745a0a08aad9f3bdc3, type: 3}
-  - {fileID: 102900000, guid: 9b694c58b7e0ed941b068f8b307d2459, type: 3}
-  - {fileID: 102900000, guid: 3396a71fc1ecf694b94d3951d1357507, type: 3}
-  - {fileID: 102900000, guid: 6b9c786060fa252479f4c9e18c87704a, type: 3}
-  - {fileID: 102900000, guid: 5b0b321e667c53f488eda9f2e0e94f94, type: 3}
-  - {fileID: 102900000, guid: d9ccd7465e25b7047b5360f9b29301a0, type: 3}
-  - {fileID: 102900000, guid: 63b96e3dff65f984ab4e7624944ab1b8, type: 3}
-  - {fileID: 102900000, guid: 3e106361086bdc0428c83a73254e3963, type: 3}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   xboxOneDisableKinectGpuReservation: 1
@@ -182,7 +166,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: helengamefactory.pixelmerger
+    Android: au.com.helengamefactory.pixelmerger
     Standalone: com.DefaultCompany.2DProject
     iPhone: ir.helengamefactory.pixelmerger
   buildNumber:
@@ -194,18 +178,18 @@ PlayerSettings:
   overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 210
   AndroidMinSdkVersion: 25
-  AndroidTargetSdkVersion: 0
+  AndroidTargetSdkVersion: 35
   AndroidPreferredInstallLocation: 0
   AndroidPreferredDataLocation: 1
   aotOptions: 
-  stripEngineCode: 0
+  stripEngineCode: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
   ForceInternetPermission: 1
   ForceSDCardPermission: 0
   CreateWallpaper: 0
   androidSplitApplicationBinary: 0
-  keepLoadedShadersAlive: 0
+  keepLoadedShadersAlive: 1
   StripUnusedMeshComponents: 0
   strictShaderVariantMatching: 0
   VertexChannelCompressionMask: 4054
@@ -543,7 +527,7 @@ PlayerSettings:
   - m_BuildTarget: LuminSupport
     m_GraphicsJobs: 0
   - m_BuildTarget: AndroidPlayer
-    m_GraphicsJobs: 0
+    m_GraphicsJobs: 1
   - m_BuildTarget: WebGLSupport
     m_GraphicsJobs: 0
   m_BuildTargetGraphicsJobMode: []
@@ -879,7 +863,7 @@ PlayerSettings:
   gcIncremental: 1
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform: {}
-  editorAssembliesCompatibilityLevel: 2
+  editorAssembliesCompatibilityLevel: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: PixelMerger
@@ -956,7 +940,7 @@ PlayerSettings:
   hmiCpuConfiguration: 
   hmiLogStartupTiming: 0
   qnxGraphicConfPath: 
-  apiCompatibilityLevel: 3
+  apiCompatibilityLevel: 6
   captureStartupLogs: {}
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
