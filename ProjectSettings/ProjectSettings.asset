@@ -961,11 +961,11 @@ PlayerSettings:
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
   enableDirectStorage: 0
-  cloudProjectId: b20c7d8e-4dff-4cfc-81e8-802247187a60
+  cloudProjectId: 5383142e-364c-458a-b691-1381bfa469f8
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: PixelMerger
-  organizationId: helen-game-factory
+  projectName: Pixel Merger
+  organizationId: helen-game-factory-australia
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

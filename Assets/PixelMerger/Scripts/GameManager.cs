@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     int _totalScore = 0;
     /// <summary>
+    /// time this round played
+    /// </summary>
+    float _totalTime = 0;
+    /// <summary>
     /// all the available deadlines - esay - medium - hard
     /// </summary>
     [SerializeField]
@@ -126,6 +130,7 @@ public class GameManager : MonoBehaviour
         _line.SetPosition(1, new Vector2(_bottomRight.position.x, _deadLines[(int)A.Levels.DifficultyLevel].transform.position.y));
         yield return null;
         _loadPixel();
+        _totalTime = Time.time;
         //_alignPlusImages();
 
     }
@@ -135,6 +140,9 @@ public class GameManager : MonoBehaviour
     {
         if (!_isGameOvered)
         {
+            _totalTime = Time.time - _totalTime;
+            BAHMANAnalytics.Instance.LogButtonClicked("End Game");
+            BAHMANAnalytics.Instance.LogGameEnded(A.GameSettings.CurrentDeckName,_totalTime ,_totalScore);
             _isGameOvered = true;
             A.Levels.ThisRoundScore = _totalScore;
             BAHMANSoundManager.Instance._PlaySound(GameSounds.GameOver);
@@ -153,22 +161,28 @@ public class GameManager : MonoBehaviour
             switch (iItem._ItemInfo._Tag)
             {
                 case "Hammer":
+                    BAHMANAnalytics.Instance.LogButtonClicked("Hammer");
                     _UseHammer();
+
                     break;
                 case "TiltLeft":
-
+                    BAHMANAnalytics.Instance.LogButtonClicked("Tilt Left");
                     iItem._ItemInfo._ChangeAmount(-1, false);
+                    BAHMANAnalytics.Instance.LogPowerupUsed("Tilt Left");
                     _Tilt(-1);
 
                     break;
                 case "TiltRight":
+                    BAHMANAnalytics.Instance.LogButtonClicked("Tilt Right");
                     iItem._ItemInfo._ChangeAmount(-1, false);
+                    BAHMANAnalytics.Instance.LogPowerupUsed("Tilt Right");
                     _Tilt(1);
 
                     break;
                 case "UniColor":
+                    BAHMANAnalytics.Instance.LogButtonClicked("Unicolor");
                     iItem._ItemInfo._ChangeAmount(-1, false);
-
+                    BAHMANAnalytics.Instance.LogPowerupUsed("Unicolor");
                     _LoadUnicolor();
                     break;
             }
@@ -338,6 +352,7 @@ public class GameManager : MonoBehaviour
 
         MergersController.OnPixelClicked -= MergersController_OnPixelClicked;
         _activeShopItem._ItemInfo._ChangeAmount(-1, false);
+        BAHMANAnalytics.Instance.LogPowerupUsed("Hammer");
         Instantiate(_particle, iPixel.transform.position, Quaternion.identity);
         _levelPixels.Remove(iPixel);
         Destroy(iPixel);
@@ -385,6 +400,7 @@ public class GameManager : MonoBehaviour
     /// <returns>nothing</returns>
     IEnumerator _dropDownPixel()
     {
+        BAHMANAnalytics.Instance.LogButtonClicked("Pixel Dropped");
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         BAHMANSoundManager.Instance._PlaySound(GameSounds.Throw);
         _currentPixel.transform.position = new Vector3(Mathf.Clamp(mousePos.x, _topLeft.position.x, _bottomRight.position.x), _currentPixel.transform.position.y, 0);
@@ -399,6 +415,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void _Back()
     {
+        BAHMANAnalytics.Instance.LogButtonClicked("Main Game Back Button");
         BAHMANBackButtonManager._Instance._ShowMenu();
     }
 

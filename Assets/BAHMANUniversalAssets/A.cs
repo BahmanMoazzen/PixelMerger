@@ -322,7 +322,13 @@ public static class A
             }
         }
 
-
+        public static string CurrentDeckName
+        {
+            get
+            {
+                return A.GameSetting.AllDecks[CurrentDeckPosition].DeckName;
+            }
+        }
 
         public static List<PixelInfo> CurrentDeckMergers
         {
