@@ -46,7 +46,7 @@ public class DeckButtomController : MonoBehaviour
 
         }
     }
-    
+
     private void _hideLock()
     {
         _lockGameObject.SetActive(false);
@@ -85,6 +85,7 @@ public class DeckButtomController : MonoBehaviour
 
             A.GameSettings.CurrentDeckPosition = _deckOrder;
             OnDeckSelected?.Invoke();
+            BAHMANAnalytics.Instance.LogDeckSelected(_deckInfo.DeckName);
             BAHMANSoundManager.Instance._PlaySound(GameSounds.DeckSelect);
             //AdManager._Instance.ShowInterstitialAd();
             //BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.GameScene);

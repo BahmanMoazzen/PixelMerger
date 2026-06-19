@@ -23,6 +23,7 @@ public class AftermathManager : MonoBehaviour
     [SerializeField] GameObject _claimButton, _claimDoubleButton;
     public void _Back()
     {
+        BAHMANAnalytics.Instance.LogButtonClicked("Aftermath Back Button");
         BAHMANBackButtonManager._Instance._ShowMenu();
     }
 
@@ -52,7 +53,7 @@ public class AftermathManager : MonoBehaviour
 
     public void _TryAgain()
     {
-
+        BAHMANAnalytics.Instance.LogButtonClicked("Try Again");
         BAHMANLoadingManager._INSTANCE._LoadScene(AllScenes.TitleScreenScene);
     }
     public void _ButtonClicked()
@@ -62,15 +63,20 @@ public class AftermathManager : MonoBehaviour
 
     public void _ClaimReward()
     {
+
         _claimReward(A.Levels.ThisRoundScore);
+        BAHMANAnalytics.Instance.LogClaimSelected(1f);
+        BAHMANAnalytics.Instance.LogButtonClicked("Claim Reward");
     }
     public void _ClaimDoubleReward()
     {
+        BAHMANAnalytics.Instance.LogButtonClicked("Claim Double Reward");
         BAHMANAdManager.Instance._ShowRewardedAd(_adShowedSuccessful, _adShowedFailure);
     }
     void _adShowedSuccessful()
     {
         _claimReward(A.Levels.ThisRoundScore * 2);
+        BAHMANAnalytics.Instance.LogClaimSelected(2f);
         _claimButton.gameObject.SetActive(false);
         _claimDoubleButton.gameObject.SetActive(false);
     }
@@ -82,6 +88,7 @@ public class AftermathManager : MonoBehaviour
     }
     void _claimReward(int iReward)
     {
+        
         A.GameSetting.ScoreSavable._ChangeAmount(iReward);
         //_totalScore.text = A.Tools.ScoreToTitle(A.GameSetting.ScoreSavable._Stock);
     }

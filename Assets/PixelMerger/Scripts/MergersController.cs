@@ -141,6 +141,7 @@ public class MergersController : MonoBehaviour
                         newGo.GetComponent<MergersController>()._LoadPixel(newPixel, c2d.GetComponent<Rigidbody2D>().linearVelocity, c2d.GetComponent<Rigidbody2D>().angularVelocity, true);
                     }
                     OnMerge?.Invoke(c2d.gameObject, gameObject, newGo);
+                    BAHMANAnalytics.Instance.LogMerge(newPixel.MergerOrder);
                     Destroy(c2d.gameObject);
                     Destroy(gameObject);
                 }
